@@ -1,0 +1,3930 @@
+[
+  {
+    "ts": "2026-02-13T15:40:59.606+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"connect.challenge\",\"payload\":{\"nonce\":\"ab394a0b-d17f-41cd-a22f-b64ca10fe5b6\",\"ts\":1770997259606}}",
+      "_len": 122
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.606+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "connect.challenge",
+      "payload": {
+        "nonce": "ab394a0b-d17f-41cd-a22f-b64ca10fe5b6",
+        "ts": 1770997259606
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.606+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "1",
+      "method": "connect",
+      "params": {
+        "minProtocol": 3,
+        "maxProtocol": 3,
+        "client": {
+          "id": "gateway-client",
+          "displayName": "WS Debug Tool",
+          "version": "1.0.0",
+          "platform": "linux",
+          "mode": "backend"
+        },
+        "caps": ["tool-events"],
+        "role": "operator",
+        "scopes": ["operator.read", "operator.write", "operator.admin", "operator.approvals"],
+        "auth": {
+          "token": "1feaa814bca7a733e52740e7eacc50f737d446a0fdb60192"
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.624+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"1\",\"ok\":true,\"payload\":{\"type\":\"hello-ok\",\"protocol\":3,\"server\":{\"version\":\"dev\",\"host\":\"ubuntu\",\"connId\":\"7852b653-9d34-4b16-8733-153fd13e8c7d\"},\"features\":{\"methods\":[\"health\",\"logs.tail\",\"channels.status\",\"channels.logout\",\"status\",\"usage.status\",\"usage.cost\",\"tts.status\",\"tts.providers\",\"tts.enable\",\"tts.disable\",\"tts.convert\",\"tts.setProvider\",\"config.get\",\"config.set\",\"config.apply\",\"config.patch\",\"config.schema\",\"exec.approvals.get\",\"exec.approvals.set\",\"exec.approvals.node.get\",\"exec.approvals.node.set\",\"exec.approval.request\",\"exec.approval.resolve\",\"wizard.start\",\"wizard.next\",\"wizard.cancel\",\"wizard.status\",\"talk.mode\",\"models.list\",\"agents.list\",\"agents.create\",\"agents.update\",\"agents.delete\",\"agents.files.list\",\"agents.files.get\",\"agents.files.set\",\"skills.status\",\"skills.bins\",\"skills.install\",\"skills.update\",\"update.run\",\"voicewake.get\",\"voicewake.set\",\"sessions.list\",\"sessions.preview\",\"sessions.patch\",\"sessions.reset\",\"sessions.delete\",\"sessions.compact\",\"last-heartbeat\",\"set-heartbeats\",\"wake\",\"node.pair.request\",\"node.pair.list\",\"node.pair.approve\",\"node.pair.reject\",\"node.pair.verify\",\"device.pair.list\",\"device.pair.approve\",\"device.pair.reject\",\"device.token.rotate\",\"device.token.revoke\",\"node.rename\",\"node.list\",\"node.describe\",\"node.invoke\",\"node.invoke.result\",\"node.event\",\"cron.list\",\"cron.status\",\"cron.add\",\"cron.update\",\"cron.remove\",\"cron.run\",\"cron.runs\",\"system-presence\",\"system-event\",\"send\",\"agent\",\"agent.identity.get\",\"agent.wait\",\"browser.request\",\"chat.history\",\"chat.abort\",\"chat.send\"],\"events\":[\"connect.challenge\",\"agent\",\"chat\",\"presence\",\"tick\",\"talk.mode\",\"shutdown\",\"health\",\"heartbeat\",\"cron\",\"node.pair.requested\",\"node.pair.resolved\",\"node.invoke.request\",\"device.pair.requested\",\"device.pair.resolved\",\"voicewake.changed\",\"exec.approval.requested\",\"exec.approval.resolved\"]},\"snapshot\":{\"presence\":[{\"host\":\"ubuntu\",\"ip\":\"192.168.1.137\",\"version\":\"unknown\",\"platform\":\"linux 6.8.0-1047-raspi\",\"deviceFamily\":\"Linux\",\"modelIdentifier\":\"arm64\",\"mode\":\"gateway\",\"reason\":\"self\",\"text\":\"Gateway: ubuntu (192.168.1.137) · app unknown · mode gateway · reason self\",\"ts\":1770997259623},{\"host\":\"WS Debug Tool\",\"version\":\"1.0.0\",\"platform\":\"linux\",\"mode\":\"backend\",\"roles\":[\"operator\"],\"scopes\":[\"operator.read\",\"operator.write\",\"operator.admin\",\"operator.approvals\"],\"reason\":\"connect\",\"ts\":1770997259623,\"text\":\"Node: WS Debug Tool · mode backend\"}],\"health\":{\"ok\":true,\"ts\":1770997203892,\"durationMs\":435,\"channels\":{\"telegram\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":435,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770997203892,\"accountId\":\"default\",\"accounts\":{\"default\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":435,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770997203892,\"accountId\":\"default\"}}}},\"channelOrder\":[\"telegram\"],\"channelLabels\":{\"telegram\":\"Telegram\"},\"heartbeatSeconds\":1800,\"defaultAgentId\":\"main\",\"agents\":[{\"agentId\":\"main\",\"isDefault\":true,\"heartbeat\":{\"enabled\":true,\"every\":\"30m\",\"everyMs\":1800000,\"prompt\":\"Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.\",\"target\":\"last\",\"ackMaxChars\":300},\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":31,\"recent\":[{\"key\":\"agent:main:debug-768b25da85d8\",\"updatedAt\":1770996927103,\"age\":276354},{\"key\":\"agent:main:debug-2a688e852a8d\",\"updatedAt\":1770996892073,\"age\":311384},{\"key\":\"agent:main:debug-e4dcd1f644f1\",\"updatedAt\":1770996885373,\"age\":318084},{\"key\":\"agent:main:debug-ecbc355643d5\",\"updatedAt\":1770996436774,\"age\":766683},{\"key\":\"agent:main:main\",\"updatedAt\":1770996189454,\"age\":1014003}]}}],\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":31,\"recent\":[{\"key\":\"agent:main:debug-768b25da85d8\",\"updatedAt\":1770996927103,\"age\":276354},{\"key\":\"agent:main:debug-2a688e852a8d\",\"updatedAt\":1770996892073,\"age\":311384},{\"key\":\"agent:main:debug-e4dcd1f644f1\",\"updatedAt\":1770996885373,\"age\":318084},{\"key\":\"agent:main:debug-ecbc355643d5\",\"updatedAt\":1770996436774,\"age\":766683},{\"key\":\"agent:main:main\",\"updatedAt\":1770996189454,\"age\":1014003}]}},\"stateVersion\":{\"presence\":2,\"health\":3},\"uptimeMs\":121781,\"configPath\":\"/home/dshishlov/.openclaw/openclaw.json\",\"stateDir\":\"/home/dshishlov/.openclaw\",\"sessionDefaults\":{\"defaultAgentId\":\"main\",\"mainKey\":\"main\",\"mainSessionKey\":\"agent:main:main\",\"scope\":\"per-sender\"}},\"canvasHostUrl\":\"http://127.0.0.1:18789\",\"policy\":{\"maxPayload\":8388608,\"maxBufferedBytes\":16777216,\"tickIntervalMs\":30000}}}",
+      "_len": 5189
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.624+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "1",
+      "ok": true,
+      "payload": {
+        "type": "hello-ok",
+        "protocol": 3,
+        "server": {
+          "version": "dev",
+          "host": "ubuntu",
+          "connId": "7852b653-9d34-4b16-8733-153fd13e8c7d"
+        },
+        "features": {
+          "methods": [
+            "health",
+            "logs.tail",
+            "channels.status",
+            "channels.logout",
+            "status",
+            "usage.status",
+            "usage.cost",
+            "tts.status",
+            "tts.providers",
+            "tts.enable",
+            "tts.disable",
+            "tts.convert",
+            "tts.setProvider",
+            "config.get",
+            "config.set",
+            "config.apply",
+            "config.patch",
+            "config.schema",
+            "exec.approvals.get",
+            "exec.approvals.set",
+            "exec.approvals.node.get",
+            "exec.approvals.node.set",
+            "exec.approval.request",
+            "exec.approval.resolve",
+            "wizard.start",
+            "wizard.next",
+            "wizard.cancel",
+            "wizard.status",
+            "talk.mode",
+            "models.list",
+            "agents.list",
+            "agents.create",
+            "agents.update",
+            "agents.delete",
+            "agents.files.list",
+            "agents.files.get",
+            "agents.files.set",
+            "skills.status",
+            "skills.bins",
+            "skills.install",
+            "skills.update",
+            "update.run",
+            "voicewake.get",
+            "voicewake.set",
+            "sessions.list",
+            "sessions.preview",
+            "sessions.patch",
+            "sessions.reset",
+            "sessions.delete",
+            "sessions.compact",
+            "last-heartbeat",
+            "set-heartbeats",
+            "wake",
+            "node.pair.request",
+            "node.pair.list",
+            "node.pair.approve",
+            "node.pair.reject",
+            "node.pair.verify",
+            "device.pair.list",
+            "device.pair.approve",
+            "device.pair.reject",
+            "device.token.rotate",
+            "device.token.revoke",
+            "node.rename",
+            "node.list",
+            "node.describe",
+            "node.invoke",
+            "node.invoke.result",
+            "node.event",
+            "cron.list",
+            "cron.status",
+            "cron.add",
+            "cron.update",
+            "cron.remove",
+            "cron.run",
+            "cron.runs",
+            "system-presence",
+            "system-event",
+            "send",
+            "agent",
+            "agent.identity.get",
+            "agent.wait",
+            "browser.request",
+            "chat.history",
+            "chat.abort",
+            "chat.send"
+          ],
+          "events": [
+            "connect.challenge",
+            "agent",
+            "chat",
+            "presence",
+            "tick",
+            "talk.mode",
+            "shutdown",
+            "health",
+            "heartbeat",
+            "cron",
+            "node.pair.requested",
+            "node.pair.resolved",
+            "node.invoke.request",
+            "device.pair.requested",
+            "device.pair.resolved",
+            "voicewake.changed",
+            "exec.approval.requested",
+            "exec.approval.resolved"
+          ]
+        },
+        "snapshot": {
+          "presence": [
+            {
+              "host": "ubuntu",
+              "ip": "192.168.1.137",
+              "version": "unknown",
+              "platform": "linux 6.8.0-1047-raspi",
+              "deviceFamily": "Linux",
+              "modelIdentifier": "arm64",
+              "mode": "gateway",
+              "reason": "self",
+              "text": "Gateway: ubuntu (192.168.1.137) · app unknown · mode gateway · reason self",
+              "ts": 1770997259623
+            },
+            {
+              "host": "WS Debug Tool",
+              "version": "1.0.0",
+              "platform": "linux",
+              "mode": "backend",
+              "roles": ["operator"],
+              "scopes": ["operator.read", "operator.write", "operator.admin", "operator.approvals"],
+              "reason": "connect",
+              "ts": 1770997259623,
+              "text": "Node: WS Debug Tool · mode backend"
+            }
+          ],
+          "health": {
+            "ok": true,
+            "ts": 1770997203892,
+            "durationMs": 435,
+            "channels": {
+              "telegram": {
+                "configured": true,
+                "tokenSource": "none",
+                "running": false,
+                "mode": null,
+                "lastStartAt": null,
+                "lastStopAt": null,
+                "lastError": null,
+                "probe": {
+                  "ok": true,
+                  "status": null,
+                  "error": null,
+                  "elapsedMs": 435,
+                  "bot": {
+                    "id": 8448623900,
+                    "username": "rassbery_openclaw_bot",
+                    "canJoinGroups": true,
+                    "canReadAllGroupMessages": true,
+                    "supportsInlineQueries": false
+                  },
+                  "webhook": {
+                    "url": "",
+                    "hasCustomCert": false
+                  }
+                },
+                "lastProbeAt": 1770997203892,
+                "accountId": "default",
+                "accounts": {
+                  "default": {
+                    "configured": true,
+                    "tokenSource": "none",
+                    "running": false,
+                    "mode": null,
+                    "lastStartAt": null,
+                    "lastStopAt": null,
+                    "lastError": null,
+                    "probe": {
+                      "ok": true,
+                      "status": null,
+                      "error": null,
+                      "elapsedMs": 435,
+                      "bot": {
+                        "id": 8448623900,
+                        "username": "rassbery_openclaw_bot",
+                        "canJoinGroups": true,
+                        "canReadAllGroupMessages": true,
+                        "supportsInlineQueries": false
+                      },
+                      "webhook": {
+                        "url": "",
+                        "hasCustomCert": false
+                      }
+                    },
+                    "lastProbeAt": 1770997203892,
+                    "accountId": "default"
+                  }
+                }
+              }
+            },
+            "channelOrder": ["telegram"],
+            "channelLabels": {
+              "telegram": "Telegram"
+            },
+            "heartbeatSeconds": 1800,
+            "defaultAgentId": "main",
+            "agents": [
+              {
+                "agentId": "main",
+                "isDefault": true,
+                "heartbeat": {
+                  "enabled": true,
+                  "every": "30m",
+                  "everyMs": 1800000,
+                  "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+                  "target": "last",
+                  "ackMaxChars": 300
+                },
+                "sessions": {
+                  "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+                  "count": 31,
+                  "recent": [
+                    {
+                      "key": "agent:main:debug-768b25da85d8",
+                      "updatedAt": 1770996927103,
+                      "age": 276354
+                    },
+                    {
+                      "key": "agent:main:debug-2a688e852a8d",
+                      "updatedAt": 1770996892073,
+                      "age": 311384
+                    },
+                    {
+                      "key": "agent:main:debug-e4dcd1f644f1",
+                      "updatedAt": 1770996885373,
+                      "age": 318084
+                    },
+                    {
+                      "key": "agent:main:debug-ecbc355643d5",
+                      "updatedAt": 1770996436774,
+                      "age": 766683
+                    },
+                    {
+                      "key": "agent:main:main",
+                      "updatedAt": 1770996189454,
+                      "age": 1014003
+                    }
+                  ]
+                }
+              }
+            ],
+            "sessions": {
+              "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+              "count": 31,
+              "recent": [
+                {
+                  "key": "agent:main:debug-768b25da85d8",
+                  "updatedAt": 1770996927103,
+                  "age": 276354
+                },
+                {
+                  "key": "agent:main:debug-2a688e852a8d",
+                  "updatedAt": 1770996892073,
+                  "age": 311384
+                },
+                {
+                  "key": "agent:main:debug-e4dcd1f644f1",
+                  "updatedAt": 1770996885373,
+                  "age": 318084
+                },
+                {
+                  "key": "agent:main:debug-ecbc355643d5",
+                  "updatedAt": 1770996436774,
+                  "age": 766683
+                },
+                {
+                  "key": "agent:main:main",
+                  "updatedAt": 1770996189454,
+                  "age": 1014003
+                }
+              ]
+            }
+          },
+          "stateVersion": {
+            "presence": 2,
+            "health": 3
+          },
+          "uptimeMs": 121781,
+          "configPath": "/home/dshishlov/.openclaw/openclaw.json",
+          "stateDir": "/home/dshishlov/.openclaw",
+          "sessionDefaults": {
+            "defaultAgentId": "main",
+            "mainKey": "main",
+            "mainSessionKey": "agent:main:main",
+            "scope": "per-sender"
+          }
+        },
+        "canvasHostUrl": "http://127.0.0.1:18789",
+        "policy": {
+          "maxPayload": 8388608,
+          "maxBufferedBytes": 16777216,
+          "tickIntervalMs": 30000
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.624+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Подключён к gateway vdev на ubuntu"
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.625+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "2",
+      "method": "agents.list",
+      "params": {}
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.647+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"2\",\"ok\":true,\"payload\":{\"defaultId\":\"main\",\"mainKey\":\"main\",\"scope\":\"per-sender\",\"agents\":[{\"id\":\"main\"}]}}",
+      "_len": 127
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.647+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "2",
+      "ok": true,
+      "payload": {
+        "defaultId": "main",
+        "mainKey": "main",
+        "scope": "per-sender",
+        "agents": [
+          {
+            "id": "main"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.647+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Default agent: main"
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.647+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Создана сессия: agent:main:debug-4a2888a9bc0f"
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.647+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "3",
+      "method": "sessions.patch",
+      "params": {
+        "key": "agent:main:debug-4a2888a9bc0f",
+        "verboseLevel": "on"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.669+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"3\",\"ok\":true,\"payload\":{\"ok\":true,\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"key\":\"agent:main:debug-4a2888a9bc0f\",\"entry\":{\"sessionId\":\"ced91437-3602-4ff1-a8cc-1d8c4f30b050\",\"updatedAt\":1770997259659,\"verboseLevel\":\"on\"},\"resolved\":{\"modelProvider\":\"deepseek\",\"model\":\"deepseek-chat\"}}}",
+      "_len": 334
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.669+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "3",
+      "ok": true,
+      "payload": {
+        "ok": true,
+        "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+        "key": "agent:main:debug-4a2888a9bc0f",
+        "entry": {
+          "sessionId": "ced91437-3602-4ff1-a8cc-1d8c4f30b050",
+          "updatedAt": 1770997259659,
+          "verboseLevel": "on"
+        },
+        "resolved": {
+          "modelProvider": "deepseek",
+          "model": "deepseek-chat"
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.669+00:00",
+    "dir": "info",
+    "data": {
+      "message": "verbose=on для сессии"
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.669+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "4",
+      "method": "chat.history",
+      "params": {
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "limit": 10
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.763+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"4\",\"ok\":true,\"payload\":{\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"sessionId\":\"ced91437-3602-4ff1-a8cc-1d8c4f30b050\",\"messages\":[],\"thinkingLevel\":\"off\",\"verboseLevel\":\"on\"}}",
+      "_len": 197
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.763+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "4",
+      "ok": true,
+      "payload": {
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "sessionId": "ced91437-3602-4ff1-a8cc-1d8c4f30b050",
+        "messages": [],
+        "thinkingLevel": "off",
+        "verboseLevel": "on"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.763+00:00",
+    "dir": "info",
+    "data": {
+      "message": "История: 0 сообщений"
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.763+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "5",
+      "method": "chat.send",
+      "params": {
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "message": "Выполни ls -la /tmp | head -5",
+        "idempotencyKey": "debug-e8b979d925c9413c"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.778+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"5\",\"ok\":true,\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"status\":\"started\"}}",
+      "_len": 97
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.778+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "5",
+      "ok": true,
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "status": "started"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:40:59.778+00:00",
+    "dir": "info",
+    "data": {
+      "message": "chat.send OK: runId=debug-e8b979d925c9413c, status=started"
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:00.287+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"lifecycle\",\"data\":{\"phase\":\"start\",\"startedAt\":1770997260286},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":1,\"ts\":1770997260286},\"seq\":6}",
+      "_len": 229
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:00.288+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "lifecycle",
+        "data": {
+          "phase": "start",
+          "startedAt": 1770997260286
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 1,
+        "ts": 1770997260286
+      },
+      "seq": 6
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:00.469+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"health\",\"payload\":{\"ok\":true,\"ts\":1770997260468,\"durationMs\":831,\"channels\":{\"telegram\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":830,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770997260468,\"accountId\":\"default\",\"accounts\":{\"default\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":830,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770997260468,\"accountId\":\"default\"}}}},\"channelOrder\":[\"telegram\"],\"channelLabels\":{\"telegram\":\"Telegram\"},\"heartbeatSeconds\":1800,\"defaultAgentId\":\"main\",\"agents\":[{\"agentId\":\"main\",\"isDefault\":true,\"heartbeat\":{\"enabled\":true,\"every\":\"30m\",\"everyMs\":1800000,\"prompt\":\"Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.\",\"target\":\"last\",\"ackMaxChars\":300},\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":31,\"recent\":[{\"key\":\"agent:main:debug-768b25da85d8\",\"updatedAt\":1770996927103,\"age\":332534},{\"key\":\"agent:main:debug-2a688e852a8d\",\"updatedAt\":1770996892073,\"age\":367564},{\"key\":\"agent:main:debug-e4dcd1f644f1\",\"updatedAt\":1770996885373,\"age\":374264},{\"key\":\"agent:main:debug-ecbc355643d5\",\"updatedAt\":1770996436774,\"age\":822863},{\"key\":\"agent:main:main\",\"updatedAt\":1770996189454,\"age\":1070183}]}}],\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":31,\"recent\":[{\"key\":\"agent:main:debug-768b25da85d8\",\"updatedAt\":1770996927103,\"age\":332534},{\"key\":\"agent:main:debug-2a688e852a8d\",\"updatedAt\":1770996892073,\"age\":367564},{\"key\":\"agent:main:debug-e4dcd1f644f1\",\"updatedAt\":1770996885373,\"age\":374264},{\"key\":\"agent:main:debug-ecbc355643d5\",\"updatedAt\":1770996436774,\"age\":822863},{\"key\":\"agent:main:main\",\"updatedAt\":1770996189454,\"age\":1070183}]}},\"seq\":7,\"stateVersion\":{\"presence\":2,\"health\":4}}",
+      "_len": 2441
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:00.469+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "health",
+      "payload": {
+        "ok": true,
+        "ts": 1770997260468,
+        "durationMs": 831,
+        "channels": {
+          "telegram": {
+            "configured": true,
+            "tokenSource": "none",
+            "running": false,
+            "mode": null,
+            "lastStartAt": null,
+            "lastStopAt": null,
+            "lastError": null,
+            "probe": {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "elapsedMs": 830,
+              "bot": {
+                "id": 8448623900,
+                "username": "rassbery_openclaw_bot",
+                "canJoinGroups": true,
+                "canReadAllGroupMessages": true,
+                "supportsInlineQueries": false
+              },
+              "webhook": {
+                "url": "",
+                "hasCustomCert": false
+              }
+            },
+            "lastProbeAt": 1770997260468,
+            "accountId": "default",
+            "accounts": {
+              "default": {
+                "configured": true,
+                "tokenSource": "none",
+                "running": false,
+                "mode": null,
+                "lastStartAt": null,
+                "lastStopAt": null,
+                "lastError": null,
+                "probe": {
+                  "ok": true,
+                  "status": null,
+                  "error": null,
+                  "elapsedMs": 830,
+                  "bot": {
+                    "id": 8448623900,
+                    "username": "rassbery_openclaw_bot",
+                    "canJoinGroups": true,
+                    "canReadAllGroupMessages": true,
+                    "supportsInlineQueries": false
+                  },
+                  "webhook": {
+                    "url": "",
+                    "hasCustomCert": false
+                  }
+                },
+                "lastProbeAt": 1770997260468,
+                "accountId": "default"
+              }
+            }
+          }
+        },
+        "channelOrder": ["telegram"],
+        "channelLabels": {
+          "telegram": "Telegram"
+        },
+        "heartbeatSeconds": 1800,
+        "defaultAgentId": "main",
+        "agents": [
+          {
+            "agentId": "main",
+            "isDefault": true,
+            "heartbeat": {
+              "enabled": true,
+              "every": "30m",
+              "everyMs": 1800000,
+              "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+              "target": "last",
+              "ackMaxChars": 300
+            },
+            "sessions": {
+              "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+              "count": 31,
+              "recent": [
+                {
+                  "key": "agent:main:debug-768b25da85d8",
+                  "updatedAt": 1770996927103,
+                  "age": 332534
+                },
+                {
+                  "key": "agent:main:debug-2a688e852a8d",
+                  "updatedAt": 1770996892073,
+                  "age": 367564
+                },
+                {
+                  "key": "agent:main:debug-e4dcd1f644f1",
+                  "updatedAt": 1770996885373,
+                  "age": 374264
+                },
+                {
+                  "key": "agent:main:debug-ecbc355643d5",
+                  "updatedAt": 1770996436774,
+                  "age": 822863
+                },
+                {
+                  "key": "agent:main:main",
+                  "updatedAt": 1770996189454,
+                  "age": 1070183
+                }
+              ]
+            }
+          }
+        ],
+        "sessions": {
+          "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+          "count": 31,
+          "recent": [
+            {
+              "key": "agent:main:debug-768b25da85d8",
+              "updatedAt": 1770996927103,
+              "age": 332534
+            },
+            {
+              "key": "agent:main:debug-2a688e852a8d",
+              "updatedAt": 1770996892073,
+              "age": 367564
+            },
+            {
+              "key": "agent:main:debug-e4dcd1f644f1",
+              "updatedAt": 1770996885373,
+              "age": 374264
+            },
+            {
+              "key": "agent:main:debug-ecbc355643d5",
+              "updatedAt": 1770996436774,
+              "age": 822863
+            },
+            {
+              "key": "agent:main:main",
+              "updatedAt": 1770996189454,
+              "age": 1070183
+            }
+          ]
+        }
+      },
+      "seq": 7,
+      "stateVersion": {
+        "presence": 2,
+        "health": 4
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.426+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"tick\",\"payload\":{\"ts\":1770997263425},\"seq\":8}",
+      "_len": 70
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.426+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "tick",
+      "payload": {
+        "ts": 1770997263425
+      },
+      "seq": 8
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.609+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"tool\",\"data\":{\"phase\":\"start\",\"name\":\"exec\",\"toolCallId\":\"call_00_q1TsCfEu56iyxYinmCRQn7pm\",\"args\":{\"command\":\"ls -la /tmp | head -5\"}},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":2,\"ts\":1770997263608}}",
+      "_len": 295
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.609+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "tool",
+        "data": {
+          "phase": "start",
+          "name": "exec",
+          "toolCallId": "call_00_q1TsCfEu56iyxYinmCRQn7pm",
+          "args": {
+            "command": "ls -la /tmp | head -5"
+          }
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 2,
+        "ts": 1770997263608
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.618+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"health\",\"payload\":{\"ok\":true,\"ts\":1770997263617,\"durationMs\":167,\"channels\":{\"telegram\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":165,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770997263616,\"accountId\":\"default\",\"accounts\":{\"default\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":165,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770997263616,\"accountId\":\"default\"}}}},\"channelOrder\":[\"telegram\"],\"channelLabels\":{\"telegram\":\"Telegram\"},\"heartbeatSeconds\":1800,\"defaultAgentId\":\"main\",\"agents\":[{\"agentId\":\"main\",\"isDefault\":true,\"heartbeat\":{\"enabled\":true,\"every\":\"30m\",\"everyMs\":1800000,\"prompt\":\"Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.\",\"target\":\"last\",\"ackMaxChars\":300},\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":32,\"recent\":[{\"key\":\"agent:main:debug-4a2888a9bc0f\",\"updatedAt\":1770997260135,\"age\":3315},{\"key\":\"agent:main:debug-768b25da85d8\",\"updatedAt\":1770996927103,\"age\":336347},{\"key\":\"agent:main:debug-2a688e852a8d\",\"updatedAt\":1770996892073,\"age\":371377},{\"key\":\"agent:main:debug-e4dcd1f644f1\",\"updatedAt\":1770996885373,\"age\":378077},{\"key\":\"agent:main:debug-ecbc355643d5\",\"updatedAt\":1770996436774,\"age\":826676}]}}],\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":32,\"recent\":[{\"key\":\"agent:main:debug-4a2888a9bc0f\",\"updatedAt\":1770997260135,\"age\":3315},{\"key\":\"agent:main:debug-768b25da85d8\",\"updatedAt\":1770996927103,\"age\":336347},{\"key\":\"agent:main:debug-2a688e852a8d\",\"updatedAt\":1770996892073,\"age\":371377},{\"key\":\"agent:main:debug-e4dcd1f644f1\",\"updatedAt\":1770996885373,\"age\":378077},{\"key\":\"agent:main:debug-ecbc355643d5\",\"updatedAt\":1770996436774,\"age\":826676}]}},\"seq\":9,\"stateVersion\":{\"presence\":2,\"health\":5}}",
+      "_len": 2463
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.618+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "health",
+      "payload": {
+        "ok": true,
+        "ts": 1770997263617,
+        "durationMs": 167,
+        "channels": {
+          "telegram": {
+            "configured": true,
+            "tokenSource": "none",
+            "running": false,
+            "mode": null,
+            "lastStartAt": null,
+            "lastStopAt": null,
+            "lastError": null,
+            "probe": {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "elapsedMs": 165,
+              "bot": {
+                "id": 8448623900,
+                "username": "rassbery_openclaw_bot",
+                "canJoinGroups": true,
+                "canReadAllGroupMessages": true,
+                "supportsInlineQueries": false
+              },
+              "webhook": {
+                "url": "",
+                "hasCustomCert": false
+              }
+            },
+            "lastProbeAt": 1770997263616,
+            "accountId": "default",
+            "accounts": {
+              "default": {
+                "configured": true,
+                "tokenSource": "none",
+                "running": false,
+                "mode": null,
+                "lastStartAt": null,
+                "lastStopAt": null,
+                "lastError": null,
+                "probe": {
+                  "ok": true,
+                  "status": null,
+                  "error": null,
+                  "elapsedMs": 165,
+                  "bot": {
+                    "id": 8448623900,
+                    "username": "rassbery_openclaw_bot",
+                    "canJoinGroups": true,
+                    "canReadAllGroupMessages": true,
+                    "supportsInlineQueries": false
+                  },
+                  "webhook": {
+                    "url": "",
+                    "hasCustomCert": false
+                  }
+                },
+                "lastProbeAt": 1770997263616,
+                "accountId": "default"
+              }
+            }
+          }
+        },
+        "channelOrder": ["telegram"],
+        "channelLabels": {
+          "telegram": "Telegram"
+        },
+        "heartbeatSeconds": 1800,
+        "defaultAgentId": "main",
+        "agents": [
+          {
+            "agentId": "main",
+            "isDefault": true,
+            "heartbeat": {
+              "enabled": true,
+              "every": "30m",
+              "everyMs": 1800000,
+              "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+              "target": "last",
+              "ackMaxChars": 300
+            },
+            "sessions": {
+              "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+              "count": 32,
+              "recent": [
+                {
+                  "key": "agent:main:debug-4a2888a9bc0f",
+                  "updatedAt": 1770997260135,
+                  "age": 3315
+                },
+                {
+                  "key": "agent:main:debug-768b25da85d8",
+                  "updatedAt": 1770996927103,
+                  "age": 336347
+                },
+                {
+                  "key": "agent:main:debug-2a688e852a8d",
+                  "updatedAt": 1770996892073,
+                  "age": 371377
+                },
+                {
+                  "key": "agent:main:debug-e4dcd1f644f1",
+                  "updatedAt": 1770996885373,
+                  "age": 378077
+                },
+                {
+                  "key": "agent:main:debug-ecbc355643d5",
+                  "updatedAt": 1770996436774,
+                  "age": 826676
+                }
+              ]
+            }
+          }
+        ],
+        "sessions": {
+          "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+          "count": 32,
+          "recent": [
+            {
+              "key": "agent:main:debug-4a2888a9bc0f",
+              "updatedAt": 1770997260135,
+              "age": 3315
+            },
+            {
+              "key": "agent:main:debug-768b25da85d8",
+              "updatedAt": 1770996927103,
+              "age": 336347
+            },
+            {
+              "key": "agent:main:debug-2a688e852a8d",
+              "updatedAt": 1770996892073,
+              "age": 371377
+            },
+            {
+              "key": "agent:main:debug-e4dcd1f644f1",
+              "updatedAt": 1770996885373,
+              "age": 378077
+            },
+            {
+              "key": "agent:main:debug-ecbc355643d5",
+              "updatedAt": 1770996436774,
+              "age": 826676
+            }
+          ]
+        }
+      },
+      "seq": 9,
+      "stateVersion": {
+        "presence": 2,
+        "health": 5
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.738+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"tool\",\"data\":{\"phase\":\"update\",\"name\":\"exec\",\"toolCallId\":\"call_00_q1TsCfEu56iyxYinmCRQn7pm\",\"partialResult\":{\"content\":[{\"type\":\"text\",\"text\":\"total 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\\n\"}],\"details\":{\"status\":\"running\",\"sessionId\":\"vivid-dune\",\"pid\":1255476,\"startedAt\":1770997263588,\"cwd\":\"/home/dshishlov/.openclaw/workspace\",\"tail\":\"total 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\\n\"}}},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":3,\"ts\":1770997263738}}",
+      "_len": 963
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.739+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "tool",
+        "data": {
+          "phase": "update",
+          "name": "exec",
+          "toolCallId": "call_00_q1TsCfEu56iyxYinmCRQn7pm",
+          "partialResult": {
+            "content": [
+              {
+                "type": "text",
+                "text": "total 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\n"
+              }
+            ],
+            "details": {
+              "status": "running",
+              "sessionId": "vivid-dune",
+              "pid": 1255476,
+              "startedAt": 1770997263588,
+              "cwd": "/home/dshishlov/.openclaw/workspace",
+              "tail": "total 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\n"
+            }
+          }
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 3,
+        "ts": 1770997263738
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.741+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"tool\",\"data\":{\"phase\":\"result\",\"name\":\"exec\",\"toolCallId\":\"call_00_q1TsCfEu56iyxYinmCRQn7pm\",\"meta\":\"ls -la /tmp | head -5\",\"isError\":false,\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"total 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\"}],\"details\":{\"status\":\"completed\",\"exitCode\":0,\"durationMs\":151,\"aggregated\":\"total 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\",\"cwd\":\"/home/dshishlov/.openclaw/workspace\"}}},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":4,\"ts\":1770997263740}}",
+      "_len": 972
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:03.741+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "tool",
+        "data": {
+          "phase": "result",
+          "name": "exec",
+          "toolCallId": "call_00_q1TsCfEu56iyxYinmCRQn7pm",
+          "meta": "ls -la /tmp | head -5",
+          "isError": false,
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "total 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix"
+              }
+            ],
+            "details": {
+              "status": "completed",
+              "exitCode": 0,
+              "durationMs": 151,
+              "aggregated": "total 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix",
+              "cwd": "/home/dshishlov/.openclaw/workspace"
+            }
+          }
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 4,
+        "ts": 1770997263740
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.543+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Ре\",\"delta\":\"Ре\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":5,\"ts\":1770997265543},\"seq\":10}",
+      "_len": 213
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.543+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Ре",
+          "delta": "Ре"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 5,
+        "ts": 1770997265543
+      },
+      "seq": 10
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.544+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":5,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Ре\"}],\"timestamp\":1770997265543}},\"seq\":11}",
+      "_len": 251
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.544+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 5,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Ре"
+            }
+          ],
+          "timestamp": 1770997265543
+        }
+      },
+      "seq": 11
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.829+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результа\",\"delta\":\"зульта\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":6,\"ts\":1770997265828},\"seq\":12}",
+      "_len": 223
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.829+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результа",
+          "delta": "зульта"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 6,
+        "ts": 1770997265828
+      },
+      "seq": 12
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.829+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":6,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результа\"}],\"timestamp\":1770997265828}},\"seq\":13}",
+      "_len": 257
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.829+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 6,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результа"
+            }
+          ],
+          "timestamp": 1770997265828
+        }
+      },
+      "seq": 13
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.899+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат\",\"delta\":\"т\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":7,\"ts\":1770997265899},\"seq\":14}",
+      "_len": 219
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.899+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат",
+          "delta": "т"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 7,
+        "ts": 1770997265899
+      },
+      "seq": 14
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.906+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\",\"delta\":\":\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":8,\"ts\":1770997265906},\"seq\":15}",
+      "_len": 220
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.906+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:",
+          "delta": ":"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 8,
+        "ts": 1770997265906
+      },
+      "seq": 15
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.908+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\",\"delta\":\"\\n```\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":9,\"ts\":1770997265907},\"seq\":16}",
+      "_len": 229
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.908+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```",
+          "delta": "\n```"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 9,
+        "ts": 1770997265907
+      },
+      "seq": 16
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.911+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal\",\"delta\":\"\\ntotal\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":10,\"ts\":1770997265908},\"seq\":17}",
+      "_len": 239
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.911+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal",
+          "delta": "\ntotal"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 10,
+        "ts": 1770997265908
+      },
+      "seq": 17
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.934+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\",\"delta\":\" 224\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":11,\"ts\":1770997265933},\"seq\":18}",
+      "_len": 240
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.934+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224",
+          "delta": " 224"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 11,
+        "ts": 1770997265933
+      },
+      "seq": 18
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.974+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndr\",\"delta\":\"\\ndr\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":12,\"ts\":1770997265973},\"seq\":19}",
+      "_len": 244
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:05.974+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndr",
+          "delta": "\ndr"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 12,
+        "ts": 1770997265973
+      },
+      "seq": 19
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.012+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwx\",\"delta\":\"wx\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":13,\"ts\":1770997266012},\"seq\":20}",
+      "_len": 244
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.012+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwx",
+          "delta": "wx"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 13,
+        "ts": 1770997266012
+      },
+      "seq": 20
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.013+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":13,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwx\"}],\"timestamp\":1770997266012}},\"seq\":21}",
+      "_len": 282
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.013+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 13,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwx"
+            }
+          ],
+          "timestamp": 1770997266012
+        }
+      },
+      "seq": 21
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.013+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrw\",\"delta\":\"rw\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":14,\"ts\":1770997266013},\"seq\":22}",
+      "_len": 246
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.013+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrw",
+          "delta": "rw"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 14,
+        "ts": 1770997266013
+      },
+      "seq": 22
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.050+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwx\",\"delta\":\"x\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":15,\"ts\":1770997266050},\"seq\":23}",
+      "_len": 246
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.050+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwx",
+          "delta": "x"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 15,
+        "ts": 1770997266050
+      },
+      "seq": 23
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.051+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxr\",\"delta\":\"r\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":16,\"ts\":1770997266050},\"seq\":24}",
+      "_len": 247
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.051+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxr",
+          "delta": "r"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 16,
+        "ts": 1770997266050
+      },
+      "seq": 24
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.090+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt\",\"delta\":\"wt\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":17,\"ts\":1770997266089},\"seq\":25}",
+      "_len": 250
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.090+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt",
+          "delta": "wt"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 17,
+        "ts": 1770997266089
+      },
+      "seq": 25
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.129+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22\",\"delta\":\" 22\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":18,\"ts\":1770997266128},\"seq\":26}",
+      "_len": 254
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.129+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22",
+          "delta": " 22"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 18,
+        "ts": 1770997266128
+      },
+      "seq": 26
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.133+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root\",\"delta\":\" root\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":19,\"ts\":1770997266129},\"seq\":27}",
+      "_len": 261
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.133+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root",
+          "delta": " root"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 19,
+        "ts": 1770997266129
+      },
+      "seq": 27
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.168+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root\",\"delta\":\"      root\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":20,\"ts\":1770997266167},\"seq\":28}",
+      "_len": 276
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.168+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root",
+          "delta": "      root"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 20,
+        "ts": 1770997266167
+      },
+      "seq": 28
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.168+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":20,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root\"}],\"timestamp\":1770997266167}},\"seq\":29}",
+      "_len": 306
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.168+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 20,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root"
+            }
+          ],
+          "timestamp": 1770997266167
+        }
+      },
+      "seq": 29
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.208+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       409\",\"delta\":\"       409\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":21,\"ts\":1770997266207},\"seq\":30}",
+      "_len": 286
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.208+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       409",
+          "delta": "       409"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 21,
+        "ts": 1770997266207
+      },
+      "seq": 30
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.246+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096\",\"delta\":\"6\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":22,\"ts\":1770997266245},\"seq\":31}",
+      "_len": 278
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.246+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096",
+          "delta": "6"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 22,
+        "ts": 1770997266245
+      },
+      "seq": 31
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.246+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb\",\"delta\":\" Feb\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":23,\"ts\":1770997266246},\"seq\":32}",
+      "_len": 285
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.246+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb",
+          "delta": " Feb"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 23,
+        "ts": 1770997266246
+      },
+      "seq": 32
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.287+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13\",\"delta\":\" 13\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":24,\"ts\":1770997266286},\"seq\":33}",
+      "_len": 287
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.287+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13",
+          "delta": " 13"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 24,
+        "ts": 1770997266286
+      },
+      "seq": 33
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.323+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15\",\"delta\":\" 15\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":25,\"ts\":1770997266323},\"seq\":34}",
+      "_len": 290
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.324+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15",
+          "delta": " 15"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 25,
+        "ts": 1770997266323
+      },
+      "seq": 34
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.324+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":25,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15\"}],\"timestamp\":1770997266323}},\"seq\":35}",
+      "_len": 327
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.324+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 25,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15"
+            }
+          ],
+          "timestamp": 1770997266323
+        }
+      },
+      "seq": 35
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.363+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:\",\"delta\":\":\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":26,\"ts\":1770997266363},\"seq\":36}",
+      "_len": 289
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.363+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:",
+          "delta": ":"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 26,
+        "ts": 1770997266363
+      },
+      "seq": 36
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.368+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40\",\"delta\":\"40\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":27,\"ts\":1770997266363},\"seq\":37}",
+      "_len": 292
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.368+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40",
+          "delta": "40"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 27,
+        "ts": 1770997266363
+      },
+      "seq": 37
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.406+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\",\"delta\":\" .\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":28,\"ts\":1770997266406},\"seq\":38}",
+      "_len": 294
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.407+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .",
+          "delta": " ."
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 28,
+        "ts": 1770997266406
+      },
+      "seq": 38
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.407+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndr\",\"delta\":\"\\ndr\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":29,\"ts\":1770997266407},\"seq\":39}",
+      "_len": 300
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.407+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndr",
+          "delta": "\ndr"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 29,
+        "ts": 1770997266407
+      },
+      "seq": 39
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.442+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwx\",\"delta\":\"wx\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":30,\"ts\":1770997266441},\"seq\":40}",
+      "_len": 300
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.442+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwx",
+          "delta": "wx"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 30,
+        "ts": 1770997266441
+      },
+      "seq": 40
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.442+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr\",\"delta\":\"r\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":31,\"ts\":1770997266442},\"seq\":41}",
+      "_len": 300
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.442+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr",
+          "delta": "r"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 31,
+        "ts": 1770997266442
+      },
+      "seq": 41
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.482+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-x\",\"delta\":\"-x\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":32,\"ts\":1770997266481},\"seq\":42}",
+      "_len": 303
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.482+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-x",
+          "delta": "-x"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 32,
+        "ts": 1770997266481
+      },
+      "seq": 42
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.482+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":32,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-x\"}],\"timestamp\":1770997266482}},\"seq\":43}",
+      "_len": 341
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.482+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 32,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-x"
+            }
+          ],
+          "timestamp": 1770997266482
+        }
+      },
+      "seq": 43
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.482+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr\",\"delta\":\"r\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":33,\"ts\":1770997266482},\"seq\":44}",
+      "_len": 303
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.482+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr",
+          "delta": "r"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 33,
+        "ts": 1770997266482
+      },
+      "seq": 44
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.524+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x\",\"delta\":\"-x\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":34,\"ts\":1770997266524},\"seq\":45}",
+      "_len": 306
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.524+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x",
+          "delta": "-x"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 34,
+        "ts": 1770997266524
+      },
+      "seq": 45
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.560+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22\",\"delta\":\" 22\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":35,\"ts\":1770997266559},\"seq\":46}",
+      "_len": 310
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.560+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22",
+          "delta": " 22"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 35,
+        "ts": 1770997266559
+      },
+      "seq": 46
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.566+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root\",\"delta\":\" root\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":36,\"ts\":1770997266560},\"seq\":47}",
+      "_len": 317
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.566+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root",
+          "delta": " root"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 36,
+        "ts": 1770997266560
+      },
+      "seq": 47
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.600+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root\",\"delta\":\"      root\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":37,\"ts\":1770997266599},\"seq\":48}",
+      "_len": 332
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.600+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root",
+          "delta": "      root"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 37,
+        "ts": 1770997266599
+      },
+      "seq": 48
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.637+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       409\",\"delta\":\"       409\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":38,\"ts\":1770997266636},\"seq\":49}",
+      "_len": 342
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.637+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       409",
+          "delta": "       409"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 38,
+        "ts": 1770997266636
+      },
+      "seq": 49
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.637+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":38,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       409\"}],\"timestamp\":1770997266637}},\"seq\":50}",
+      "_len": 372
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.637+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 38,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       409"
+            }
+          ],
+          "timestamp": 1770997266637
+        }
+      },
+      "seq": 50
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.685+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096\",\"delta\":\"6\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":39,\"ts\":1770997266684},\"seq\":51}",
+      "_len": 334
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.685+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096",
+          "delta": "6"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 39,
+        "ts": 1770997266684
+      },
+      "seq": 51
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.685+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb\",\"delta\":\" Feb\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":40,\"ts\":1770997266685},\"seq\":52}",
+      "_len": 341
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.685+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb",
+          "delta": " Feb"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 40,
+        "ts": 1770997266685
+      },
+      "seq": 52
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.716+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10\",\"delta\":\" 10\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":41,\"ts\":1770997266715},\"seq\":53}",
+      "_len": 343
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.716+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10",
+          "delta": " 10"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 41,
+        "ts": 1770997266715
+      },
+      "seq": 53
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.756+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11\",\"delta\":\" 11\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":42,\"ts\":1770997266756},\"seq\":54}",
+      "_len": 346
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.756+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11",
+          "delta": " 11"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 42,
+        "ts": 1770997266756
+      },
+      "seq": 54
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.798+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:\",\"delta\":\":\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":43,\"ts\":1770997266798},\"seq\":55}",
+      "_len": 345
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.798+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:",
+          "delta": ":"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 43,
+        "ts": 1770997266798
+      },
+      "seq": 55
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.798+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":43,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:\"}],\"timestamp\":1770997266798}},\"seq\":56}",
+      "_len": 384
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.798+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 43,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:"
+            }
+          ],
+          "timestamp": 1770997266798
+        }
+      },
+      "seq": 56
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.805+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10\",\"delta\":\"10\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":44,\"ts\":1770997266798},\"seq\":57}",
+      "_len": 348
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.805+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10",
+          "delta": "10"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 44,
+        "ts": 1770997266798
+      },
+      "seq": 57
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.834+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\",\"delta\":\" ..\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":45,\"ts\":1770997266833},\"seq\":58}",
+      "_len": 352
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.834+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..",
+          "delta": " .."
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 45,
+        "ts": 1770997266833
+      },
+      "seq": 58
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.834+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndr\",\"delta\":\"\\ndr\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":46,\"ts\":1770997266834},\"seq\":59}",
+      "_len": 357
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.834+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndr",
+          "delta": "\ndr"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 46,
+        "ts": 1770997266834
+      },
+      "seq": 59
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.874+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwx\",\"delta\":\"wx\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":47,\"ts\":1770997266873},\"seq\":60}",
+      "_len": 357
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.874+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwx",
+          "delta": "wx"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 47,
+        "ts": 1770997266873
+      },
+      "seq": 60
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.874+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrw\",\"delta\":\"rw\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":48,\"ts\":1770997266874},\"seq\":61}",
+      "_len": 359
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.874+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrw",
+          "delta": "rw"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 48,
+        "ts": 1770997266874
+      },
+      "seq": 61
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.913+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwx\",\"delta\":\"x\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":49,\"ts\":1770997266912},\"seq\":62}",
+      "_len": 359
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.913+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwx",
+          "delta": "x"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 49,
+        "ts": 1770997266912
+      },
+      "seq": 62
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.913+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxr\",\"delta\":\"r\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":50,\"ts\":1770997266913},\"seq\":63}",
+      "_len": 360
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:06.913+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxr",
+          "delta": "r"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 50,
+        "ts": 1770997266913
+      },
+      "seq": 63
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.010+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt\",\"delta\":\"wt\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":51,\"ts\":1770997267009},\"seq\":64}",
+      "_len": 363
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.010+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt",
+          "delta": "wt"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 51,
+        "ts": 1770997267009
+      },
+      "seq": 64
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.010+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":51,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt\"}],\"timestamp\":1770997267010}},\"seq\":65}",
+      "_len": 401
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.010+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 51,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt"
+            }
+          ],
+          "timestamp": 1770997267010
+        }
+      },
+      "seq": 65
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.014+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2\",\"delta\":\"  2\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":52,\"ts\":1770997267014},\"seq\":66}",
+      "_len": 367
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.014+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2",
+          "delta": "  2"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 52,
+        "ts": 1770997267014
+      },
+      "seq": 66
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.021+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root\",\"delta\":\" root\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":53,\"ts\":1770997267014},\"seq\":67}",
+      "_len": 374
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.021+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root",
+          "delta": " root"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 53,
+        "ts": 1770997267014
+      },
+      "seq": 67
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.035+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root\",\"delta\":\"      root\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":54,\"ts\":1770997267035},\"seq\":68}",
+      "_len": 389
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.035+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root",
+          "delta": "      root"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 54,
+        "ts": 1770997267035
+      },
+      "seq": 68
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.070+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       409\",\"delta\":\"       409\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":55,\"ts\":1770997267070},\"seq\":69}",
+      "_len": 399
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.070+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       409",
+          "delta": "       409"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 55,
+        "ts": 1770997267070
+      },
+      "seq": 69
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.108+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096\",\"delta\":\"6\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":56,\"ts\":1770997267107},\"seq\":70}",
+      "_len": 391
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.108+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096",
+          "delta": "6"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 56,
+        "ts": 1770997267107
+      },
+      "seq": 70
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.108+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb\",\"delta\":\" Feb\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":57,\"ts\":1770997267108},\"seq\":71}",
+      "_len": 398
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.108+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb",
+          "delta": " Feb"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 57,
+        "ts": 1770997267108
+      },
+      "seq": 71
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.147+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10\",\"delta\":\" 10\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":58,\"ts\":1770997267146},\"seq\":72}",
+      "_len": 400
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.147+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10",
+          "delta": " 10"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 58,
+        "ts": 1770997267146
+      },
+      "seq": 72
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.185+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11\",\"delta\":\" 11\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":59,\"ts\":1770997267184},\"seq\":73}",
+      "_len": 403
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.185+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11",
+          "delta": " 11"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 59,
+        "ts": 1770997267184
+      },
+      "seq": 73
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.185+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":59,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11\"}],\"timestamp\":1770997267185}},\"seq\":74}",
+      "_len": 440
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.185+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 59,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11"
+            }
+          ],
+          "timestamp": 1770997267185
+        }
+      },
+      "seq": 74
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.225+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:\",\"delta\":\":\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":60,\"ts\":1770997267225},\"seq\":75}",
+      "_len": 402
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.226+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:",
+          "delta": ":"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 60,
+        "ts": 1770997267225
+      },
+      "seq": 75
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.226+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10\",\"delta\":\"10\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":61,\"ts\":1770997267225},\"seq\":76}",
+      "_len": 405
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.226+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10",
+          "delta": "10"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 61,
+        "ts": 1770997267225
+      },
+      "seq": 76
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.266+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .\",\"delta\":\" .\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":62,\"ts\":1770997267265},\"seq\":77}",
+      "_len": 407
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.266+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .",
+          "delta": " ."
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 62,
+        "ts": 1770997267265
+      },
+      "seq": 77
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.266+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE\",\"delta\":\"ICE\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":63,\"ts\":1770997267266},\"seq\":78}",
+      "_len": 411
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.266+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE",
+          "delta": "ICE"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 63,
+        "ts": 1770997267266
+      },
+      "seq": 78
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.309+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-un\",\"delta\":\"-un\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":64,\"ts\":1770997267309},\"seq\":79}",
+      "_len": 414
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.309+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-un",
+          "delta": "-un"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 64,
+        "ts": 1770997267309
+      },
+      "seq": 79
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.310+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\",\"delta\":\"ix\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":65,\"ts\":1770997267309},\"seq\":80}",
+      "_len": 415
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.310+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix",
+          "delta": "ix"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 65,
+        "ts": 1770997267309
+      },
+      "seq": 80
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.342+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndr\",\"delta\":\"\\ndr\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":66,\"ts\":1770997267341},\"seq\":81}",
+      "_len": 421
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.342+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndr",
+          "delta": "\ndr"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 66,
+        "ts": 1770997267341
+      },
+      "seq": 81
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.342+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":66,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndr\"}],\"timestamp\":1770997267341}},\"seq\":82}",
+      "_len": 457
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.342+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 66,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndr"
+            }
+          ],
+          "timestamp": 1770997267341
+        }
+      },
+      "seq": 82
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.380+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwx\",\"delta\":\"wx\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":67,\"ts\":1770997267380},\"seq\":83}",
+      "_len": 421
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.380+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwx",
+          "delta": "wx"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 67,
+        "ts": 1770997267380
+      },
+      "seq": 83
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.381+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrw\",\"delta\":\"rw\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":68,\"ts\":1770997267380},\"seq\":84}",
+      "_len": 423
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.381+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrw",
+          "delta": "rw"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 68,
+        "ts": 1770997267380
+      },
+      "seq": 84
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.421+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwx\",\"delta\":\"x\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":69,\"ts\":1770997267420},\"seq\":85}",
+      "_len": 423
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.421+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwx",
+          "delta": "x"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 69,
+        "ts": 1770997267420
+      },
+      "seq": 85
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.421+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxr\",\"delta\":\"r\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":70,\"ts\":1770997267421},\"seq\":86}",
+      "_len": 424
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.421+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxr",
+          "delta": "r"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 70,
+        "ts": 1770997267421
+      },
+      "seq": 86
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.457+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt\",\"delta\":\"wt\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":71,\"ts\":1770997267457},\"seq\":87}",
+      "_len": 427
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.457+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt",
+          "delta": "wt"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 71,
+        "ts": 1770997267457
+      },
+      "seq": 87
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.496+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2\",\"delta\":\"  2\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":72,\"ts\":1770997267496},\"seq\":88}",
+      "_len": 431
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.496+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2",
+          "delta": "  2"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 72,
+        "ts": 1770997267496
+      },
+      "seq": 88
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.496+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":72,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2\"}],\"timestamp\":1770997267496}},\"seq\":89}",
+      "_len": 468
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.497+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 72,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2"
+            }
+          ],
+          "timestamp": 1770997267496
+        }
+      },
+      "seq": 89
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.497+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root\",\"delta\":\" root\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":73,\"ts\":1770997267496},\"seq\":90}",
+      "_len": 438
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.497+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root",
+          "delta": " root"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 73,
+        "ts": 1770997267496
+      },
+      "seq": 90
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.551+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root\",\"delta\":\"      root\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":74,\"ts\":1770997267551},\"seq\":91}",
+      "_len": 453
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.551+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root",
+          "delta": "      root"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 74,
+        "ts": 1770997267551
+      },
+      "seq": 91
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.576+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       409\",\"delta\":\"       409\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":75,\"ts\":1770997267576},\"seq\":92}",
+      "_len": 463
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.576+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       409",
+          "delta": "       409"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 75,
+        "ts": 1770997267576
+      },
+      "seq": 92
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.612+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096\",\"delta\":\"6\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":76,\"ts\":1770997267612},\"seq\":93}",
+      "_len": 455
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.612+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096",
+          "delta": "6"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 76,
+        "ts": 1770997267612
+      },
+      "seq": 93
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.613+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb\",\"delta\":\" Feb\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":77,\"ts\":1770997267612},\"seq\":94}",
+      "_len": 462
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.613+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb",
+          "delta": " Feb"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 77,
+        "ts": 1770997267612
+      },
+      "seq": 94
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.652+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10\",\"delta\":\" 10\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":78,\"ts\":1770997267651},\"seq\":95}",
+      "_len": 464
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.652+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10",
+          "delta": " 10"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 78,
+        "ts": 1770997267651
+      },
+      "seq": 95
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.652+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":78,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10\"}],\"timestamp\":1770997267652}},\"seq\":96}",
+      "_len": 501
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.652+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 78,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10"
+            }
+          ],
+          "timestamp": 1770997267652
+        }
+      },
+      "seq": 96
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.694+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11\",\"delta\":\" 11\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":79,\"ts\":1770997267693},\"seq\":97}",
+      "_len": 467
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.694+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11",
+          "delta": " 11"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 79,
+        "ts": 1770997267693
+      },
+      "seq": 97
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.734+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:\",\"delta\":\":\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":80,\"ts\":1770997267733},\"seq\":98}",
+      "_len": 466
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.734+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:",
+          "delta": ":"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 80,
+        "ts": 1770997267733
+      },
+      "seq": 98
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.734+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10\",\"delta\":\"10\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":81,\"ts\":1770997267734},\"seq\":99}",
+      "_len": 469
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.734+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10",
+          "delta": "10"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 81,
+        "ts": 1770997267734
+      },
+      "seq": 99
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.779+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .\",\"delta\":\" .\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":82,\"ts\":1770997267778},\"seq\":100}",
+      "_len": 472
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.779+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .",
+          "delta": " ."
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 82,
+        "ts": 1770997267778
+      },
+      "seq": 100
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.779+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X\",\"delta\":\"X\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":83,\"ts\":1770997267779},\"seq\":101}",
+      "_len": 472
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.779+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X",
+          "delta": "X"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 83,
+        "ts": 1770997267779
+      },
+      "seq": 101
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.812+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11\",\"delta\":\"11\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":84,\"ts\":1770997267812},\"seq\":102}",
+      "_len": 475
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.812+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11",
+          "delta": "11"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 84,
+        "ts": 1770997267812
+      },
+      "seq": 102
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.812+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":84,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11\"}],\"timestamp\":1770997267812}},\"seq\":103}",
+      "_len": 513
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.812+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 84,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11"
+            }
+          ],
+          "timestamp": 1770997267812
+        }
+      },
+      "seq": 103
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.813+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-un\",\"delta\":\"-un\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":85,\"ts\":1770997267812},\"seq\":104}",
+      "_len": 479
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.813+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-un",
+          "delta": "-un"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 85,
+        "ts": 1770997267812
+      },
+      "seq": 104
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.852+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\",\"delta\":\"ix\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":86,\"ts\":1770997267851},\"seq\":105}",
+      "_len": 480
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.852+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix",
+          "delta": "ix"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 86,
+        "ts": 1770997267851
+      },
+      "seq": 105
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.893+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"assistant\",\"data\":{\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\\n```\",\"delta\":\"\\n```\"},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":87,\"ts\":1770997267893},\"seq\":106}",
+      "_len": 488
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.893+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "assistant",
+        "data": {
+          "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\n```",
+          "delta": "\n```"
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 87,
+        "ts": 1770997267893
+      },
+      "seq": 106
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.906+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"stream\":\"lifecycle\",\"data\":{\"phase\":\"end\",\"endedAt\":1770997267905},\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":88,\"ts\":1770997267905},\"seq\":107}",
+      "_len": 228
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.906+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "stream": "lifecycle",
+        "data": {
+          "phase": "end",
+          "endedAt": 1770997267905
+        },
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 88,
+        "ts": 1770997267905
+      },
+      "seq": 107
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.906+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-e8b979d925c9413c\",\"sessionKey\":\"agent:main:debug-4a2888a9bc0f\",\"seq\":88,\"state\":\"final\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Результат:\\n```\\ntotal 224\\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\\n```\"}],\"timestamp\":1770997267906}},\"seq\":108}",
+      "_len": 523
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.906+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-e8b979d925c9413c",
+        "sessionKey": "agent:main:debug-4a2888a9bc0f",
+        "seq": 88,
+        "state": "final",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Результат:\n```\ntotal 224\ndrwxrwxrwt 22 root      root       4096 Feb 13 15:40 .\ndrwxr-xr-x 22 root      root       4096 Feb 10 11:10 ..\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .ICE-unix\ndrwxrwxrwt  2 root      root       4096 Feb 10 11:10 .X11-unix\n```"
+            }
+          ],
+          "timestamp": 1770997267906
+        }
+      },
+      "seq": 108
+    }
+  },
+  {
+    "ts": "2026-02-13T15:41:07.906+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Ответ получен (final)"
+    }
+  }
+]

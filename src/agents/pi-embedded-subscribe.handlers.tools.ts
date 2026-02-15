@@ -1,4 +1,7 @@
 import type { AgentEvent } from "@mariozechner/pi-agent-core";
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
 import type {
   PluginHookAfterToolCallEvent,
   PluginHookBeforeToolCallEvent,
@@ -17,6 +20,49 @@ import {
 } from "./pi-embedded-subscribe.tools.js";
 import { inferToolMetaFromArgs } from "./pi-embedded-utils.js";
 import { normalizeToolName } from "./tool-policy.js";
+
+/** Tools that modify files — we create a backup before these run. */
+const FILE_MUTATING_TOOLS = new Set(["write", "edit"]);
+
+/** Backup directory under ~/.openclaw/backups/. Created once lazily. */
+const BACKUP_DIR = path.join(os.homedir(), ".openclaw", "backups");
+let backupDirEnsured = false;
+
+type FileBackupResult = { backupPath: string; originalSize: number };
+
+/**
+ * Create a backup copy of a file before a mutating tool modifies it.
+ * Returns null if the file doesn't exist yet (new file) or is unreadable.
+ * No TTL — cleanup is the client's responsibility.
+ */
+async function createFileBackup(
+  filePath: string,
+  toolCallId: string,
+  log: { debug: (msg: string) => void },
+): Promise<FileBackupResult | null> {
+  try {
+    const stat = await fs.stat(filePath);
+    if (!stat.isFile()) {
+      return null;
+    }
+    // Ensure backup directory exists (once per process).
+    if (!backupDirEnsured) {
+      await fs.mkdir(BACKUP_DIR, { recursive: true });
+      backupDirEnsured = true;
+    }
+    // Sanitize toolCallId for use as filename (replace path-unsafe chars).
+    const safeId = toolCallId.replace(/[^a-zA-Z0-9_-]/g, "_");
+    const backupPath = path.join(BACKUP_DIR, `${safeId}.bak`);
+    await fs.copyFile(filePath, backupPath);
+    log.debug(
+      `file backup created: tool_call=${toolCallId} path=${filePath} backup=${backupPath} size=${stat.size}`,
+    );
+    return { backupPath, originalSize: stat.size };
+  } catch {
+    // File doesn't exist yet (new file) or not readable — that's fine.
+    return null;
+  }
+}
 
 /** Track tool execution start times and args for after_tool_call hook */
 const toolStartData = new Map<string, { startTime: number; args: unknown }>();
@@ -92,6 +138,18 @@ export async function handleToolExecutionStart(
     `embedded run tool start: runId=${ctx.params.runId} tool=${toolName} toolCallId=${toolCallId}`,
   );
 
+  // Create a backup of the file before mutating tools (write/edit) modify it.
+  // The backup path is included in the tool start event so WS clients can
+  // fetch it via SSH for diff display or undo. No TTL — client deletes after use.
+  let backup: FileBackupResult | null = null;
+  if (FILE_MUTATING_TOOLS.has(toolName)) {
+    const record = args && typeof args === "object" ? (args as Record<string, unknown>) : {};
+    const filePath = typeof record.path === "string" ? record.path.trim() : "";
+    if (filePath) {
+      backup = await createFileBackup(filePath, toolCallId, ctx.log);
+    }
+  }
+
   const shouldEmitToolEvents = ctx.shouldEmitToolResult();
   emitAgentEvent({
     runId: ctx.params.runId,
@@ -101,6 +159,7 @@ export async function handleToolExecutionStart(
       name: toolName,
       toolCallId,
       args: args as Record<string, unknown>,
+      ...(backup ? { beforeBackupPath: backup.backupPath, beforeSize: backup.originalSize } : {}),
     },
   });
   // Best-effort typing signal; do not block tool summaries on slow emitters.

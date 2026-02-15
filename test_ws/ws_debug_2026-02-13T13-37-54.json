@@ -1,0 +1,4947 @@
+[
+  {
+    "ts": "2026-02-13T13:37:54.471+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"connect.challenge\",\"payload\":{\"nonce\":\"eafd0286-3a4f-48eb-81f6-fbdb4c3ff065\",\"ts\":1770989874470}}",
+      "_len": 122
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.471+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "connect.challenge",
+      "payload": {
+        "nonce": "eafd0286-3a4f-48eb-81f6-fbdb4c3ff065",
+        "ts": 1770989874470
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.471+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "1",
+      "method": "connect",
+      "params": {
+        "minProtocol": 3,
+        "maxProtocol": 3,
+        "client": {
+          "id": "gateway-client",
+          "displayName": "WS Debug Tool",
+          "version": "1.0.0",
+          "platform": "linux",
+          "mode": "backend"
+        },
+        "caps": ["tool-events"],
+        "role": "operator",
+        "scopes": ["operator.read", "operator.write", "operator.admin", "operator.approvals"],
+        "auth": {
+          "token": "1feaa814bca7a733e52740e7eacc50f737d446a0fdb60192"
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.489+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"1\",\"ok\":true,\"payload\":{\"type\":\"hello-ok\",\"protocol\":3,\"server\":{\"version\":\"dev\",\"host\":\"ubuntu\",\"connId\":\"1074d982-d0cc-407b-a4ac-500bb1f06281\"},\"features\":{\"methods\":[\"health\",\"logs.tail\",\"channels.status\",\"channels.logout\",\"status\",\"usage.status\",\"usage.cost\",\"tts.status\",\"tts.providers\",\"tts.enable\",\"tts.disable\",\"tts.convert\",\"tts.setProvider\",\"config.get\",\"config.set\",\"config.apply\",\"config.patch\",\"config.schema\",\"exec.approvals.get\",\"exec.approvals.set\",\"exec.approvals.node.get\",\"exec.approvals.node.set\",\"exec.approval.request\",\"exec.approval.resolve\",\"wizard.start\",\"wizard.next\",\"wizard.cancel\",\"wizard.status\",\"talk.mode\",\"models.list\",\"agents.list\",\"agents.create\",\"agents.update\",\"agents.delete\",\"agents.files.list\",\"agents.files.get\",\"agents.files.set\",\"skills.status\",\"skills.bins\",\"skills.install\",\"skills.update\",\"update.run\",\"voicewake.get\",\"voicewake.set\",\"sessions.list\",\"sessions.preview\",\"sessions.patch\",\"sessions.reset\",\"sessions.delete\",\"sessions.compact\",\"last-heartbeat\",\"set-heartbeats\",\"wake\",\"node.pair.request\",\"node.pair.list\",\"node.pair.approve\",\"node.pair.reject\",\"node.pair.verify\",\"device.pair.list\",\"device.pair.approve\",\"device.pair.reject\",\"device.token.rotate\",\"device.token.revoke\",\"node.rename\",\"node.list\",\"node.describe\",\"node.invoke\",\"node.invoke.result\",\"node.event\",\"cron.list\",\"cron.status\",\"cron.add\",\"cron.update\",\"cron.remove\",\"cron.run\",\"cron.runs\",\"system-presence\",\"system-event\",\"send\",\"agent\",\"agent.identity.get\",\"agent.wait\",\"browser.request\",\"chat.history\",\"chat.abort\",\"chat.send\"],\"events\":[\"connect.challenge\",\"agent\",\"chat\",\"presence\",\"tick\",\"talk.mode\",\"shutdown\",\"health\",\"heartbeat\",\"cron\",\"node.pair.requested\",\"node.pair.resolved\",\"node.invoke.request\",\"device.pair.requested\",\"device.pair.resolved\",\"voicewake.changed\",\"exec.approval.requested\",\"exec.approval.resolved\"]},\"snapshot\":{\"presence\":[{\"host\":\"ubuntu\",\"ip\":\"192.168.1.137\",\"version\":\"unknown\",\"platform\":\"linux 6.8.0-1047-raspi\",\"deviceFamily\":\"Linux\",\"modelIdentifier\":\"arm64\",\"mode\":\"gateway\",\"reason\":\"self\",\"text\":\"Gateway: ubuntu (192.168.1.137) · app unknown · mode gateway · reason self\",\"ts\":1770989874488},{\"host\":\"WS Debug Tool\",\"version\":\"1.0.0\",\"platform\":\"linux\",\"mode\":\"backend\",\"roles\":[\"operator\"],\"scopes\":[\"operator.read\",\"operator.write\",\"operator.admin\",\"operator.approvals\"],\"reason\":\"connect\",\"ts\":1770989874488,\"text\":\"Node: WS Debug Tool · mode backend\"},{\"host\":\"WS Debug Tool\",\"version\":\"1.0.0\",\"platform\":\"linux\",\"mode\":\"backend\",\"roles\":[\"operator\"],\"scopes\":[\"operator.read\",\"operator.write\",\"operator.admin\",\"operator.approvals\"],\"reason\":\"disconnect\",\"ts\":1770989855591,\"text\":\"Node: WS Debug Tool · mode backend\"},{\"host\":\"openclaw-probe\",\"ip\":\"192.168.1.137\",\"version\":\"dev\",\"platform\":\"linux\",\"mode\":\"probe\",\"deviceId\":\"9f76652095ad852a8d6ad3898cdaf94ef1a69d16048634616be58e4fb9e36a99\",\"roles\":[\"operator\"],\"scopes\":[\"operator.admin\",\"operator.approvals\",\"operator.pairing\"],\"instanceId\":\"9f76652095ad852a8d6ad3898cdaf94ef1a69d16048634616be58e4fb9e36a99\",\"reason\":\"disconnect\",\"ts\":1770989588381,\"text\":\"Node: openclaw-probe · mode probe\"},{\"host\":\"openclaw-control-ui\",\"version\":\"dev\",\"platform\":\"MacIntel\",\"mode\":\"webchat\",\"deviceId\":\"6668f156dea1df5353c70ff24631e9c7fd2d0f43a41e603210425d7c8c4eeeb1\",\"roles\":[\"operator\"],\"scopes\":[\"operator.admin\",\"operator.approvals\",\"operator.pairing\"],\"instanceId\":\"6668f156dea1df5353c70ff24631e9c7fd2d0f43a41e603210425d7c8c4eeeb1\",\"reason\":\"connect\",\"ts\":1770989584329,\"text\":\"Node: openclaw-control-ui · mode webchat\"}],\"health\":{\"ok\":true,\"ts\":1770989837880,\"durationMs\":732,\"channels\":{\"telegram\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":731,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989837880,\"accountId\":\"default\",\"accounts\":{\"default\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":731,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989837880,\"accountId\":\"default\"}}}},\"channelOrder\":[\"telegram\"],\"channelLabels\":{\"telegram\":\"Telegram\"},\"heartbeatSeconds\":1800,\"defaultAgentId\":\"main\",\"agents\":[{\"agentId\":\"main\",\"isDefault\":true,\"heartbeat\":{\"enabled\":true,\"every\":\"30m\",\"everyMs\":1800000,\"prompt\":\"Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.\",\"target\":\"last\",\"ackMaxChars\":300},\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":23,\"recent\":[{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2256361},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2562426},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5663482},{\"key\":\"agent:main:fleet-84b72cadcfd38689\",\"updatedAt\":1770983928951,\"age\":5908197},{\"key\":\"agent:main:fleet-dacd4753b44228be\",\"updatedAt\":1770979168848,\"age\":10668300}]}}],\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":23,\"recent\":[{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2256361},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2562426},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5663482},{\"key\":\"agent:main:fleet-84b72cadcfd38689\",\"updatedAt\":1770983928951,\"age\":5908197},{\"key\":\"agent:main:fleet-dacd4753b44228be\",\"updatedAt\":1770979168848,\"age\":10668300}]}},\"stateVersion\":{\"presence\":9,\"health\":9},\"uptimeMs\":296893,\"configPath\":\"/home/dshishlov/.openclaw/openclaw.json\",\"stateDir\":\"/home/dshishlov/.openclaw\",\"sessionDefaults\":{\"defaultAgentId\":\"main\",\"mainKey\":\"main\",\"mainSessionKey\":\"agent:main:main\",\"scope\":\"per-sender\"}},\"canvasHostUrl\":\"http://127.0.0.1:18789\",\"policy\":{\"maxPayload\":8388608,\"maxBufferedBytes\":16777216,\"tickIntervalMs\":30000}}}",
+      "_len": 6347
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.489+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "1",
+      "ok": true,
+      "payload": {
+        "type": "hello-ok",
+        "protocol": 3,
+        "server": {
+          "version": "dev",
+          "host": "ubuntu",
+          "connId": "1074d982-d0cc-407b-a4ac-500bb1f06281"
+        },
+        "features": {
+          "methods": [
+            "health",
+            "logs.tail",
+            "channels.status",
+            "channels.logout",
+            "status",
+            "usage.status",
+            "usage.cost",
+            "tts.status",
+            "tts.providers",
+            "tts.enable",
+            "tts.disable",
+            "tts.convert",
+            "tts.setProvider",
+            "config.get",
+            "config.set",
+            "config.apply",
+            "config.patch",
+            "config.schema",
+            "exec.approvals.get",
+            "exec.approvals.set",
+            "exec.approvals.node.get",
+            "exec.approvals.node.set",
+            "exec.approval.request",
+            "exec.approval.resolve",
+            "wizard.start",
+            "wizard.next",
+            "wizard.cancel",
+            "wizard.status",
+            "talk.mode",
+            "models.list",
+            "agents.list",
+            "agents.create",
+            "agents.update",
+            "agents.delete",
+            "agents.files.list",
+            "agents.files.get",
+            "agents.files.set",
+            "skills.status",
+            "skills.bins",
+            "skills.install",
+            "skills.update",
+            "update.run",
+            "voicewake.get",
+            "voicewake.set",
+            "sessions.list",
+            "sessions.preview",
+            "sessions.patch",
+            "sessions.reset",
+            "sessions.delete",
+            "sessions.compact",
+            "last-heartbeat",
+            "set-heartbeats",
+            "wake",
+            "node.pair.request",
+            "node.pair.list",
+            "node.pair.approve",
+            "node.pair.reject",
+            "node.pair.verify",
+            "device.pair.list",
+            "device.pair.approve",
+            "device.pair.reject",
+            "device.token.rotate",
+            "device.token.revoke",
+            "node.rename",
+            "node.list",
+            "node.describe",
+            "node.invoke",
+            "node.invoke.result",
+            "node.event",
+            "cron.list",
+            "cron.status",
+            "cron.add",
+            "cron.update",
+            "cron.remove",
+            "cron.run",
+            "cron.runs",
+            "system-presence",
+            "system-event",
+            "send",
+            "agent",
+            "agent.identity.get",
+            "agent.wait",
+            "browser.request",
+            "chat.history",
+            "chat.abort",
+            "chat.send"
+          ],
+          "events": [
+            "connect.challenge",
+            "agent",
+            "chat",
+            "presence",
+            "tick",
+            "talk.mode",
+            "shutdown",
+            "health",
+            "heartbeat",
+            "cron",
+            "node.pair.requested",
+            "node.pair.resolved",
+            "node.invoke.request",
+            "device.pair.requested",
+            "device.pair.resolved",
+            "voicewake.changed",
+            "exec.approval.requested",
+            "exec.approval.resolved"
+          ]
+        },
+        "snapshot": {
+          "presence": [
+            {
+              "host": "ubuntu",
+              "ip": "192.168.1.137",
+              "version": "unknown",
+              "platform": "linux 6.8.0-1047-raspi",
+              "deviceFamily": "Linux",
+              "modelIdentifier": "arm64",
+              "mode": "gateway",
+              "reason": "self",
+              "text": "Gateway: ubuntu (192.168.1.137) · app unknown · mode gateway · reason self",
+              "ts": 1770989874488
+            },
+            {
+              "host": "WS Debug Tool",
+              "version": "1.0.0",
+              "platform": "linux",
+              "mode": "backend",
+              "roles": ["operator"],
+              "scopes": ["operator.read", "operator.write", "operator.admin", "operator.approvals"],
+              "reason": "connect",
+              "ts": 1770989874488,
+              "text": "Node: WS Debug Tool · mode backend"
+            },
+            {
+              "host": "WS Debug Tool",
+              "version": "1.0.0",
+              "platform": "linux",
+              "mode": "backend",
+              "roles": ["operator"],
+              "scopes": ["operator.read", "operator.write", "operator.admin", "operator.approvals"],
+              "reason": "disconnect",
+              "ts": 1770989855591,
+              "text": "Node: WS Debug Tool · mode backend"
+            },
+            {
+              "host": "openclaw-probe",
+              "ip": "192.168.1.137",
+              "version": "dev",
+              "platform": "linux",
+              "mode": "probe",
+              "deviceId": "9f76652095ad852a8d6ad3898cdaf94ef1a69d16048634616be58e4fb9e36a99",
+              "roles": ["operator"],
+              "scopes": ["operator.admin", "operator.approvals", "operator.pairing"],
+              "instanceId": "9f76652095ad852a8d6ad3898cdaf94ef1a69d16048634616be58e4fb9e36a99",
+              "reason": "disconnect",
+              "ts": 1770989588381,
+              "text": "Node: openclaw-probe · mode probe"
+            },
+            {
+              "host": "openclaw-control-ui",
+              "version": "dev",
+              "platform": "MacIntel",
+              "mode": "webchat",
+              "deviceId": "6668f156dea1df5353c70ff24631e9c7fd2d0f43a41e603210425d7c8c4eeeb1",
+              "roles": ["operator"],
+              "scopes": ["operator.admin", "operator.approvals", "operator.pairing"],
+              "instanceId": "6668f156dea1df5353c70ff24631e9c7fd2d0f43a41e603210425d7c8c4eeeb1",
+              "reason": "connect",
+              "ts": 1770989584329,
+              "text": "Node: openclaw-control-ui · mode webchat"
+            }
+          ],
+          "health": {
+            "ok": true,
+            "ts": 1770989837880,
+            "durationMs": 732,
+            "channels": {
+              "telegram": {
+                "configured": true,
+                "tokenSource": "none",
+                "running": false,
+                "mode": null,
+                "lastStartAt": null,
+                "lastStopAt": null,
+                "lastError": null,
+                "probe": {
+                  "ok": true,
+                  "status": null,
+                  "error": null,
+                  "elapsedMs": 731,
+                  "bot": {
+                    "id": 8448623900,
+                    "username": "rassbery_openclaw_bot",
+                    "canJoinGroups": true,
+                    "canReadAllGroupMessages": true,
+                    "supportsInlineQueries": false
+                  },
+                  "webhook": {
+                    "url": "",
+                    "hasCustomCert": false
+                  }
+                },
+                "lastProbeAt": 1770989837880,
+                "accountId": "default",
+                "accounts": {
+                  "default": {
+                    "configured": true,
+                    "tokenSource": "none",
+                    "running": false,
+                    "mode": null,
+                    "lastStartAt": null,
+                    "lastStopAt": null,
+                    "lastError": null,
+                    "probe": {
+                      "ok": true,
+                      "status": null,
+                      "error": null,
+                      "elapsedMs": 731,
+                      "bot": {
+                        "id": 8448623900,
+                        "username": "rassbery_openclaw_bot",
+                        "canJoinGroups": true,
+                        "canReadAllGroupMessages": true,
+                        "supportsInlineQueries": false
+                      },
+                      "webhook": {
+                        "url": "",
+                        "hasCustomCert": false
+                      }
+                    },
+                    "lastProbeAt": 1770989837880,
+                    "accountId": "default"
+                  }
+                }
+              }
+            },
+            "channelOrder": ["telegram"],
+            "channelLabels": {
+              "telegram": "Telegram"
+            },
+            "heartbeatSeconds": 1800,
+            "defaultAgentId": "main",
+            "agents": [
+              {
+                "agentId": "main",
+                "isDefault": true,
+                "heartbeat": {
+                  "enabled": true,
+                  "every": "30m",
+                  "everyMs": 1800000,
+                  "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+                  "target": "last",
+                  "ackMaxChars": 300
+                },
+                "sessions": {
+                  "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+                  "count": 23,
+                  "recent": [
+                    {
+                      "key": "agent:main:main",
+                      "updatedAt": 1770987580787,
+                      "age": 2256361
+                    },
+                    {
+                      "key": "agent:main:fleet-7bd69d31d2128b49",
+                      "updatedAt": 1770987274722,
+                      "age": 2562426
+                    },
+                    {
+                      "key": "agent:main:fleet-15475ec881af212b",
+                      "updatedAt": 1770984173666,
+                      "age": 5663482
+                    },
+                    {
+                      "key": "agent:main:fleet-84b72cadcfd38689",
+                      "updatedAt": 1770983928951,
+                      "age": 5908197
+                    },
+                    {
+                      "key": "agent:main:fleet-dacd4753b44228be",
+                      "updatedAt": 1770979168848,
+                      "age": 10668300
+                    }
+                  ]
+                }
+              }
+            ],
+            "sessions": {
+              "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+              "count": 23,
+              "recent": [
+                {
+                  "key": "agent:main:main",
+                  "updatedAt": 1770987580787,
+                  "age": 2256361
+                },
+                {
+                  "key": "agent:main:fleet-7bd69d31d2128b49",
+                  "updatedAt": 1770987274722,
+                  "age": 2562426
+                },
+                {
+                  "key": "agent:main:fleet-15475ec881af212b",
+                  "updatedAt": 1770984173666,
+                  "age": 5663482
+                },
+                {
+                  "key": "agent:main:fleet-84b72cadcfd38689",
+                  "updatedAt": 1770983928951,
+                  "age": 5908197
+                },
+                {
+                  "key": "agent:main:fleet-dacd4753b44228be",
+                  "updatedAt": 1770979168848,
+                  "age": 10668300
+                }
+              ]
+            }
+          },
+          "stateVersion": {
+            "presence": 9,
+            "health": 9
+          },
+          "uptimeMs": 296893,
+          "configPath": "/home/dshishlov/.openclaw/openclaw.json",
+          "stateDir": "/home/dshishlov/.openclaw",
+          "sessionDefaults": {
+            "defaultAgentId": "main",
+            "mainKey": "main",
+            "mainSessionKey": "agent:main:main",
+            "scope": "per-sender"
+          }
+        },
+        "canvasHostUrl": "http://127.0.0.1:18789",
+        "policy": {
+          "maxPayload": 8388608,
+          "maxBufferedBytes": 16777216,
+          "tickIntervalMs": 30000
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.489+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Подключён к gateway vdev на ubuntu"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.489+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "2",
+      "method": "agents.list",
+      "params": {}
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.499+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"2\",\"ok\":true,\"payload\":{\"defaultId\":\"main\",\"mainKey\":\"main\",\"scope\":\"per-sender\",\"agents\":[{\"id\":\"main\"}]}}",
+      "_len": 127
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.499+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "2",
+      "ok": true,
+      "payload": {
+        "defaultId": "main",
+        "mainKey": "main",
+        "scope": "per-sender",
+        "agents": [
+          {
+            "id": "main"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.499+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Default agent: main"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.499+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Создана сессия: agent:main:debug-de78e30a9d38"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.499+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "3",
+      "method": "sessions.patch",
+      "params": {
+        "key": "agent:main:debug-de78e30a9d38",
+        "verboseLevel": "on"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.512+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"3\",\"ok\":true,\"payload\":{\"ok\":true,\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"key\":\"agent:main:debug-de78e30a9d38\",\"entry\":{\"sessionId\":\"761cc8db-14d9-4bdd-87e1-2311cbe898e8\",\"updatedAt\":1770989874507,\"verboseLevel\":\"on\"},\"resolved\":{\"modelProvider\":\"deepseek\",\"model\":\"deepseek-chat\"}}}",
+      "_len": 334
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.512+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "3",
+      "ok": true,
+      "payload": {
+        "ok": true,
+        "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+        "key": "agent:main:debug-de78e30a9d38",
+        "entry": {
+          "sessionId": "761cc8db-14d9-4bdd-87e1-2311cbe898e8",
+          "updatedAt": 1770989874507,
+          "verboseLevel": "on"
+        },
+        "resolved": {
+          "modelProvider": "deepseek",
+          "model": "deepseek-chat"
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.512+00:00",
+    "dir": "info",
+    "data": {
+      "message": "verbose=on для сессии"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.512+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "4",
+      "method": "chat.history",
+      "params": {
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "limit": 10
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.522+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"4\",\"ok\":true,\"payload\":{\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"sessionId\":\"761cc8db-14d9-4bdd-87e1-2311cbe898e8\",\"messages\":[],\"thinkingLevel\":\"off\",\"verboseLevel\":\"on\"}}",
+      "_len": 197
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.522+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "4",
+      "ok": true,
+      "payload": {
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "sessionId": "761cc8db-14d9-4bdd-87e1-2311cbe898e8",
+        "messages": [],
+        "thinkingLevel": "off",
+        "verboseLevel": "on"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.522+00:00",
+    "dir": "info",
+    "data": {
+      "message": "История: 0 сообщений"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.522+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "5",
+      "method": "chat.send",
+      "params": {
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "message": "используй тул write чтобы создать файл /home/dshishlov/openclaw/test_ws/test_backup_demo.txt с текстом 'hello world', а потом используй тул edit чтобы заменить hello на goodbye в этом файле. НЕ используй bash/exec для редактирования.",
+        "idempotencyKey": "debug-621c1a4ccdc54291"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.526+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"5\",\"ok\":true,\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"status\":\"started\"}}",
+      "_len": 97
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.526+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "5",
+      "ok": true,
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "status": "started"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.526+00:00",
+    "dir": "info",
+    "data": {
+      "message": "chat.send OK: runId=debug-621c1a4ccdc54291, status=started"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.855+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"lifecycle\",\"data\":{\"phase\":\"start\",\"startedAt\":1770989874854},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":1,\"ts\":1770989874854},\"seq\":134}",
+      "_len": 231
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:54.855+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "lifecycle",
+        "data": {
+          "phase": "start",
+          "startedAt": 1770989874854
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 1,
+        "ts": 1770989874854
+      },
+      "seq": 134
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:55.094+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"health\",\"payload\":{\"ok\":true,\"ts\":1770989875093,\"durationMs\":597,\"channels\":{\"telegram\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":596,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989875093,\"accountId\":\"default\",\"accounts\":{\"default\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":596,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989875093,\"accountId\":\"default\"}}}},\"channelOrder\":[\"telegram\"],\"channelLabels\":{\"telegram\":\"Telegram\"},\"heartbeatSeconds\":1800,\"defaultAgentId\":\"main\",\"agents\":[{\"agentId\":\"main\",\"isDefault\":true,\"heartbeat\":{\"enabled\":true,\"every\":\"30m\",\"everyMs\":1800000,\"prompt\":\"Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.\",\"target\":\"last\",\"ackMaxChars\":300},\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":24,\"recent\":[{\"key\":\"agent:main:debug-c84066cc7c6e\",\"updatedAt\":1770989853607,\"age\":20889},{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2293709},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2599774},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5700830},{\"key\":\"agent:main:fleet-84b72cadcfd38689\",\"updatedAt\":1770983928951,\"age\":5945545}]}}],\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":24,\"recent\":[{\"key\":\"agent:main:debug-c84066cc7c6e\",\"updatedAt\":1770989853607,\"age\":20889},{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2293709},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2599774},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5700830},{\"key\":\"agent:main:fleet-84b72cadcfd38689\",\"updatedAt\":1770983928951,\"age\":5945545}]}},\"seq\":135,\"stateVersion\":{\"presence\":9,\"health\":10}}",
+      "_len": 2472
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:55.094+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "health",
+      "payload": {
+        "ok": true,
+        "ts": 1770989875093,
+        "durationMs": 597,
+        "channels": {
+          "telegram": {
+            "configured": true,
+            "tokenSource": "none",
+            "running": false,
+            "mode": null,
+            "lastStartAt": null,
+            "lastStopAt": null,
+            "lastError": null,
+            "probe": {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "elapsedMs": 596,
+              "bot": {
+                "id": 8448623900,
+                "username": "rassbery_openclaw_bot",
+                "canJoinGroups": true,
+                "canReadAllGroupMessages": true,
+                "supportsInlineQueries": false
+              },
+              "webhook": {
+                "url": "",
+                "hasCustomCert": false
+              }
+            },
+            "lastProbeAt": 1770989875093,
+            "accountId": "default",
+            "accounts": {
+              "default": {
+                "configured": true,
+                "tokenSource": "none",
+                "running": false,
+                "mode": null,
+                "lastStartAt": null,
+                "lastStopAt": null,
+                "lastError": null,
+                "probe": {
+                  "ok": true,
+                  "status": null,
+                  "error": null,
+                  "elapsedMs": 596,
+                  "bot": {
+                    "id": 8448623900,
+                    "username": "rassbery_openclaw_bot",
+                    "canJoinGroups": true,
+                    "canReadAllGroupMessages": true,
+                    "supportsInlineQueries": false
+                  },
+                  "webhook": {
+                    "url": "",
+                    "hasCustomCert": false
+                  }
+                },
+                "lastProbeAt": 1770989875093,
+                "accountId": "default"
+              }
+            }
+          }
+        },
+        "channelOrder": ["telegram"],
+        "channelLabels": {
+          "telegram": "Telegram"
+        },
+        "heartbeatSeconds": 1800,
+        "defaultAgentId": "main",
+        "agents": [
+          {
+            "agentId": "main",
+            "isDefault": true,
+            "heartbeat": {
+              "enabled": true,
+              "every": "30m",
+              "everyMs": 1800000,
+              "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+              "target": "last",
+              "ackMaxChars": 300
+            },
+            "sessions": {
+              "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+              "count": 24,
+              "recent": [
+                {
+                  "key": "agent:main:debug-c84066cc7c6e",
+                  "updatedAt": 1770989853607,
+                  "age": 20889
+                },
+                {
+                  "key": "agent:main:main",
+                  "updatedAt": 1770987580787,
+                  "age": 2293709
+                },
+                {
+                  "key": "agent:main:fleet-7bd69d31d2128b49",
+                  "updatedAt": 1770987274722,
+                  "age": 2599774
+                },
+                {
+                  "key": "agent:main:fleet-15475ec881af212b",
+                  "updatedAt": 1770984173666,
+                  "age": 5700830
+                },
+                {
+                  "key": "agent:main:fleet-84b72cadcfd38689",
+                  "updatedAt": 1770983928951,
+                  "age": 5945545
+                }
+              ]
+            }
+          }
+        ],
+        "sessions": {
+          "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+          "count": 24,
+          "recent": [
+            {
+              "key": "agent:main:debug-c84066cc7c6e",
+              "updatedAt": 1770989853607,
+              "age": 20889
+            },
+            {
+              "key": "agent:main:main",
+              "updatedAt": 1770987580787,
+              "age": 2293709
+            },
+            {
+              "key": "agent:main:fleet-7bd69d31d2128b49",
+              "updatedAt": 1770987274722,
+              "age": 2599774
+            },
+            {
+              "key": "agent:main:fleet-15475ec881af212b",
+              "updatedAt": 1770984173666,
+              "age": 5700830
+            },
+            {
+              "key": "agent:main:fleet-84b72cadcfd38689",
+              "updatedAt": 1770983928951,
+              "age": 5945545
+            }
+          ]
+        }
+      },
+      "seq": 135,
+      "stateVersion": {
+        "presence": 9,
+        "health": 10
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.322+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я\",\"delta\":\"Я\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":2,\"ts\":1770989876321},\"seq\":136}",
+      "_len": 212
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.322+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я",
+          "delta": "Я"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 2,
+        "ts": 1770989876321
+      },
+      "seq": 136
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.322+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":2,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я\"}],\"timestamp\":1770989876321}},\"seq\":137}",
+      "_len": 251
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.322+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 2,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я"
+            }
+          ],
+          "timestamp": 1770989876321
+        }
+      },
+      "seq": 137
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.571+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я созда\",\"delta\":\" созда\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":3,\"ts\":1770989876571},\"seq\":138}",
+      "_len": 223
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.571+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я созда",
+          "delta": " созда"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 3,
+        "ts": 1770989876571
+      },
+      "seq": 138
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.572+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":3,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я созда\"}],\"timestamp\":1770989876571}},\"seq\":139}",
+      "_len": 257
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.572+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 3,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я созда"
+            }
+          ],
+          "timestamp": 1770989876571
+        }
+      },
+      "seq": 139
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.639+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам\",\"delta\":\"м\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":4,\"ts\":1770989876638},\"seq\":140}",
+      "_len": 219
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.639+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам",
+          "delta": "м"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 4,
+        "ts": 1770989876638
+      },
+      "seq": 140
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.639+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам фай\",\"delta\":\" фай\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":5,\"ts\":1770989876639},\"seq\":141}",
+      "_len": 226
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.639+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам фай",
+          "delta": " фай"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 5,
+        "ts": 1770989876639
+      },
+      "seq": 141
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.704+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":6,\"ts\":1770989876704},\"seq\":142}",
+      "_len": 224
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.704+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 6,
+        "ts": 1770989876704
+      },
+      "seq": 142
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.705+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с\",\"delta\":\" с\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":7,\"ts\":1770989876704},\"seq\":143}",
+      "_len": 227
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.705+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с",
+          "delta": " с"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 7,
+        "ts": 1770989876704
+      },
+      "seq": 143
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.772+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью\",\"delta\":\" помощью\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":8,\"ts\":1770989876772},\"seq\":144}",
+      "_len": 241
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.772+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью",
+          "delta": " помощью"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 8,
+        "ts": 1770989876772
+      },
+      "seq": 144
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.773+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":8,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я создам файл с помощью\"}],\"timestamp\":1770989876772}},\"seq\":145}",
+      "_len": 273
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.773+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 8,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я создам файл с помощью"
+            }
+          ],
+          "timestamp": 1770989876772
+        }
+      },
+      "seq": 145
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.773+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write\",\"delta\":\" write\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":9,\"ts\":1770989876773},\"seq\":146}",
+      "_len": 245
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.773+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write",
+          "delta": " write"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 9,
+        "ts": 1770989876773
+      },
+      "seq": 146
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.835+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write,\",\"delta\":\",\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":10,\"ts\":1770989876834},\"seq\":147}",
+      "_len": 242
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.835+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write,",
+          "delta": ","
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 10,
+        "ts": 1770989876834
+      },
+      "seq": 147
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.899+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а\",\"delta\":\" а\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":11,\"ts\":1770989876898},\"seq\":148}",
+      "_len": 245
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.899+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а",
+          "delta": " а"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 11,
+        "ts": 1770989876898
+      },
+      "seq": 148
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.899+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем\",\"delta\":\" затем\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":12,\"ts\":1770989876898},\"seq\":149}",
+      "_len": 255
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.899+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем",
+          "delta": " затем"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 12,
+        "ts": 1770989876898
+      },
+      "seq": 149
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.959+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем от\",\"delta\":\" от\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":13,\"ts\":1770989876959},\"seq\":150}",
+      "_len": 255
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.959+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем от",
+          "delta": " от"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 13,
+        "ts": 1770989876959
+      },
+      "seq": 150
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.960+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":13,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я создам файл с помощью write, а затем от\"}],\"timestamp\":1770989876959}},\"seq\":151}",
+      "_len": 292
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:56.960+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 13,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я создам файл с помощью write, а затем от"
+            }
+          ],
+          "timestamp": 1770989876959
+        }
+      },
+      "seq": 151
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.023+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отреда\",\"delta\":\"реда\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":14,\"ts\":1770989877023},\"seq\":152}",
+      "_len": 260
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.023+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отреда",
+          "delta": "реда"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 14,
+        "ts": 1770989877023
+      },
+      "seq": 152
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.024+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отредакти\",\"delta\":\"кти\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":15,\"ts\":1770989877023},\"seq\":153}",
+      "_len": 262
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.024+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отредакти",
+          "delta": "кти"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 15,
+        "ts": 1770989877023
+      },
+      "seq": 153
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.089+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отредактиру\",\"delta\":\"ру\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":16,\"ts\":1770989877088},\"seq\":154}",
+      "_len": 263
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.089+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отредактиру",
+          "delta": "ру"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 16,
+        "ts": 1770989877088
+      },
+      "seq": 154
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.089+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отредактирую\",\"delta\":\"ю\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":17,\"ts\":1770989877089},\"seq\":155}",
+      "_len": 263
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.090+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отредактирую",
+          "delta": "ю"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 17,
+        "ts": 1770989877089
+      },
+      "seq": 155
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.154+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отредактирую его\",\"delta\":\" его\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":18,\"ts\":1770989877153},\"seq\":156}",
+      "_len": 270
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.154+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отредактирую его",
+          "delta": " его"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 18,
+        "ts": 1770989877153
+      },
+      "seq": 156
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.154+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":18,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я создам файл с помощью write, а затем отредактирую его\"}],\"timestamp\":1770989877153}},\"seq\":157}",
+      "_len": 306
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.154+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 18,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я создам файл с помощью write, а затем отредактирую его"
+            }
+          ],
+          "timestamp": 1770989877153
+        }
+      },
+      "seq": 157
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.158+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отредактирую его с\",\"delta\":\" с\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":19,\"ts\":1770989877154},\"seq\":158}",
+      "_len": 270
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.158+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отредактирую его с",
+          "delta": " с"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 19,
+        "ts": 1770989877154
+      },
+      "seq": 158
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.219+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отредактирую его с помощью\",\"delta\":\" помощью\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":20,\"ts\":1770989877219},\"seq\":159}",
+      "_len": 284
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.220+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отредактирую его с помощью",
+          "delta": " помощью"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 20,
+        "ts": 1770989877219
+      },
+      "seq": 159
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.220+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отредактирую его с помощью edit\",\"delta\":\" edit\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":21,\"ts\":1770989877219},\"seq\":160}",
+      "_len": 286
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.220+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отредактирую его с помощью edit",
+          "delta": " edit"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 21,
+        "ts": 1770989877219
+      },
+      "seq": 160
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.348+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам файл с помощью write, а затем отредактирую его с помощью edit.\",\"delta\":\".\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":22,\"ts\":1770989877347},\"seq\":161}",
+      "_len": 283
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.348+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам файл с помощью write, а затем отредактирую его с помощью edit.",
+          "delta": "."
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 22,
+        "ts": 1770989877347
+      },
+      "seq": 161
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.348+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":22,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я создам файл с помощью write, а затем отредактирую его с помощью edit.\"}],\"timestamp\":1770989877347}},\"seq\":162}",
+      "_len": 322
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:57.348+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 22,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я создам файл с помощью write, а затем отредактирую его с помощью edit."
+            }
+          ],
+          "timestamp": 1770989877347
+        }
+      },
+      "seq": 162
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:59.759+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"tool\",\"data\":{\"phase\":\"start\",\"name\":\"write\",\"toolCallId\":\"call_00_E2WJQ63OEtwXE1KsctC8ac3D\",\"args\":{\"path\":\"/home/dshishlov/openclaw/test_ws/test_backup_demo.txt\",\"content\":\"hello world\"}},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":23,\"ts\":1770989879758}}",
+      "_len": 350
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:59.759+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "tool",
+        "data": {
+          "phase": "start",
+          "name": "write",
+          "toolCallId": "call_00_E2WJQ63OEtwXE1KsctC8ac3D",
+          "args": {
+            "path": "/home/dshishlov/openclaw/test_ws/test_backup_demo.txt",
+            "content": "hello world"
+          }
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 23,
+        "ts": 1770989879758
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:59.761+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"tool\",\"data\":{\"phase\":\"result\",\"name\":\"write\",\"toolCallId\":\"call_00_E2WJQ63OEtwXE1KsctC8ac3D\",\"meta\":\"~/openclaw/test_ws/test_backup_demo.txt\",\"isError\":false},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":24,\"ts\":1770989879760}}",
+      "_len": 320
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:59.761+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "tool",
+        "data": {
+          "phase": "result",
+          "name": "write",
+          "toolCallId": "call_00_E2WJQ63OEtwXE1KsctC8ac3D",
+          "meta": "~/openclaw/test_ws/test_backup_demo.txt",
+          "isError": false
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 24,
+        "ts": 1770989879760
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:01.612+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Те\",\"delta\":\"Те\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":25,\"ts\":1770989881611},\"seq\":163}",
+      "_len": 215
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:01.612+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Те",
+          "delta": "Те"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 25,
+        "ts": 1770989881611
+      },
+      "seq": 163
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:01.612+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":25,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Те\"}],\"timestamp\":1770989881611}},\"seq\":164}",
+      "_len": 253
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:01.612+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 25,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Те"
+            }
+          ],
+          "timestamp": 1770989881611
+        }
+      },
+      "seq": 164
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:01.930+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь\",\"delta\":\"перь\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":26,\"ts\":1770989881930},\"seq\":165}",
+      "_len": 221
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:01.930+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь",
+          "delta": "перь"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 26,
+        "ts": 1770989881930
+      },
+      "seq": 165
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:01.935+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":26,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Теперь\"}],\"timestamp\":1770989881930}},\"seq\":166}",
+      "_len": 257
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:01.935+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 26,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Теперь"
+            }
+          ],
+          "timestamp": 1770989881930
+        }
+      },
+      "seq": 166
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.013+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь от\",\"delta\":\" от\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":27,\"ts\":1770989882012},\"seq\":167}",
+      "_len": 223
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.013+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь от",
+          "delta": " от"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 27,
+        "ts": 1770989882012
+      },
+      "seq": 167
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.013+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отреда\",\"delta\":\"реда\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":28,\"ts\":1770989882012},\"seq\":168}",
+      "_len": 228
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.013+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отреда",
+          "delta": "реда"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 28,
+        "ts": 1770989882012
+      },
+      "seq": 168
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.077+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредакти\",\"delta\":\"кти\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":29,\"ts\":1770989882077},\"seq\":169}",
+      "_len": 230
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.077+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредакти",
+          "delta": "кти"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 29,
+        "ts": 1770989882077
+      },
+      "seq": 169
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.078+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактиру\",\"delta\":\"ру\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":30,\"ts\":1770989882077},\"seq\":170}",
+      "_len": 231
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.078+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактиру",
+          "delta": "ру"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 30,
+        "ts": 1770989882077
+      },
+      "seq": 170
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.146+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую\",\"delta\":\"ю\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":31,\"ts\":1770989882145},\"seq\":171}",
+      "_len": 231
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.146+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую",
+          "delta": "ю"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 31,
+        "ts": 1770989882145
+      },
+      "seq": 171
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.146+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":31,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Теперь отредактирую\"}],\"timestamp\":1770989882146}},\"seq\":172}",
+      "_len": 270
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.146+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 31,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Теперь отредактирую"
+            }
+          ],
+          "timestamp": 1770989882146
+        }
+      },
+      "seq": 172
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.147+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую фай\",\"delta\":\" фай\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":32,\"ts\":1770989882146},\"seq\":173}",
+      "_len": 238
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.147+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую фай",
+          "delta": " фай"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 32,
+        "ts": 1770989882146
+      },
+      "seq": 173
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.212+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":33,\"ts\":1770989882212},\"seq\":174}",
+      "_len": 236
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.212+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 33,
+        "ts": 1770989882212
+      },
+      "seq": 174
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.213+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл,\",\"delta\":\",\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":34,\"ts\":1770989882212},\"seq\":175}",
+      "_len": 237
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.213+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл,",
+          "delta": ","
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 34,
+        "ts": 1770989882212
+      },
+      "seq": 175
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.278+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, за\",\"delta\":\" за\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":35,\"ts\":1770989882278},\"seq\":176}",
+      "_len": 242
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.278+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, за",
+          "delta": " за"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 35,
+        "ts": 1770989882278
+      },
+      "seq": 176
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.279+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, замени\",\"delta\":\"мени\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":36,\"ts\":1770989882278},\"seq\":177}",
+      "_len": 247
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.279+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, замени",
+          "delta": "мени"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 36,
+        "ts": 1770989882278
+      },
+      "seq": 177
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.354+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив\",\"delta\":\"в\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":37,\"ts\":1770989882353},\"seq\":178}",
+      "_len": 245
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.354+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив",
+          "delta": "в"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 37,
+        "ts": 1770989882353
+      },
+      "seq": 178
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.354+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":37,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Теперь отредактирую файл, заменив\"}],\"timestamp\":1770989882353}},\"seq\":179}",
+      "_len": 284
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.354+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 37,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Теперь отредактирую файл, заменив"
+            }
+          ],
+          "timestamp": 1770989882353
+        }
+      },
+      "seq": 179
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.354+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":38,\"ts\":1770989882354},\"seq\":180}",
+      "_len": 250
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.354+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 38,
+        "ts": 1770989882354
+      },
+      "seq": 180
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.408+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\",\"delta\":\"hello\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":39,\"ts\":1770989882407},\"seq\":181}",
+      "_len": 257
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.408+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello",
+          "delta": "hello"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 39,
+        "ts": 1770989882407
+      },
+      "seq": 181
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.409+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\"\",\"delta\":\"\\\"\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":40,\"ts\":1770989882408},\"seq\":182}",
+      "_len": 256
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.409+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\"",
+          "delta": "\""
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 40,
+        "ts": 1770989882408
+      },
+      "seq": 182
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.476+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на\",\"delta\":\" на\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":41,\"ts\":1770989882476},\"seq\":183}",
+      "_len": 260
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.476+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на",
+          "delta": " на"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 41,
+        "ts": 1770989882476
+      },
+      "seq": 183
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.477+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":42,\"ts\":1770989882476},\"seq\":184}",
+      "_len": 263
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.477+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 42,
+        "ts": 1770989882476
+      },
+      "seq": 184
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.543+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"good\",\"delta\":\"good\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":43,\"ts\":1770989882542},\"seq\":185}",
+      "_len": 268
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.543+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на \"good",
+          "delta": "good"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 43,
+        "ts": 1770989882542
+      },
+      "seq": 185
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.549+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":43,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"good\"}],\"timestamp\":1770989882543}},\"seq\":186}",
+      "_len": 304
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.549+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 43,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Теперь отредактирую файл, заменив \"hello\" на \"good"
+            }
+          ],
+          "timestamp": 1770989882543
+        }
+      },
+      "seq": 186
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.549+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"goodbye\",\"delta\":\"bye\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":44,\"ts\":1770989882543},\"seq\":187}",
+      "_len": 270
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.549+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на \"goodbye",
+          "delta": "bye"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 44,
+        "ts": 1770989882543
+      },
+      "seq": 187
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.677+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"goodbye\\\":\",\"delta\":\"\\\":\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":45,\"ts\":1770989882676},\"seq\":188}",
+      "_len": 273
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:02.677+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на \"goodbye\":",
+          "delta": "\":"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 45,
+        "ts": 1770989882676
+      },
+      "seq": 188
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:03.359+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"tick\",\"payload\":{\"ts\":1770989883359},\"seq\":189}",
+      "_len": 72
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:03.359+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "tick",
+      "payload": {
+        "ts": 1770989883359
+      },
+      "seq": 189
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:03.752+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"health\",\"payload\":{\"ok\":true,\"ts\":1770989883751,\"durationMs\":407,\"channels\":{\"telegram\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":407,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989883751,\"accountId\":\"default\",\"accounts\":{\"default\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":407,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989883751,\"accountId\":\"default\"}}}},\"channelOrder\":[\"telegram\"],\"channelLabels\":{\"telegram\":\"Telegram\"},\"heartbeatSeconds\":1800,\"defaultAgentId\":\"main\",\"agents\":[{\"agentId\":\"main\",\"isDefault\":true,\"heartbeat\":{\"enabled\":true,\"every\":\"30m\",\"everyMs\":1800000,\"prompt\":\"Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.\",\"target\":\"last\",\"ackMaxChars\":300},\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":25,\"recent\":[{\"key\":\"agent:main:debug-de78e30a9d38\",\"updatedAt\":1770989874745,\"age\":8598},{\"key\":\"agent:main:debug-c84066cc7c6e\",\"updatedAt\":1770989853607,\"age\":29736},{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2302556},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2608621},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5709677}]}}],\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":25,\"recent\":[{\"key\":\"agent:main:debug-de78e30a9d38\",\"updatedAt\":1770989874745,\"age\":8598},{\"key\":\"agent:main:debug-c84066cc7c6e\",\"updatedAt\":1770989853607,\"age\":29736},{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2302556},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2608621},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5709677}]}},\"seq\":190,\"stateVersion\":{\"presence\":9,\"health\":11}}",
+      "_len": 2458
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:03.752+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "health",
+      "payload": {
+        "ok": true,
+        "ts": 1770989883751,
+        "durationMs": 407,
+        "channels": {
+          "telegram": {
+            "configured": true,
+            "tokenSource": "none",
+            "running": false,
+            "mode": null,
+            "lastStartAt": null,
+            "lastStopAt": null,
+            "lastError": null,
+            "probe": {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "elapsedMs": 407,
+              "bot": {
+                "id": 8448623900,
+                "username": "rassbery_openclaw_bot",
+                "canJoinGroups": true,
+                "canReadAllGroupMessages": true,
+                "supportsInlineQueries": false
+              },
+              "webhook": {
+                "url": "",
+                "hasCustomCert": false
+              }
+            },
+            "lastProbeAt": 1770989883751,
+            "accountId": "default",
+            "accounts": {
+              "default": {
+                "configured": true,
+                "tokenSource": "none",
+                "running": false,
+                "mode": null,
+                "lastStartAt": null,
+                "lastStopAt": null,
+                "lastError": null,
+                "probe": {
+                  "ok": true,
+                  "status": null,
+                  "error": null,
+                  "elapsedMs": 407,
+                  "bot": {
+                    "id": 8448623900,
+                    "username": "rassbery_openclaw_bot",
+                    "canJoinGroups": true,
+                    "canReadAllGroupMessages": true,
+                    "supportsInlineQueries": false
+                  },
+                  "webhook": {
+                    "url": "",
+                    "hasCustomCert": false
+                  }
+                },
+                "lastProbeAt": 1770989883751,
+                "accountId": "default"
+              }
+            }
+          }
+        },
+        "channelOrder": ["telegram"],
+        "channelLabels": {
+          "telegram": "Telegram"
+        },
+        "heartbeatSeconds": 1800,
+        "defaultAgentId": "main",
+        "agents": [
+          {
+            "agentId": "main",
+            "isDefault": true,
+            "heartbeat": {
+              "enabled": true,
+              "every": "30m",
+              "everyMs": 1800000,
+              "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+              "target": "last",
+              "ackMaxChars": 300
+            },
+            "sessions": {
+              "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+              "count": 25,
+              "recent": [
+                {
+                  "key": "agent:main:debug-de78e30a9d38",
+                  "updatedAt": 1770989874745,
+                  "age": 8598
+                },
+                {
+                  "key": "agent:main:debug-c84066cc7c6e",
+                  "updatedAt": 1770989853607,
+                  "age": 29736
+                },
+                {
+                  "key": "agent:main:main",
+                  "updatedAt": 1770987580787,
+                  "age": 2302556
+                },
+                {
+                  "key": "agent:main:fleet-7bd69d31d2128b49",
+                  "updatedAt": 1770987274722,
+                  "age": 2608621
+                },
+                {
+                  "key": "agent:main:fleet-15475ec881af212b",
+                  "updatedAt": 1770984173666,
+                  "age": 5709677
+                }
+              ]
+            }
+          }
+        ],
+        "sessions": {
+          "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+          "count": 25,
+          "recent": [
+            {
+              "key": "agent:main:debug-de78e30a9d38",
+              "updatedAt": 1770989874745,
+              "age": 8598
+            },
+            {
+              "key": "agent:main:debug-c84066cc7c6e",
+              "updatedAt": 1770989853607,
+              "age": 29736
+            },
+            {
+              "key": "agent:main:main",
+              "updatedAt": 1770987580787,
+              "age": 2302556
+            },
+            {
+              "key": "agent:main:fleet-7bd69d31d2128b49",
+              "updatedAt": 1770987274722,
+              "age": 2608621
+            },
+            {
+              "key": "agent:main:fleet-15475ec881af212b",
+              "updatedAt": 1770984173666,
+              "age": 5709677
+            }
+          ]
+        }
+      },
+      "seq": 190,
+      "stateVersion": {
+        "presence": 9,
+        "health": 11
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:05.837+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"tool\",\"data\":{\"phase\":\"start\",\"name\":\"edit\",\"toolCallId\":\"call_00_YGLVn1cYWog5eNjYGI6OOu3f\",\"args\":{\"path\":\"/home/dshishlov/openclaw/test_ws/test_backup_demo.txt\",\"oldText\":\"hello world\",\"newText\":\"goodbye world\"}},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":46,\"ts\":1770989885836}}",
+      "_len": 375
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:05.837+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "tool",
+        "data": {
+          "phase": "start",
+          "name": "edit",
+          "toolCallId": "call_00_YGLVn1cYWog5eNjYGI6OOu3f",
+          "args": {
+            "path": "/home/dshishlov/openclaw/test_ws/test_backup_demo.txt",
+            "oldText": "hello world",
+            "newText": "goodbye world"
+          }
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 46,
+        "ts": 1770989885836
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:05.845+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"tool\",\"data\":{\"phase\":\"result\",\"name\":\"edit\",\"toolCallId\":\"call_00_YGLVn1cYWog5eNjYGI6OOu3f\",\"meta\":\"~/openclaw/test_ws/test_backup_demo.txt\",\"isError\":false},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":47,\"ts\":1770989885844}}",
+      "_len": 319
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:05.845+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "tool",
+        "data": {
+          "phase": "result",
+          "name": "edit",
+          "toolCallId": "call_00_YGLVn1cYWog5eNjYGI6OOu3f",
+          "meta": "~/openclaw/test_ws/test_backup_demo.txt",
+          "isError": false
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 47,
+        "ts": 1770989885844
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:07.975+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Г\",\"delta\":\"Г\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":48,\"ts\":1770989887974},\"seq\":191}",
+      "_len": 213
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:07.975+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Г",
+          "delta": "Г"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 48,
+        "ts": 1770989887974
+      },
+      "seq": 191
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:07.975+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":48,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Г\"}],\"timestamp\":1770989887975}},\"seq\":192}",
+      "_len": 252
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:07.975+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 48,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Г"
+            }
+          ],
+          "timestamp": 1770989887975
+        }
+      },
+      "seq": 192
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.260+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готов\",\"delta\":\"отов\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":49,\"ts\":1770989888259},\"seq\":193}",
+      "_len": 220
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.260+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готов",
+          "delta": "отов"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 49,
+        "ts": 1770989888259
+      },
+      "seq": 193
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.268+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":49,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готов\"}],\"timestamp\":1770989888260}},\"seq\":194}",
+      "_len": 256
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.268+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 49,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готов"
+            }
+          ],
+          "timestamp": 1770989888260
+        }
+      },
+      "seq": 194
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.328+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово\",\"delta\":\"о\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":50,\"ts\":1770989888327},\"seq\":195}",
+      "_len": 218
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.328+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово",
+          "delta": "о"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 50,
+        "ts": 1770989888327
+      },
+      "seq": 195
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.328+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово!\",\"delta\":\"!\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":51,\"ts\":1770989888328},\"seq\":196}",
+      "_len": 219
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.328+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово!",
+          "delta": "!"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 51,
+        "ts": 1770989888328
+      },
+      "seq": 196
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.394+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я\",\"delta\":\" Я\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":52,\"ts\":1770989888393},\"seq\":197}",
+      "_len": 222
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.394+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я",
+          "delta": " Я"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 52,
+        "ts": 1770989888393
+      },
+      "seq": 197
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.394+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я созда\",\"delta\":\" созда\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":53,\"ts\":1770989888394},\"seq\":198}",
+      "_len": 232
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.394+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я созда",
+          "delta": " созда"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 53,
+        "ts": 1770989888394
+      },
+      "seq": 198
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.456+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":54,\"ts\":1770989888455},\"seq\":199}",
+      "_len": 228
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.456+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 54,
+        "ts": 1770989888455
+      },
+      "seq": 199
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.456+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":54,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал\"}],\"timestamp\":1770989888456}},\"seq\":200}",
+      "_len": 267
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.456+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 54,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал"
+            }
+          ],
+          "timestamp": 1770989888456
+        }
+      },
+      "seq": 200
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.457+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал фай\",\"delta\":\" фай\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":55,\"ts\":1770989888456},\"seq\":201}",
+      "_len": 235
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.457+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал фай",
+          "delta": " фай"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 55,
+        "ts": 1770989888456
+      },
+      "seq": 201
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.521+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":56,\"ts\":1770989888521},\"seq\":202}",
+      "_len": 233
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.522+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 56,
+        "ts": 1770989888521
+      },
+      "seq": 202
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.522+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/\",\"delta\":\" `/\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":57,\"ts\":1770989888521},\"seq\":203}",
+      "_len": 238
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.522+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/",
+          "delta": " `/"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 57,
+        "ts": 1770989888521
+      },
+      "seq": 203
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.587+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home\",\"delta\":\"home\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":58,\"ts\":1770989888587},\"seq\":204}",
+      "_len": 243
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.587+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home",
+          "delta": "home"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 58,
+        "ts": 1770989888587
+      },
+      "seq": 204
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.588+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/d\",\"delta\":\"/d\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":59,\"ts\":1770989888587},\"seq\":205}",
+      "_len": 243
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.588+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/d",
+          "delta": "/d"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 59,
+        "ts": 1770989888587
+      },
+      "seq": 205
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.654+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dsh\",\"delta\":\"sh\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":60,\"ts\":1770989888653},\"seq\":206}",
+      "_len": 245
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.654+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dsh",
+          "delta": "sh"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 60,
+        "ts": 1770989888653
+      },
+      "seq": 206
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.654+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":60,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dsh\"}],\"timestamp\":1770989888653}},\"seq\":207}",
+      "_len": 283
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.654+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 60,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dsh"
+            }
+          ],
+          "timestamp": 1770989888653
+        }
+      },
+      "seq": 207
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.654+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshish\",\"delta\":\"ish\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":61,\"ts\":1770989888654},\"seq\":208}",
+      "_len": 249
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.654+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshish",
+          "delta": "ish"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 61,
+        "ts": 1770989888654
+      },
+      "seq": 208
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.720+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov\",\"delta\":\"lov\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":62,\"ts\":1770989888719},\"seq\":209}",
+      "_len": 252
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.720+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov",
+          "delta": "lov"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 62,
+        "ts": 1770989888719
+      },
+      "seq": 209
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.721+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/open\",\"delta\":\"/open\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":63,\"ts\":1770989888720},\"seq\":210}",
+      "_len": 259
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.721+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/open",
+          "delta": "/open"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 63,
+        "ts": 1770989888720
+      },
+      "seq": 210
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.785+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/opencl\",\"delta\":\"cl\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":64,\"ts\":1770989888785},\"seq\":211}",
+      "_len": 258
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.786+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/opencl",
+          "delta": "cl"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 64,
+        "ts": 1770989888785
+      },
+      "seq": 211
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.786+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw\",\"delta\":\"aw\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":65,\"ts\":1770989888785},\"seq\":212}",
+      "_len": 260
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.786+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw",
+          "delta": "aw"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 65,
+        "ts": 1770989888785
+      },
+      "seq": 212
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.854+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test\",\"delta\":\"/test\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":66,\"ts\":1770989888853},\"seq\":213}",
+      "_len": 268
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.854+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test",
+          "delta": "/test"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 66,
+        "ts": 1770989888853
+      },
+      "seq": 213
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.862+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":66,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test\"}],\"timestamp\":1770989888854}},\"seq\":214}",
+      "_len": 303
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.862+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 66,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test"
+            }
+          ],
+          "timestamp": 1770989888854
+        }
+      },
+      "seq": 214
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.862+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_\",\"delta\":\"_\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":67,\"ts\":1770989888854},\"seq\":215}",
+      "_len": 265
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.862+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_",
+          "delta": "_"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 67,
+        "ts": 1770989888854
+      },
+      "seq": 215
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.945+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws\",\"delta\":\"ws\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":68,\"ts\":1770989888944},\"seq\":216}",
+      "_len": 268
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.945+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws",
+          "delta": "ws"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 68,
+        "ts": 1770989888944
+      },
+      "seq": 216
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.945+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test\",\"delta\":\"/test\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":69,\"ts\":1770989888945},\"seq\":217}",
+      "_len": 276
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.945+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test",
+          "delta": "/test"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 69,
+        "ts": 1770989888945
+      },
+      "seq": 217
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.985+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_back\",\"delta\":\"_back\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":70,\"ts\":1770989888985},\"seq\":218}",
+      "_len": 281
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.985+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_back",
+          "delta": "_back"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 70,
+        "ts": 1770989888985
+      },
+      "seq": 218
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.986+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup\",\"delta\":\"up\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":71,\"ts\":1770989888986},\"seq\":219}",
+      "_len": 280
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:08.986+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup",
+          "delta": "up"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 71,
+        "ts": 1770989888986
+      },
+      "seq": 219
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.052+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_d\",\"delta\":\"_d\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":72,\"ts\":1770989889051},\"seq\":220}",
+      "_len": 282
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.052+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_d",
+          "delta": "_d"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 72,
+        "ts": 1770989889051
+      },
+      "seq": 220
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.052+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":72,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_d\"}],\"timestamp\":1770989889052}},\"seq\":221}",
+      "_len": 320
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.052+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 72,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_d"
+            }
+          ],
+          "timestamp": 1770989889052
+        }
+      },
+      "seq": 221
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.053+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo\",\"delta\":\"emo\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":73,\"ts\":1770989889052},\"seq\":222}",
+      "_len": 286
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.053+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo",
+          "delta": "emo"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 73,
+        "ts": 1770989889052
+      },
+      "seq": 222
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.125+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt\",\"delta\":\".txt\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":74,\"ts\":1770989889124},\"seq\":223}",
+      "_len": 291
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.125+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt",
+          "delta": ".txt"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 74,
+        "ts": 1770989889124
+      },
+      "seq": 223
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.132+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt`\",\"delta\":\"`\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":75,\"ts\":1770989889125},\"seq\":224}",
+      "_len": 289
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.132+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt`",
+          "delta": "`"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 75,
+        "ts": 1770989889125
+      },
+      "seq": 224
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.227+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с\",\"delta\":\" с\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":76,\"ts\":1770989889226},\"seq\":225}",
+      "_len": 292
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.227+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с",
+          "delta": " с"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 76,
+        "ts": 1770989889226
+      },
+      "seq": 225
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.227+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":76,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с\"}],\"timestamp\":1770989889226}},\"seq\":226}",
+      "_len": 330
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.227+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 76,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с"
+            }
+          ],
+          "timestamp": 1770989889226
+        }
+      },
+      "seq": 226
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.227+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с тек\",\"delta\":\" тек\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":77,\"ts\":1770989889227},\"seq\":227}",
+      "_len": 298
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.227+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с тек",
+          "delta": " тек"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 77,
+        "ts": 1770989889227
+      },
+      "seq": 227
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.259+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом\",\"delta\":\"стом\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":78,\"ts\":1770989889258},\"seq\":228}",
+      "_len": 302
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.259+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом",
+          "delta": "стом"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 78,
+        "ts": 1770989889258
+      },
+      "seq": 228
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.259+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":79,\"ts\":1770989889259},\"seq\":229}",
+      "_len": 304
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.259+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 79,
+        "ts": 1770989889259
+      },
+      "seq": 229
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.323+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello\",\"delta\":\"hello\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":80,\"ts\":1770989889322},\"seq\":230}",
+      "_len": 311
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.323+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello",
+          "delta": "hello"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 80,
+        "ts": 1770989889322
+      },
+      "seq": 230
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.323+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\",\"delta\":\" world\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":81,\"ts\":1770989889323},\"seq\":231}",
+      "_len": 318
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.323+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world",
+          "delta": " world"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 81,
+        "ts": 1770989889323
+      },
+      "seq": 231
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.386+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\",\",\"delta\":\"\\\",\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":82,\"ts\":1770989889385},\"seq\":232}",
+      "_len": 318
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.386+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\",",
+          "delta": "\","
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 82,
+        "ts": 1770989889385
+      },
+      "seq": 232
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.387+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":82,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\",\"}],\"timestamp\":1770989889386}},\"seq\":233}",
+      "_len": 355
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.387+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 82,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\","
+            }
+          ],
+          "timestamp": 1770989889386
+        }
+      },
+      "seq": 233
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.396+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а\",\"delta\":\" а\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":83,\"ts\":1770989889387},\"seq\":234}",
+      "_len": 319
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.397+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а",
+          "delta": " а"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 83,
+        "ts": 1770989889387
+      },
+      "seq": 234
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.454+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем\",\"delta\":\" затем\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":84,\"ts\":1770989889453},\"seq\":235}",
+      "_len": 329
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.454+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем",
+          "delta": " затем"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 84,
+        "ts": 1770989889453
+      },
+      "seq": 235
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.455+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с\",\"delta\":\" с\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":85,\"ts\":1770989889454},\"seq\":236}",
+      "_len": 327
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.455+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с",
+          "delta": " с"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 85,
+        "ts": 1770989889454
+      },
+      "seq": 236
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.526+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью\",\"delta\":\" помощью\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":86,\"ts\":1770989889525},\"seq\":237}",
+      "_len": 341
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.526+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью",
+          "delta": " помощью"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 86,
+        "ts": 1770989889525
+      },
+      "seq": 237
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.527+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инстру\",\"delta\":\" инстру\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":87,\"ts\":1770989889526},\"seq\":238}",
+      "_len": 347
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.527+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инстру",
+          "delta": " инстру"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 87,
+        "ts": 1770989889526
+      },
+      "seq": 238
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.587+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента\",\"delta\":\"мента\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":88,\"ts\":1770989889586},\"seq\":239}",
+      "_len": 350
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.587+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента",
+          "delta": "мента"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 88,
+        "ts": 1770989889586
+      },
+      "seq": 239
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.587+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":88,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента\"}],\"timestamp\":1770989889586}},\"seq\":240}",
+      "_len": 385
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.587+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 88,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента"
+            }
+          ],
+          "timestamp": 1770989889586
+        }
+      },
+      "seq": 240
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.587+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit\",\"delta\":\" edit\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":89,\"ts\":1770989889587},\"seq\":241}",
+      "_len": 355
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.587+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit",
+          "delta": " edit"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 89,
+        "ts": 1770989889587
+      },
+      "seq": 241
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.748+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit за\",\"delta\":\" за\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":90,\"ts\":1770989889747},\"seq\":242}",
+      "_len": 356
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.748+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit за",
+          "delta": " за"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 90,
+        "ts": 1770989889747
+      },
+      "seq": 242
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.748+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":90,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit за\"}],\"timestamp\":1770989889747}},\"seq\":243}",
+      "_len": 393
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.748+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 90,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit за"
+            }
+          ],
+          "timestamp": 1770989889747
+        }
+      },
+      "seq": 243
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.755+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit замени\",\"delta\":\"мени\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":91,\"ts\":1770989889748},\"seq\":244}",
+      "_len": 361
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.755+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit замени",
+          "delta": "мени"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 91,
+        "ts": 1770989889748
+      },
+      "seq": 244
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.755+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":92,\"ts\":1770989889755},\"seq\":245}",
+      "_len": 359
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.755+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 92,
+        "ts": 1770989889755
+      },
+      "seq": 245
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.756+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":93,\"ts\":1770989889755},\"seq\":246}",
+      "_len": 364
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.756+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 93,
+        "ts": 1770989889755
+      },
+      "seq": 246
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.787+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\",\"delta\":\"hello\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":94,\"ts\":1770989889787},\"seq\":247}",
+      "_len": 371
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.787+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello",
+          "delta": "hello"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 94,
+        "ts": 1770989889787
+      },
+      "seq": 247
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.788+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\"\",\"delta\":\"\\\"\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":95,\"ts\":1770989889787},\"seq\":248}",
+      "_len": 370
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.788+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\"",
+          "delta": "\""
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 95,
+        "ts": 1770989889787
+      },
+      "seq": 248
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.850+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на\",\"delta\":\" на\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":96,\"ts\":1770989889849},\"seq\":249}",
+      "_len": 374
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.850+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на",
+          "delta": " на"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 96,
+        "ts": 1770989889849
+      },
+      "seq": 249
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.850+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":97,\"ts\":1770989889850},\"seq\":250}",
+      "_len": 377
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.850+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 97,
+        "ts": 1770989889850
+      },
+      "seq": 250
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.914+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"good\",\"delta\":\"good\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":98,\"ts\":1770989889913},\"seq\":251}",
+      "_len": 382
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.914+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"good",
+          "delta": "good"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 98,
+        "ts": 1770989889913
+      },
+      "seq": 251
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.914+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":98,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"good\"}],\"timestamp\":1770989889914}},\"seq\":252}",
+      "_len": 418
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.914+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 98,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"good"
+            }
+          ],
+          "timestamp": 1770989889914
+        }
+      },
+      "seq": 252
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.915+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\",\"delta\":\"bye\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":99,\"ts\":1770989889914},\"seq\":253}",
+      "_len": 384
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.915+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye",
+          "delta": "bye"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 99,
+        "ts": 1770989889914
+      },
+      "seq": 253
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.979+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\".\",\"delta\":\"\\\".\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":100,\"ts\":1770989889978},\"seq\":254}",
+      "_len": 388
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:09.979+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\".",
+          "delta": "\"."
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 100,
+        "ts": 1770989889978
+      },
+      "seq": 254
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.045+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Те\",\"delta\":\" Те\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":101,\"ts\":1770989890045},\"seq\":255}",
+      "_len": 391
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.046+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Те",
+          "delta": " Те"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 101,
+        "ts": 1770989890045
+      },
+      "seq": 255
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.046+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь\",\"delta\":\"перь\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":102,\"ts\":1770989890045},\"seq\":256}",
+      "_len": 396
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.046+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь",
+          "delta": "перь"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 102,
+        "ts": 1770989890045
+      },
+      "seq": 256
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.111+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь фай\",\"delta\":\" фай\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":103,\"ts\":1770989890110},\"seq\":257}",
+      "_len": 400
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.111+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь фай",
+          "delta": " фай"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 103,
+        "ts": 1770989890110
+      },
+      "seq": 257
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.111+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":103,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь фай\"}],\"timestamp\":1770989890110}},\"seq\":258}",
+      "_len": 436
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.111+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 103,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь фай"
+            }
+          ],
+          "timestamp": 1770989890110
+        }
+      },
+      "seq": 258
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.112+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":104,\"ts\":1770989890111},\"seq\":259}",
+      "_len": 398
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.112+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 104,
+        "ts": 1770989890111
+      },
+      "seq": 259
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.178+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит\",\"delta\":\" содержит\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":105,\"ts\":1770989890177},\"seq\":260}",
+      "_len": 415
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.178+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит",
+          "delta": " содержит"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 105,
+        "ts": 1770989890177
+      },
+      "seq": 260
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.178+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит текст\",\"delta\":\" текст\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":106,\"ts\":1770989890177},\"seq\":261}",
+      "_len": 418
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.178+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит текст",
+          "delta": " текст"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 106,
+        "ts": 1770989890177
+      },
+      "seq": 261
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.241+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит текст \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":107,\"ts\":1770989890241},\"seq\":262}",
+      "_len": 418
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.241+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит текст \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 107,
+        "ts": 1770989890241
+      },
+      "seq": 262
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.242+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит текст \\\"good\",\"delta\":\"good\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":108,\"ts\":1770989890241},\"seq\":263}",
+      "_len": 423
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.242+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит текст \"good",
+          "delta": "good"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 108,
+        "ts": 1770989890241
+      },
+      "seq": 263
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.311+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит текст \\\"goodbye\",\"delta\":\"bye\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":109,\"ts\":1770989890311},\"seq\":264}",
+      "_len": 425
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.312+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит текст \"goodbye",
+          "delta": "bye"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 109,
+        "ts": 1770989890311
+      },
+      "seq": 264
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.312+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":109,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит текст \\\"goodbye\"}],\"timestamp\":1770989890311}},\"seq\":265}",
+      "_len": 462
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.312+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 109,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит текст \"goodbye"
+            }
+          ],
+          "timestamp": 1770989890311
+        }
+      },
+      "seq": 265
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.312+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит текст \\\"goodbye world\",\"delta\":\" world\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":110,\"ts\":1770989890312},\"seq\":266}",
+      "_len": 434
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.312+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит текст \"goodbye world",
+          "delta": " world"
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 110,
+        "ts": 1770989890312
+      },
+      "seq": 266
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.380+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит текст \\\"goodbye world\\\".\",\"delta\":\"\\\".\"},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":111,\"ts\":1770989890379},\"seq\":267}",
+      "_len": 434
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.380+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит текст \"goodbye world\".",
+          "delta": "\"."
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 111,
+        "ts": 1770989890379
+      },
+      "seq": 267
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.388+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"stream\":\"lifecycle\",\"data\":{\"phase\":\"end\",\"endedAt\":1770989890387},\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":112,\"ts\":1770989890387},\"seq\":268}",
+      "_len": 229
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.388+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "stream": "lifecycle",
+        "data": {
+          "phase": "end",
+          "endedAt": 1770989890387
+        },
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 112,
+        "ts": 1770989890387
+      },
+      "seq": 268
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.388+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-621c1a4ccdc54291\",\"sessionKey\":\"agent:main:debug-de78e30a9d38\",\"seq\":112,\"state\":\"final\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \\\"hello world\\\", а затем с помощью инструмента edit заменил \\\"hello\\\" на \\\"goodbye\\\". Теперь файл содержит текст \\\"goodbye world\\\".\"}],\"timestamp\":1770989890388}},\"seq\":269}",
+      "_len": 471
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.388+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-621c1a4ccdc54291",
+        "sessionKey": "agent:main:debug-de78e30a9d38",
+        "seq": 112,
+        "state": "final",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Я создал файл `/home/dshishlov/openclaw/test_ws/test_backup_demo.txt` с текстом \"hello world\", а затем с помощью инструмента edit заменил \"hello\" на \"goodbye\". Теперь файл содержит текст \"goodbye world\"."
+            }
+          ],
+          "timestamp": 1770989890388
+        }
+      },
+      "seq": 269
+    }
+  },
+  {
+    "ts": "2026-02-13T13:38:10.388+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Ответ получен (final)"
+    }
+  }
+]

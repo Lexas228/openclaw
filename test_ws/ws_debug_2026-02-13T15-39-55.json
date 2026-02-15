@@ -1,0 +1,73 @@
+[
+  {
+    "ts": "2026-02-13T15:39:55.951+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"connect.challenge\",\"payload\":{\"nonce\":\"40572239-98dc-4f3f-aba4-573d89958ec7\",\"ts\":1770997195950}}",
+      "_len": 122
+    }
+  },
+  {
+    "ts": "2026-02-13T15:39:55.951+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "connect.challenge",
+      "payload": {
+        "nonce": "40572239-98dc-4f3f-aba4-573d89958ec7",
+        "ts": 1770997195950
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:39:55.951+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "1",
+      "method": "connect",
+      "params": {
+        "minProtocol": 3,
+        "maxProtocol": 3,
+        "client": {
+          "id": "gateway-client",
+          "displayName": "WS Debug Tool",
+          "version": "1.0.0",
+          "platform": "linux",
+          "mode": "backend"
+        },
+        "caps": ["tool-events"],
+        "role": "operator",
+        "scopes": ["operator.read", "operator.write", "operator.admin", "operator.approvals"]
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:39:55.978+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"1\",\"ok\":false,\"error\":{\"code\":\"NOT_PAIRED\",\"message\":\"device identity required\"}}",
+      "_len": 101
+    }
+  },
+  {
+    "ts": "2026-02-13T15:39:55.978+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "1",
+      "ok": false,
+      "error": {
+        "code": "NOT_PAIRED",
+        "message": "device identity required"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T15:39:55.982+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Соединение закрыто: received 1008 (policy violation) device identity required; then sent 1008 (policy violation) device identity required"
+    }
+  }
+]
