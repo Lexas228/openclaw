@@ -334,7 +334,9 @@ export function createAgentEventHandler({
     const last = agentRunSeq.get(evt.runId) ?? 0;
     const isToolEvent = evt.stream === "tool";
     const toolVerbose = isToolEvent ? resolveToolVerboseLevel(evt.runId, sessionKey) : "off";
-    // Build tool payload: strip result/partialResult unless verbose=full
+    // Build tool payload for messaging surfaces: strip result/partialResult
+    // unless verbose=full. WS clients with tool-events cap get the full
+    // agentPayload (including result) unconditionally.
     const toolPayload =
       isToolEvent && toolVerbose !== "full"
         ? (() => {
@@ -365,7 +367,7 @@ export function createAgentEventHandler({
       // messages to messaging surfaces (Telegram, Discord, etc.).
       const recipients = toolEventRecipients.get(evt.runId);
       if (recipients && recipients.size > 0) {
-        broadcastToConnIds("agent", toolPayload, recipients);
+        broadcastToConnIds("agent", agentPayload, recipients);
       }
     } else {
       broadcast("agent", agentPayload);

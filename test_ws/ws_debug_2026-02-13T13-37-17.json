@@ -1,0 +1,4274 @@
+[
+  {
+    "ts": "2026-02-13T13:37:17.126+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"connect.challenge\",\"payload\":{\"nonce\":\"752c8891-b4d9-4892-a4af-8d2c7c426bae\",\"ts\":1770989837126}}",
+      "_len": 122
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.126+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "connect.challenge",
+      "payload": {
+        "nonce": "752c8891-b4d9-4892-a4af-8d2c7c426bae",
+        "ts": 1770989837126
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.126+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "1",
+      "method": "connect",
+      "params": {
+        "minProtocol": 3,
+        "maxProtocol": 3,
+        "client": {
+          "id": "gateway-client",
+          "displayName": "WS Debug Tool",
+          "version": "1.0.0",
+          "platform": "linux",
+          "mode": "backend"
+        },
+        "caps": ["tool-events"],
+        "role": "operator",
+        "scopes": ["operator.read", "operator.write", "operator.admin", "operator.approvals"],
+        "auth": {
+          "token": "1feaa814bca7a733e52740e7eacc50f737d446a0fdb60192"
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.144+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"1\",\"ok\":true,\"payload\":{\"type\":\"hello-ok\",\"protocol\":3,\"server\":{\"version\":\"dev\",\"host\":\"ubuntu\",\"connId\":\"f4220483-34be-4c17-a0f1-9a3f8a98df12\"},\"features\":{\"methods\":[\"health\",\"logs.tail\",\"channels.status\",\"channels.logout\",\"status\",\"usage.status\",\"usage.cost\",\"tts.status\",\"tts.providers\",\"tts.enable\",\"tts.disable\",\"tts.convert\",\"tts.setProvider\",\"config.get\",\"config.set\",\"config.apply\",\"config.patch\",\"config.schema\",\"exec.approvals.get\",\"exec.approvals.set\",\"exec.approvals.node.get\",\"exec.approvals.node.set\",\"exec.approval.request\",\"exec.approval.resolve\",\"wizard.start\",\"wizard.next\",\"wizard.cancel\",\"wizard.status\",\"talk.mode\",\"models.list\",\"agents.list\",\"agents.create\",\"agents.update\",\"agents.delete\",\"agents.files.list\",\"agents.files.get\",\"agents.files.set\",\"skills.status\",\"skills.bins\",\"skills.install\",\"skills.update\",\"update.run\",\"voicewake.get\",\"voicewake.set\",\"sessions.list\",\"sessions.preview\",\"sessions.patch\",\"sessions.reset\",\"sessions.delete\",\"sessions.compact\",\"last-heartbeat\",\"set-heartbeats\",\"wake\",\"node.pair.request\",\"node.pair.list\",\"node.pair.approve\",\"node.pair.reject\",\"node.pair.verify\",\"device.pair.list\",\"device.pair.approve\",\"device.pair.reject\",\"device.token.rotate\",\"device.token.revoke\",\"node.rename\",\"node.list\",\"node.describe\",\"node.invoke\",\"node.invoke.result\",\"node.event\",\"cron.list\",\"cron.status\",\"cron.add\",\"cron.update\",\"cron.remove\",\"cron.run\",\"cron.runs\",\"system-presence\",\"system-event\",\"send\",\"agent\",\"agent.identity.get\",\"agent.wait\",\"browser.request\",\"chat.history\",\"chat.abort\",\"chat.send\"],\"events\":[\"connect.challenge\",\"agent\",\"chat\",\"presence\",\"tick\",\"talk.mode\",\"shutdown\",\"health\",\"heartbeat\",\"cron\",\"node.pair.requested\",\"node.pair.resolved\",\"node.invoke.request\",\"device.pair.requested\",\"device.pair.resolved\",\"voicewake.changed\",\"exec.approval.requested\",\"exec.approval.resolved\"]},\"snapshot\":{\"presence\":[{\"host\":\"ubuntu\",\"ip\":\"192.168.1.137\",\"version\":\"unknown\",\"platform\":\"linux 6.8.0-1047-raspi\",\"deviceFamily\":\"Linux\",\"modelIdentifier\":\"arm64\",\"mode\":\"gateway\",\"reason\":\"self\",\"text\":\"Gateway: ubuntu (192.168.1.137) · app unknown · mode gateway · reason self\",\"ts\":1770989837143},{\"host\":\"WS Debug Tool\",\"version\":\"1.0.0\",\"platform\":\"linux\",\"mode\":\"backend\",\"roles\":[\"operator\"],\"scopes\":[\"operator.read\",\"operator.write\",\"operator.admin\",\"operator.approvals\"],\"reason\":\"connect\",\"ts\":1770989837143,\"text\":\"Node: WS Debug Tool · mode backend\"},{\"host\":\"openclaw-probe\",\"ip\":\"192.168.1.137\",\"version\":\"dev\",\"platform\":\"linux\",\"mode\":\"probe\",\"deviceId\":\"9f76652095ad852a8d6ad3898cdaf94ef1a69d16048634616be58e4fb9e36a99\",\"roles\":[\"operator\"],\"scopes\":[\"operator.admin\",\"operator.approvals\",\"operator.pairing\"],\"instanceId\":\"9f76652095ad852a8d6ad3898cdaf94ef1a69d16048634616be58e4fb9e36a99\",\"reason\":\"disconnect\",\"ts\":1770989588381,\"text\":\"Node: openclaw-probe · mode probe\"},{\"host\":\"openclaw-control-ui\",\"version\":\"dev\",\"platform\":\"MacIntel\",\"mode\":\"webchat\",\"deviceId\":\"6668f156dea1df5353c70ff24631e9c7fd2d0f43a41e603210425d7c8c4eeeb1\",\"roles\":[\"operator\"],\"scopes\":[\"operator.admin\",\"operator.approvals\",\"operator.pairing\"],\"instanceId\":\"6668f156dea1df5353c70ff24631e9c7fd2d0f43a41e603210425d7c8c4eeeb1\",\"reason\":\"connect\",\"ts\":1770989584329,\"text\":\"Node: openclaw-control-ui · mode webchat\"}],\"health\":{\"ok\":true,\"ts\":1770989823742,\"durationMs\":389,\"channels\":{\"telegram\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":388,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989823742,\"accountId\":\"default\",\"accounts\":{\"default\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":388,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989823742,\"accountId\":\"default\"}}}},\"channelOrder\":[\"telegram\"],\"channelLabels\":{\"telegram\":\"Telegram\"},\"heartbeatSeconds\":1800,\"defaultAgentId\":\"main\",\"agents\":[{\"agentId\":\"main\",\"isDefault\":true,\"heartbeat\":{\"enabled\":true,\"every\":\"30m\",\"everyMs\":1800000,\"prompt\":\"Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.\",\"target\":\"last\",\"ackMaxChars\":300},\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":23,\"recent\":[{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2242566},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2548631},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5649687},{\"key\":\"agent:main:fleet-84b72cadcfd38689\",\"updatedAt\":1770983928951,\"age\":5894402},{\"key\":\"agent:main:fleet-dacd4753b44228be\",\"updatedAt\":1770979168848,\"age\":10654505}]}}],\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":23,\"recent\":[{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2242566},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2548631},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5649687},{\"key\":\"agent:main:fleet-84b72cadcfd38689\",\"updatedAt\":1770983928951,\"age\":5894402},{\"key\":\"agent:main:fleet-dacd4753b44228be\",\"updatedAt\":1770979168848,\"age\":10654505}]}},\"stateVersion\":{\"presence\":7,\"health\":8},\"uptimeMs\":259548,\"configPath\":\"/home/dshishlov/.openclaw/openclaw.json\",\"stateDir\":\"/home/dshishlov/.openclaw\",\"sessionDefaults\":{\"defaultAgentId\":\"main\",\"mainKey\":\"main\",\"mainSessionKey\":\"agent:main:main\",\"scope\":\"per-sender\"}},\"canvasHostUrl\":\"http://127.0.0.1:18789\",\"policy\":{\"maxPayload\":8388608,\"maxBufferedBytes\":16777216,\"tickIntervalMs\":30000}}}",
+      "_len": 6080
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.144+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "1",
+      "ok": true,
+      "payload": {
+        "type": "hello-ok",
+        "protocol": 3,
+        "server": {
+          "version": "dev",
+          "host": "ubuntu",
+          "connId": "f4220483-34be-4c17-a0f1-9a3f8a98df12"
+        },
+        "features": {
+          "methods": [
+            "health",
+            "logs.tail",
+            "channels.status",
+            "channels.logout",
+            "status",
+            "usage.status",
+            "usage.cost",
+            "tts.status",
+            "tts.providers",
+            "tts.enable",
+            "tts.disable",
+            "tts.convert",
+            "tts.setProvider",
+            "config.get",
+            "config.set",
+            "config.apply",
+            "config.patch",
+            "config.schema",
+            "exec.approvals.get",
+            "exec.approvals.set",
+            "exec.approvals.node.get",
+            "exec.approvals.node.set",
+            "exec.approval.request",
+            "exec.approval.resolve",
+            "wizard.start",
+            "wizard.next",
+            "wizard.cancel",
+            "wizard.status",
+            "talk.mode",
+            "models.list",
+            "agents.list",
+            "agents.create",
+            "agents.update",
+            "agents.delete",
+            "agents.files.list",
+            "agents.files.get",
+            "agents.files.set",
+            "skills.status",
+            "skills.bins",
+            "skills.install",
+            "skills.update",
+            "update.run",
+            "voicewake.get",
+            "voicewake.set",
+            "sessions.list",
+            "sessions.preview",
+            "sessions.patch",
+            "sessions.reset",
+            "sessions.delete",
+            "sessions.compact",
+            "last-heartbeat",
+            "set-heartbeats",
+            "wake",
+            "node.pair.request",
+            "node.pair.list",
+            "node.pair.approve",
+            "node.pair.reject",
+            "node.pair.verify",
+            "device.pair.list",
+            "device.pair.approve",
+            "device.pair.reject",
+            "device.token.rotate",
+            "device.token.revoke",
+            "node.rename",
+            "node.list",
+            "node.describe",
+            "node.invoke",
+            "node.invoke.result",
+            "node.event",
+            "cron.list",
+            "cron.status",
+            "cron.add",
+            "cron.update",
+            "cron.remove",
+            "cron.run",
+            "cron.runs",
+            "system-presence",
+            "system-event",
+            "send",
+            "agent",
+            "agent.identity.get",
+            "agent.wait",
+            "browser.request",
+            "chat.history",
+            "chat.abort",
+            "chat.send"
+          ],
+          "events": [
+            "connect.challenge",
+            "agent",
+            "chat",
+            "presence",
+            "tick",
+            "talk.mode",
+            "shutdown",
+            "health",
+            "heartbeat",
+            "cron",
+            "node.pair.requested",
+            "node.pair.resolved",
+            "node.invoke.request",
+            "device.pair.requested",
+            "device.pair.resolved",
+            "voicewake.changed",
+            "exec.approval.requested",
+            "exec.approval.resolved"
+          ]
+        },
+        "snapshot": {
+          "presence": [
+            {
+              "host": "ubuntu",
+              "ip": "192.168.1.137",
+              "version": "unknown",
+              "platform": "linux 6.8.0-1047-raspi",
+              "deviceFamily": "Linux",
+              "modelIdentifier": "arm64",
+              "mode": "gateway",
+              "reason": "self",
+              "text": "Gateway: ubuntu (192.168.1.137) · app unknown · mode gateway · reason self",
+              "ts": 1770989837143
+            },
+            {
+              "host": "WS Debug Tool",
+              "version": "1.0.0",
+              "platform": "linux",
+              "mode": "backend",
+              "roles": ["operator"],
+              "scopes": ["operator.read", "operator.write", "operator.admin", "operator.approvals"],
+              "reason": "connect",
+              "ts": 1770989837143,
+              "text": "Node: WS Debug Tool · mode backend"
+            },
+            {
+              "host": "openclaw-probe",
+              "ip": "192.168.1.137",
+              "version": "dev",
+              "platform": "linux",
+              "mode": "probe",
+              "deviceId": "9f76652095ad852a8d6ad3898cdaf94ef1a69d16048634616be58e4fb9e36a99",
+              "roles": ["operator"],
+              "scopes": ["operator.admin", "operator.approvals", "operator.pairing"],
+              "instanceId": "9f76652095ad852a8d6ad3898cdaf94ef1a69d16048634616be58e4fb9e36a99",
+              "reason": "disconnect",
+              "ts": 1770989588381,
+              "text": "Node: openclaw-probe · mode probe"
+            },
+            {
+              "host": "openclaw-control-ui",
+              "version": "dev",
+              "platform": "MacIntel",
+              "mode": "webchat",
+              "deviceId": "6668f156dea1df5353c70ff24631e9c7fd2d0f43a41e603210425d7c8c4eeeb1",
+              "roles": ["operator"],
+              "scopes": ["operator.admin", "operator.approvals", "operator.pairing"],
+              "instanceId": "6668f156dea1df5353c70ff24631e9c7fd2d0f43a41e603210425d7c8c4eeeb1",
+              "reason": "connect",
+              "ts": 1770989584329,
+              "text": "Node: openclaw-control-ui · mode webchat"
+            }
+          ],
+          "health": {
+            "ok": true,
+            "ts": 1770989823742,
+            "durationMs": 389,
+            "channels": {
+              "telegram": {
+                "configured": true,
+                "tokenSource": "none",
+                "running": false,
+                "mode": null,
+                "lastStartAt": null,
+                "lastStopAt": null,
+                "lastError": null,
+                "probe": {
+                  "ok": true,
+                  "status": null,
+                  "error": null,
+                  "elapsedMs": 388,
+                  "bot": {
+                    "id": 8448623900,
+                    "username": "rassbery_openclaw_bot",
+                    "canJoinGroups": true,
+                    "canReadAllGroupMessages": true,
+                    "supportsInlineQueries": false
+                  },
+                  "webhook": {
+                    "url": "",
+                    "hasCustomCert": false
+                  }
+                },
+                "lastProbeAt": 1770989823742,
+                "accountId": "default",
+                "accounts": {
+                  "default": {
+                    "configured": true,
+                    "tokenSource": "none",
+                    "running": false,
+                    "mode": null,
+                    "lastStartAt": null,
+                    "lastStopAt": null,
+                    "lastError": null,
+                    "probe": {
+                      "ok": true,
+                      "status": null,
+                      "error": null,
+                      "elapsedMs": 388,
+                      "bot": {
+                        "id": 8448623900,
+                        "username": "rassbery_openclaw_bot",
+                        "canJoinGroups": true,
+                        "canReadAllGroupMessages": true,
+                        "supportsInlineQueries": false
+                      },
+                      "webhook": {
+                        "url": "",
+                        "hasCustomCert": false
+                      }
+                    },
+                    "lastProbeAt": 1770989823742,
+                    "accountId": "default"
+                  }
+                }
+              }
+            },
+            "channelOrder": ["telegram"],
+            "channelLabels": {
+              "telegram": "Telegram"
+            },
+            "heartbeatSeconds": 1800,
+            "defaultAgentId": "main",
+            "agents": [
+              {
+                "agentId": "main",
+                "isDefault": true,
+                "heartbeat": {
+                  "enabled": true,
+                  "every": "30m",
+                  "everyMs": 1800000,
+                  "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+                  "target": "last",
+                  "ackMaxChars": 300
+                },
+                "sessions": {
+                  "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+                  "count": 23,
+                  "recent": [
+                    {
+                      "key": "agent:main:main",
+                      "updatedAt": 1770987580787,
+                      "age": 2242566
+                    },
+                    {
+                      "key": "agent:main:fleet-7bd69d31d2128b49",
+                      "updatedAt": 1770987274722,
+                      "age": 2548631
+                    },
+                    {
+                      "key": "agent:main:fleet-15475ec881af212b",
+                      "updatedAt": 1770984173666,
+                      "age": 5649687
+                    },
+                    {
+                      "key": "agent:main:fleet-84b72cadcfd38689",
+                      "updatedAt": 1770983928951,
+                      "age": 5894402
+                    },
+                    {
+                      "key": "agent:main:fleet-dacd4753b44228be",
+                      "updatedAt": 1770979168848,
+                      "age": 10654505
+                    }
+                  ]
+                }
+              }
+            ],
+            "sessions": {
+              "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+              "count": 23,
+              "recent": [
+                {
+                  "key": "agent:main:main",
+                  "updatedAt": 1770987580787,
+                  "age": 2242566
+                },
+                {
+                  "key": "agent:main:fleet-7bd69d31d2128b49",
+                  "updatedAt": 1770987274722,
+                  "age": 2548631
+                },
+                {
+                  "key": "agent:main:fleet-15475ec881af212b",
+                  "updatedAt": 1770984173666,
+                  "age": 5649687
+                },
+                {
+                  "key": "agent:main:fleet-84b72cadcfd38689",
+                  "updatedAt": 1770983928951,
+                  "age": 5894402
+                },
+                {
+                  "key": "agent:main:fleet-dacd4753b44228be",
+                  "updatedAt": 1770979168848,
+                  "age": 10654505
+                }
+              ]
+            }
+          },
+          "stateVersion": {
+            "presence": 7,
+            "health": 8
+          },
+          "uptimeMs": 259548,
+          "configPath": "/home/dshishlov/.openclaw/openclaw.json",
+          "stateDir": "/home/dshishlov/.openclaw",
+          "sessionDefaults": {
+            "defaultAgentId": "main",
+            "mainKey": "main",
+            "mainSessionKey": "agent:main:main",
+            "scope": "per-sender"
+          }
+        },
+        "canvasHostUrl": "http://127.0.0.1:18789",
+        "policy": {
+          "maxPayload": 8388608,
+          "maxBufferedBytes": 16777216,
+          "tickIntervalMs": 30000
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.144+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Подключён к gateway vdev на ubuntu"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.145+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "2",
+      "method": "agents.list",
+      "params": {}
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.151+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"2\",\"ok\":true,\"payload\":{\"defaultId\":\"main\",\"mainKey\":\"main\",\"scope\":\"per-sender\",\"agents\":[{\"id\":\"main\"}]}}",
+      "_len": 127
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.151+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "2",
+      "ok": true,
+      "payload": {
+        "defaultId": "main",
+        "mainKey": "main",
+        "scope": "per-sender",
+        "agents": [
+          {
+            "id": "main"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.151+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Default agent: main"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.151+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Создана сессия: agent:main:debug-c84066cc7c6e"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.151+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "3",
+      "method": "sessions.patch",
+      "params": {
+        "key": "agent:main:debug-c84066cc7c6e",
+        "verboseLevel": "on"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.168+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"3\",\"ok\":true,\"payload\":{\"ok\":true,\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"key\":\"agent:main:debug-c84066cc7c6e\",\"entry\":{\"sessionId\":\"9c096bd8-fde2-4a1a-87d4-731d8729629f\",\"updatedAt\":1770989837161,\"verboseLevel\":\"on\"},\"resolved\":{\"modelProvider\":\"deepseek\",\"model\":\"deepseek-chat\"}}}",
+      "_len": 334
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.168+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "3",
+      "ok": true,
+      "payload": {
+        "ok": true,
+        "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+        "key": "agent:main:debug-c84066cc7c6e",
+        "entry": {
+          "sessionId": "9c096bd8-fde2-4a1a-87d4-731d8729629f",
+          "updatedAt": 1770989837161,
+          "verboseLevel": "on"
+        },
+        "resolved": {
+          "modelProvider": "deepseek",
+          "model": "deepseek-chat"
+        }
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.168+00:00",
+    "dir": "info",
+    "data": {
+      "message": "verbose=on для сессии"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.168+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "4",
+      "method": "chat.history",
+      "params": {
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "limit": 10
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.262+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"4\",\"ok\":true,\"payload\":{\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"sessionId\":\"9c096bd8-fde2-4a1a-87d4-731d8729629f\",\"messages\":[],\"thinkingLevel\":\"off\",\"verboseLevel\":\"on\"}}",
+      "_len": 197
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.262+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "4",
+      "ok": true,
+      "payload": {
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "sessionId": "9c096bd8-fde2-4a1a-87d4-731d8729629f",
+        "messages": [],
+        "thinkingLevel": "off",
+        "verboseLevel": "on"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.262+00:00",
+    "dir": "info",
+    "data": {
+      "message": "История: 0 сообщений"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.262+00:00",
+    "dir": "send",
+    "data": {
+      "type": "req",
+      "id": "5",
+      "method": "chat.send",
+      "params": {
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "message": "создай файл /tmp/openclaw-test-backup.txt с текстом hello world, потом отредактируй его: замени hello на goodbye",
+        "idempotencyKey": "debug-6bb3b08108e241d4"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.271+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"res\",\"id\":\"5\",\"ok\":true,\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"status\":\"started\"}}",
+      "_len": 97
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.271+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "res",
+      "id": "5",
+      "ok": true,
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "status": "started"
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.271+00:00",
+    "dir": "info",
+    "data": {
+      "message": "chat.send OK: runId=debug-6bb3b08108e241d4, status=started"
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.847+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"lifecycle\",\"data\":{\"phase\":\"start\",\"startedAt\":1770989837846},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":1,\"ts\":1770989837846},\"seq\":18}",
+      "_len": 230
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.847+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "lifecycle",
+        "data": {
+          "phase": "start",
+          "startedAt": 1770989837846
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 1,
+        "ts": 1770989837846
+      },
+      "seq": 18
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.881+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"health\",\"payload\":{\"ok\":true,\"ts\":1770989837880,\"durationMs\":732,\"channels\":{\"telegram\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":731,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989837880,\"accountId\":\"default\",\"accounts\":{\"default\":{\"configured\":true,\"tokenSource\":\"none\",\"running\":false,\"mode\":null,\"lastStartAt\":null,\"lastStopAt\":null,\"lastError\":null,\"probe\":{\"ok\":true,\"status\":null,\"error\":null,\"elapsedMs\":731,\"bot\":{\"id\":8448623900,\"username\":\"rassbery_openclaw_bot\",\"canJoinGroups\":true,\"canReadAllGroupMessages\":true,\"supportsInlineQueries\":false},\"webhook\":{\"url\":\"\",\"hasCustomCert\":false}},\"lastProbeAt\":1770989837880,\"accountId\":\"default\"}}}},\"channelOrder\":[\"telegram\"],\"channelLabels\":{\"telegram\":\"Telegram\"},\"heartbeatSeconds\":1800,\"defaultAgentId\":\"main\",\"agents\":[{\"agentId\":\"main\",\"isDefault\":true,\"heartbeat\":{\"enabled\":true,\"every\":\"30m\",\"everyMs\":1800000,\"prompt\":\"Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.\",\"target\":\"last\",\"ackMaxChars\":300},\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":23,\"recent\":[{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2256361},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2562426},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5663482},{\"key\":\"agent:main:fleet-84b72cadcfd38689\",\"updatedAt\":1770983928951,\"age\":5908197},{\"key\":\"agent:main:fleet-dacd4753b44228be\",\"updatedAt\":1770979168848,\"age\":10668300}]}}],\"sessions\":{\"path\":\"/home/dshishlov/.openclaw/agents/main/sessions/sessions.json\",\"count\":23,\"recent\":[{\"key\":\"agent:main:main\",\"updatedAt\":1770987580787,\"age\":2256361},{\"key\":\"agent:main:fleet-7bd69d31d2128b49\",\"updatedAt\":1770987274722,\"age\":2562426},{\"key\":\"agent:main:fleet-15475ec881af212b\",\"updatedAt\":1770984173666,\"age\":5663482},{\"key\":\"agent:main:fleet-84b72cadcfd38689\",\"updatedAt\":1770983928951,\"age\":5908197},{\"key\":\"agent:main:fleet-dacd4753b44228be\",\"updatedAt\":1770979168848,\"age\":10668300}]}},\"seq\":19,\"stateVersion\":{\"presence\":7,\"health\":9}}",
+      "_len": 2484
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:17.881+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "health",
+      "payload": {
+        "ok": true,
+        "ts": 1770989837880,
+        "durationMs": 732,
+        "channels": {
+          "telegram": {
+            "configured": true,
+            "tokenSource": "none",
+            "running": false,
+            "mode": null,
+            "lastStartAt": null,
+            "lastStopAt": null,
+            "lastError": null,
+            "probe": {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "elapsedMs": 731,
+              "bot": {
+                "id": 8448623900,
+                "username": "rassbery_openclaw_bot",
+                "canJoinGroups": true,
+                "canReadAllGroupMessages": true,
+                "supportsInlineQueries": false
+              },
+              "webhook": {
+                "url": "",
+                "hasCustomCert": false
+              }
+            },
+            "lastProbeAt": 1770989837880,
+            "accountId": "default",
+            "accounts": {
+              "default": {
+                "configured": true,
+                "tokenSource": "none",
+                "running": false,
+                "mode": null,
+                "lastStartAt": null,
+                "lastStopAt": null,
+                "lastError": null,
+                "probe": {
+                  "ok": true,
+                  "status": null,
+                  "error": null,
+                  "elapsedMs": 731,
+                  "bot": {
+                    "id": 8448623900,
+                    "username": "rassbery_openclaw_bot",
+                    "canJoinGroups": true,
+                    "canReadAllGroupMessages": true,
+                    "supportsInlineQueries": false
+                  },
+                  "webhook": {
+                    "url": "",
+                    "hasCustomCert": false
+                  }
+                },
+                "lastProbeAt": 1770989837880,
+                "accountId": "default"
+              }
+            }
+          }
+        },
+        "channelOrder": ["telegram"],
+        "channelLabels": {
+          "telegram": "Telegram"
+        },
+        "heartbeatSeconds": 1800,
+        "defaultAgentId": "main",
+        "agents": [
+          {
+            "agentId": "main",
+            "isDefault": true,
+            "heartbeat": {
+              "enabled": true,
+              "every": "30m",
+              "everyMs": 1800000,
+              "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+              "target": "last",
+              "ackMaxChars": 300
+            },
+            "sessions": {
+              "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+              "count": 23,
+              "recent": [
+                {
+                  "key": "agent:main:main",
+                  "updatedAt": 1770987580787,
+                  "age": 2256361
+                },
+                {
+                  "key": "agent:main:fleet-7bd69d31d2128b49",
+                  "updatedAt": 1770987274722,
+                  "age": 2562426
+                },
+                {
+                  "key": "agent:main:fleet-15475ec881af212b",
+                  "updatedAt": 1770984173666,
+                  "age": 5663482
+                },
+                {
+                  "key": "agent:main:fleet-84b72cadcfd38689",
+                  "updatedAt": 1770983928951,
+                  "age": 5908197
+                },
+                {
+                  "key": "agent:main:fleet-dacd4753b44228be",
+                  "updatedAt": 1770979168848,
+                  "age": 10668300
+                }
+              ]
+            }
+          }
+        ],
+        "sessions": {
+          "path": "/home/dshishlov/.openclaw/agents/main/sessions/sessions.json",
+          "count": 23,
+          "recent": [
+            {
+              "key": "agent:main:main",
+              "updatedAt": 1770987580787,
+              "age": 2256361
+            },
+            {
+              "key": "agent:main:fleet-7bd69d31d2128b49",
+              "updatedAt": 1770987274722,
+              "age": 2562426
+            },
+            {
+              "key": "agent:main:fleet-15475ec881af212b",
+              "updatedAt": 1770984173666,
+              "age": 5663482
+            },
+            {
+              "key": "agent:main:fleet-84b72cadcfd38689",
+              "updatedAt": 1770983928951,
+              "age": 5908197
+            },
+            {
+              "key": "agent:main:fleet-dacd4753b44228be",
+              "updatedAt": 1770979168848,
+              "age": 10668300
+            }
+          ]
+        }
+      },
+      "seq": 19,
+      "stateVersion": {
+        "presence": 7,
+        "health": 9
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.463+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я\",\"delta\":\"Я\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":2,\"ts\":1770989839462},\"seq\":20}",
+      "_len": 211
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.463+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я",
+          "delta": "Я"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 2,
+        "ts": 1770989839462
+      },
+      "seq": 20
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.464+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":2,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я\"}],\"timestamp\":1770989839463}},\"seq\":21}",
+      "_len": 250
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.464+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 2,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я"
+            }
+          ],
+          "timestamp": 1770989839463
+        }
+      },
+      "seq": 21
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.784+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я созда\",\"delta\":\" созда\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":3,\"ts\":1770989839783},\"seq\":22}",
+      "_len": 222
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.784+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я созда",
+          "delta": " созда"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 3,
+        "ts": 1770989839783
+      },
+      "seq": 22
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.784+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":3,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я созда\"}],\"timestamp\":1770989839784}},\"seq\":23}",
+      "_len": 256
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.784+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 3,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я созда"
+            }
+          ],
+          "timestamp": 1770989839784
+        }
+      },
+      "seq": 23
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.836+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам\",\"delta\":\"м\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":4,\"ts\":1770989839836},\"seq\":24}",
+      "_len": 218
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.836+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам",
+          "delta": "м"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 4,
+        "ts": 1770989839836
+      },
+      "seq": 24
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.837+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и\",\"delta\":\" и\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":5,\"ts\":1770989839837},\"seq\":25}",
+      "_len": 221
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.837+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и",
+          "delta": " и"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 5,
+        "ts": 1770989839837
+      },
+      "seq": 25
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.906+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и от\",\"delta\":\" от\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":6,\"ts\":1770989839905},\"seq\":26}",
+      "_len": 225
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.906+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и от",
+          "delta": " от"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 6,
+        "ts": 1770989839905
+      },
+      "seq": 26
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.906+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отреда\",\"delta\":\"реда\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":7,\"ts\":1770989839906},\"seq\":27}",
+      "_len": 230
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:19.906+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отреда",
+          "delta": "реда"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 7,
+        "ts": 1770989839906
+      },
+      "seq": 27
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.035+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредакти\",\"delta\":\"кти\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":8,\"ts\":1770989840035},\"seq\":28}",
+      "_len": 232
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.035+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредакти",
+          "delta": "кти"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 8,
+        "ts": 1770989840035
+      },
+      "seq": 28
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.036+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":8,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я создам и отредакти\"}],\"timestamp\":1770989840035}},\"seq\":29}",
+      "_len": 269
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.036+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 8,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я создам и отредакти"
+            }
+          ],
+          "timestamp": 1770989840035
+        }
+      },
+      "seq": 29
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.036+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактиру\",\"delta\":\"ру\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":9,\"ts\":1770989840036},\"seq\":30}",
+      "_len": 233
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.036+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактиру",
+          "delta": "ру"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 9,
+        "ts": 1770989840036
+      },
+      "seq": 30
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.042+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую\",\"delta\":\"ю\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":10,\"ts\":1770989840041},\"seq\":31}",
+      "_len": 234
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.042+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую",
+          "delta": "ю"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 10,
+        "ts": 1770989840041
+      },
+      "seq": 31
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.045+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую фай\",\"delta\":\" фай\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":11,\"ts\":1770989840042},\"seq\":32}",
+      "_len": 241
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.045+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую фай",
+          "delta": " фай"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 11,
+        "ts": 1770989840042
+      },
+      "seq": 32
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.077+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую файл\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":12,\"ts\":1770989840076},\"seq\":33}",
+      "_len": 239
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.077+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую файл",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 12,
+        "ts": 1770989840076
+      },
+      "seq": 33
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.078+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую файл как\",\"delta\":\" как\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":13,\"ts\":1770989840077},\"seq\":34}",
+      "_len": 246
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.078+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую файл как",
+          "delta": " как"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 13,
+        "ts": 1770989840077
+      },
+      "seq": 34
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.128+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую файл как вы\",\"delta\":\" вы\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":14,\"ts\":1770989840128},\"seq\":35}",
+      "_len": 248
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.128+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую файл как вы",
+          "delta": " вы"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 14,
+        "ts": 1770989840128
+      },
+      "seq": 35
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.129+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую файл как вы про\",\"delta\":\" про\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":15,\"ts\":1770989840128},\"seq\":36}",
+      "_len": 253
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.129+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую файл как вы про",
+          "delta": " про"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 15,
+        "ts": 1770989840128
+      },
+      "seq": 36
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.213+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую файл как вы проси\",\"delta\":\"си\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":16,\"ts\":1770989840212},\"seq\":37}",
+      "_len": 253
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.213+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую файл как вы проси",
+          "delta": "си"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 16,
+        "ts": 1770989840212
+      },
+      "seq": 37
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.213+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":16,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Я создам и отредактирую файл как вы проси\"}],\"timestamp\":1770989840213}},\"seq\":38}",
+      "_len": 291
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.213+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 16,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Я создам и отредактирую файл как вы проси"
+            }
+          ],
+          "timestamp": 1770989840213
+        }
+      },
+      "seq": 38
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.214+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую файл как вы просили\",\"delta\":\"ли\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":17,\"ts\":1770989840214},\"seq\":39}",
+      "_len": 255
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.214+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую файл как вы просили",
+          "delta": "ли"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 17,
+        "ts": 1770989840214
+      },
+      "seq": 39
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.310+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Я создам и отредактирую файл как вы просили.\",\"delta\":\".\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":18,\"ts\":1770989840309},\"seq\":40}",
+      "_len": 255
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:20.310+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Я создам и отредактирую файл как вы просили.",
+          "delta": "."
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 18,
+        "ts": 1770989840309
+      },
+      "seq": 40
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:21.985+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"tool\",\"data\":{\"phase\":\"start\",\"name\":\"exec\",\"toolCallId\":\"call_00_jyrQHZ8ZggwekUW8B1f7b1Z2\",\"args\":{\"command\":\"echo \\\"hello world\\\" > /tmp/openclaw-test-backup.txt\"}},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":19,\"ts\":1770989841981}}",
+      "_len": 327
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:21.985+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "tool",
+        "data": {
+          "phase": "start",
+          "name": "exec",
+          "toolCallId": "call_00_jyrQHZ8ZggwekUW8B1f7b1Z2",
+          "args": {
+            "command": "echo \"hello world\" > /tmp/openclaw-test-backup.txt"
+          }
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 19,
+        "ts": 1770989841981
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:22.112+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"tool\",\"data\":{\"phase\":\"result\",\"name\":\"exec\",\"toolCallId\":\"call_00_jyrQHZ8ZggwekUW8B1f7b1Z2\",\"meta\":\"echo \\\"hello world\\\" > /tmp/openclaw-test-backup.txt\",\"isError\":false},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":20,\"ts\":1770989842112}}",
+      "_len": 332
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:22.112+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "tool",
+        "data": {
+          "phase": "result",
+          "name": "exec",
+          "toolCallId": "call_00_jyrQHZ8ZggwekUW8B1f7b1Z2",
+          "meta": "echo \"hello world\" > /tmp/openclaw-test-backup.txt",
+          "isError": false
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 20,
+        "ts": 1770989842112
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:23.853+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Те\",\"delta\":\"Те\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":21,\"ts\":1770989843852},\"seq\":41}",
+      "_len": 214
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:23.853+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Те",
+          "delta": "Те"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 21,
+        "ts": 1770989843852
+      },
+      "seq": 41
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:23.853+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":21,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Те\"}],\"timestamp\":1770989843852}},\"seq\":42}",
+      "_len": 252
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:23.853+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 21,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Те"
+            }
+          ],
+          "timestamp": 1770989843852
+        }
+      },
+      "seq": 42
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.164+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь\",\"delta\":\"перь\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":22,\"ts\":1770989844164},\"seq\":43}",
+      "_len": 220
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.164+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь",
+          "delta": "перь"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 22,
+        "ts": 1770989844164
+      },
+      "seq": 43
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.165+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":22,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Теперь\"}],\"timestamp\":1770989844164}},\"seq\":44}",
+      "_len": 256
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.165+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 22,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Теперь"
+            }
+          ],
+          "timestamp": 1770989844164
+        }
+      },
+      "seq": 44
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.224+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь от\",\"delta\":\" от\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":23,\"ts\":1770989844223},\"seq\":45}",
+      "_len": 222
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.224+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь от",
+          "delta": " от"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 23,
+        "ts": 1770989844223
+      },
+      "seq": 45
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.224+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отреда\",\"delta\":\"реда\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":24,\"ts\":1770989844224},\"seq\":46}",
+      "_len": 227
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.224+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отреда",
+          "delta": "реда"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 24,
+        "ts": 1770989844224
+      },
+      "seq": 46
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.287+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредакти\",\"delta\":\"кти\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":25,\"ts\":1770989844286},\"seq\":47}",
+      "_len": 229
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.287+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредакти",
+          "delta": "кти"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 25,
+        "ts": 1770989844286
+      },
+      "seq": 47
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.288+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактиру\",\"delta\":\"ру\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":26,\"ts\":1770989844287},\"seq\":48}",
+      "_len": 230
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.288+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактиру",
+          "delta": "ру"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 26,
+        "ts": 1770989844287
+      },
+      "seq": 48
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.343+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую\",\"delta\":\"ю\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":27,\"ts\":1770989844342},\"seq\":49}",
+      "_len": 230
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.343+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую",
+          "delta": "ю"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 27,
+        "ts": 1770989844342
+      },
+      "seq": 49
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.348+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":27,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Теперь отредактирую\"}],\"timestamp\":1770989844343}},\"seq\":50}",
+      "_len": 269
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.348+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 27,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Теперь отредактирую"
+            }
+          ],
+          "timestamp": 1770989844343
+        }
+      },
+      "seq": 50
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.348+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую фай\",\"delta\":\" фай\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":28,\"ts\":1770989844344},\"seq\":51}",
+      "_len": 237
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.348+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую фай",
+          "delta": " фай"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 28,
+        "ts": 1770989844344
+      },
+      "seq": 51
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.402+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":29,\"ts\":1770989844401},\"seq\":52}",
+      "_len": 235
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.402+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 29,
+        "ts": 1770989844401
+      },
+      "seq": 52
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.403+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл,\",\"delta\":\",\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":30,\"ts\":1770989844402},\"seq\":53}",
+      "_len": 236
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.403+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл,",
+          "delta": ","
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 30,
+        "ts": 1770989844402
+      },
+      "seq": 53
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.462+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, за\",\"delta\":\" за\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":31,\"ts\":1770989844461},\"seq\":54}",
+      "_len": 241
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.462+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, за",
+          "delta": " за"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 31,
+        "ts": 1770989844461
+      },
+      "seq": 54
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.463+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, замени\",\"delta\":\"мени\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":32,\"ts\":1770989844462},\"seq\":55}",
+      "_len": 246
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.463+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, замени",
+          "delta": "мени"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 32,
+        "ts": 1770989844462
+      },
+      "seq": 55
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.523+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив\",\"delta\":\"в\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":33,\"ts\":1770989844523},\"seq\":56}",
+      "_len": 244
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.523+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив",
+          "delta": "в"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 33,
+        "ts": 1770989844523
+      },
+      "seq": 56
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.524+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":33,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Теперь отредактирую файл, заменив\"}],\"timestamp\":1770989844523}},\"seq\":57}",
+      "_len": 283
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.524+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 33,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Теперь отредактирую файл, заменив"
+            }
+          ],
+          "timestamp": 1770989844523
+        }
+      },
+      "seq": 57
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.524+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":34,\"ts\":1770989844524},\"seq\":58}",
+      "_len": 249
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.524+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 34,
+        "ts": 1770989844524
+      },
+      "seq": 58
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.584+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\",\"delta\":\"hello\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":35,\"ts\":1770989844584},\"seq\":59}",
+      "_len": 256
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.585+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello",
+          "delta": "hello"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 35,
+        "ts": 1770989844584
+      },
+      "seq": 59
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.590+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\"\",\"delta\":\"\\\"\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":36,\"ts\":1770989844585},\"seq\":60}",
+      "_len": 255
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.590+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\"",
+          "delta": "\""
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 36,
+        "ts": 1770989844585
+      },
+      "seq": 60
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.641+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на\",\"delta\":\" на\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":37,\"ts\":1770989844640},\"seq\":61}",
+      "_len": 259
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.641+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на",
+          "delta": " на"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 37,
+        "ts": 1770989844640
+      },
+      "seq": 61
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.641+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":38,\"ts\":1770989844641},\"seq\":62}",
+      "_len": 262
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.641+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 38,
+        "ts": 1770989844641
+      },
+      "seq": 62
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.699+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"good\",\"delta\":\"good\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":39,\"ts\":1770989844699},\"seq\":63}",
+      "_len": 267
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.699+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на \"good",
+          "delta": "good"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 39,
+        "ts": 1770989844699
+      },
+      "seq": 63
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.700+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":39,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"good\"}],\"timestamp\":1770989844699}},\"seq\":64}",
+      "_len": 303
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.700+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 39,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Теперь отредактирую файл, заменив \"hello\" на \"good"
+            }
+          ],
+          "timestamp": 1770989844699
+        }
+      },
+      "seq": 64
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.700+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"goodbye\",\"delta\":\"bye\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":40,\"ts\":1770989844700},\"seq\":65}",
+      "_len": 269
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.700+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на \"goodbye",
+          "delta": "bye"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 40,
+        "ts": 1770989844700
+      },
+      "seq": 65
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.816+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Теперь отредактирую файл, заменив \\\"hello\\\" на \\\"goodbye\\\":\",\"delta\":\"\\\":\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":41,\"ts\":1770989844815},\"seq\":66}",
+      "_len": 272
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:24.816+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Теперь отредактирую файл, заменив \"hello\" на \"goodbye\":",
+          "delta": "\":"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 41,
+        "ts": 1770989844815
+      },
+      "seq": 66
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:26.572+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"tool\",\"data\":{\"phase\":\"start\",\"name\":\"exec\",\"toolCallId\":\"call_00_ojzS7GbcR0pCGAZddm13kQz7\",\"args\":{\"command\":\"sed -i 's/hello/goodbye/' /tmp/openclaw-test-backup.txt\"}},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":42,\"ts\":1770989846571}}",
+      "_len": 330
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:26.572+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "tool",
+        "data": {
+          "phase": "start",
+          "name": "exec",
+          "toolCallId": "call_00_ojzS7GbcR0pCGAZddm13kQz7",
+          "args": {
+            "command": "sed -i 's/hello/goodbye/' /tmp/openclaw-test-backup.txt"
+          }
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 42,
+        "ts": 1770989846571
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:26.701+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"tool\",\"data\":{\"phase\":\"result\",\"name\":\"exec\",\"toolCallId\":\"call_00_ojzS7GbcR0pCGAZddm13kQz7\",\"meta\":\"sed -i 's/hello/goodbye/' /tmp/openclaw-test-backup.txt\",\"isError\":false},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":43,\"ts\":1770989846700}}",
+      "_len": 335
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:26.701+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "tool",
+        "data": {
+          "phase": "result",
+          "name": "exec",
+          "toolCallId": "call_00_ojzS7GbcR0pCGAZddm13kQz7",
+          "meta": "sed -i 's/hello/goodbye/' /tmp/openclaw-test-backup.txt",
+          "isError": false
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 43,
+        "ts": 1770989846700
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.022+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"П\",\"delta\":\"П\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":44,\"ts\":1770989848021},\"seq\":67}",
+      "_len": 212
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.022+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "П",
+          "delta": "П"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 44,
+        "ts": 1770989848021
+      },
+      "seq": 67
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.028+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":44,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"П\"}],\"timestamp\":1770989848021}},\"seq\":68}",
+      "_len": 251
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.028+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 44,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "П"
+            }
+          ],
+          "timestamp": 1770989848021
+        }
+      },
+      "seq": 68
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.333+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Пров\",\"delta\":\"ров\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":45,\"ts\":1770989848332},\"seq\":69}",
+      "_len": 217
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.333+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Пров",
+          "delta": "ров"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 45,
+        "ts": 1770989848332
+      },
+      "seq": 69
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.333+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":45,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Пров\"}],\"timestamp\":1770989848332}},\"seq\":70}",
+      "_len": 254
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.333+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 45,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Пров"
+            }
+          ],
+          "timestamp": 1770989848332
+        }
+      },
+      "seq": 70
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.390+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Провер\",\"delta\":\"ер\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":46,\"ts\":1770989848389},\"seq\":71}",
+      "_len": 218
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.390+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Провер",
+          "delta": "ер"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 46,
+        "ts": 1770989848389
+      },
+      "seq": 71
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.452+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Проверю\",\"delta\":\"ю\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":47,\"ts\":1770989848451},\"seq\":72}",
+      "_len": 218
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.452+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Проверю",
+          "delta": "ю"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 47,
+        "ts": 1770989848451
+      },
+      "seq": 72
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.452+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Проверю содержи\",\"delta\":\" содержи\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":48,\"ts\":1770989848452},\"seq\":73}",
+      "_len": 233
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.452+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Проверю содержи",
+          "delta": " содержи"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 48,
+        "ts": 1770989848452
+      },
+      "seq": 73
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.508+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Проверю содержимое\",\"delta\":\"мое\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":49,\"ts\":1770989848507},\"seq\":74}",
+      "_len": 231
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.508+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Проверю содержимое",
+          "delta": "мое"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 49,
+        "ts": 1770989848507
+      },
+      "seq": 74
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.508+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":49,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Проверю содержимое\"}],\"timestamp\":1770989848508}},\"seq\":75}",
+      "_len": 268
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.508+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 49,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Проверю содержимое"
+            }
+          ],
+          "timestamp": 1770989848508
+        }
+      },
+      "seq": 75
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.509+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Проверю содержимое фай\",\"delta\":\" фай\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":50,\"ts\":1770989848508},\"seq\":76}",
+      "_len": 236
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.509+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Проверю содержимое фай",
+          "delta": " фай"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 50,
+        "ts": 1770989848508
+      },
+      "seq": 76
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.568+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Проверю содержимое файла\",\"delta\":\"ла\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":51,\"ts\":1770989848568},\"seq\":77}",
+      "_len": 236
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.569+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Проверю содержимое файла",
+          "delta": "ла"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 51,
+        "ts": 1770989848568
+      },
+      "seq": 77
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.634+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Проверю содержимое файла:\",\"delta\":\":\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":52,\"ts\":1770989848634},\"seq\":78}",
+      "_len": 236
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:28.634+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Проверю содержимое файла:",
+          "delta": ":"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 52,
+        "ts": 1770989848634
+      },
+      "seq": 78
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:30.133+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"tool\",\"data\":{\"phase\":\"start\",\"name\":\"exec\",\"toolCallId\":\"call_00_LUvCHeNsNMRfZ65uPccJM3e7\",\"args\":{\"command\":\"cat /tmp/openclaw-test-backup.txt\"}},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":53,\"ts\":1770989850133}}",
+      "_len": 308
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:30.134+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "tool",
+        "data": {
+          "phase": "start",
+          "name": "exec",
+          "toolCallId": "call_00_LUvCHeNsNMRfZ65uPccJM3e7",
+          "args": {
+            "command": "cat /tmp/openclaw-test-backup.txt"
+          }
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 53,
+        "ts": 1770989850133
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:30.263+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"tool\",\"data\":{\"phase\":\"update\",\"name\":\"exec\",\"toolCallId\":\"call_00_LUvCHeNsNMRfZ65uPccJM3e7\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":54,\"ts\":1770989850263}}",
+      "_len": 254
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:30.263+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "tool",
+        "data": {
+          "phase": "update",
+          "name": "exec",
+          "toolCallId": "call_00_LUvCHeNsNMRfZ65uPccJM3e7"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 54,
+        "ts": 1770989850263
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:30.265+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"tool\",\"data\":{\"phase\":\"result\",\"name\":\"exec\",\"toolCallId\":\"call_00_LUvCHeNsNMRfZ65uPccJM3e7\",\"meta\":\"cat /tmp/openclaw-test-backup.txt\",\"isError\":false},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":55,\"ts\":1770989850264}}",
+      "_len": 313
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:30.265+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "tool",
+        "data": {
+          "phase": "result",
+          "name": "exec",
+          "toolCallId": "call_00_LUvCHeNsNMRfZ65uPccJM3e7",
+          "meta": "cat /tmp/openclaw-test-backup.txt",
+          "isError": false
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 55,
+        "ts": 1770989850264
+      }
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:31.958+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Г\",\"delta\":\"Г\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":56,\"ts\":1770989851958},\"seq\":79}",
+      "_len": 212
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:31.959+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Г",
+          "delta": "Г"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 56,
+        "ts": 1770989851958
+      },
+      "seq": 79
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:31.959+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":56,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Г\"}],\"timestamp\":1770989851958}},\"seq\":80}",
+      "_len": 251
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:31.959+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 56,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Г"
+            }
+          ],
+          "timestamp": 1770989851958
+        }
+      },
+      "seq": 80
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.250+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готов\",\"delta\":\"отов\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":57,\"ts\":1770989852250},\"seq\":81}",
+      "_len": 219
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.251+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готов",
+          "delta": "отов"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 57,
+        "ts": 1770989852250
+      },
+      "seq": 81
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.251+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":57,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готов\"}],\"timestamp\":1770989852250}},\"seq\":82}",
+      "_len": 255
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.251+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 57,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готов"
+            }
+          ],
+          "timestamp": 1770989852250
+        }
+      },
+      "seq": 82
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.320+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово\",\"delta\":\"о\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":58,\"ts\":1770989852319},\"seq\":83}",
+      "_len": 217
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.320+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово",
+          "delta": "о"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 58,
+        "ts": 1770989852319
+      },
+      "seq": 83
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.321+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово!\",\"delta\":\"!\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":59,\"ts\":1770989852320},\"seq\":84}",
+      "_len": 218
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.321+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово!",
+          "delta": "!"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 59,
+        "ts": 1770989852320
+      },
+      "seq": 84
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.376+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Ф\",\"delta\":\" Ф\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":60,\"ts\":1770989852375},\"seq\":85}",
+      "_len": 221
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.376+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Ф",
+          "delta": " Ф"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 60,
+        "ts": 1770989852375
+      },
+      "seq": 85
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.376+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Фай\",\"delta\":\"ай\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":61,\"ts\":1770989852376},\"seq\":86}",
+      "_len": 223
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.376+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Фай",
+          "delta": "ай"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 61,
+        "ts": 1770989852376
+      },
+      "seq": 86
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.431+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":62,\"ts\":1770989852431},\"seq\":87}",
+      "_len": 223
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.432+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 62,
+        "ts": 1770989852431
+      },
+      "seq": 87
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.432+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":62,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Файл\"}],\"timestamp\":1770989852431}},\"seq\":88}",
+      "_len": 262
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.432+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 62,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Файл"
+            }
+          ],
+          "timestamp": 1770989852431
+        }
+      },
+      "seq": 88
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.432+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/\",\"delta\":\" `/\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":63,\"ts\":1770989852432},\"seq\":89}",
+      "_len": 228
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.432+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/",
+          "delta": " `/"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 63,
+        "ts": 1770989852432
+      },
+      "seq": 89
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.515+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp\",\"delta\":\"tmp\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":64,\"ts\":1770989852514},\"seq\":90}",
+      "_len": 231
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.515+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp",
+          "delta": "tmp"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 64,
+        "ts": 1770989852514
+      },
+      "seq": 90
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.515+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/open\",\"delta\":\"/open\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":65,\"ts\":1770989852515},\"seq\":91}",
+      "_len": 238
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.515+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/open",
+          "delta": "/open"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 65,
+        "ts": 1770989852515
+      },
+      "seq": 91
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.552+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/opencl\",\"delta\":\"cl\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":66,\"ts\":1770989852551},\"seq\":92}",
+      "_len": 237
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.552+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/opencl",
+          "delta": "cl"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 66,
+        "ts": 1770989852551
+      },
+      "seq": 92
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.552+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw\",\"delta\":\"aw\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":67,\"ts\":1770989852552},\"seq\":93}",
+      "_len": 239
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.552+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw",
+          "delta": "aw"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 67,
+        "ts": 1770989852552
+      },
+      "seq": 93
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.646+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test\",\"delta\":\"-test\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":68,\"ts\":1770989852645},\"seq\":94}",
+      "_len": 247
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.646+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test",
+          "delta": "-test"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 68,
+        "ts": 1770989852645
+      },
+      "seq": 94
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.651+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":68,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Файл `/tmp/openclaw-test\"}],\"timestamp\":1770989852645}},\"seq\":95}",
+      "_len": 282
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.651+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 68,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Файл `/tmp/openclaw-test"
+            }
+          ],
+          "timestamp": 1770989852645
+        }
+      },
+      "seq": 95
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.651+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-back\",\"delta\":\"-back\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":69,\"ts\":1770989852646},\"seq\":96}",
+      "_len": 252
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.651+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-back",
+          "delta": "-back"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 69,
+        "ts": 1770989852646
+      },
+      "seq": 96
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.669+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup\",\"delta\":\"up\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":70,\"ts\":1770989852668},\"seq\":97}",
+      "_len": 251
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.669+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup",
+          "delta": "up"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 70,
+        "ts": 1770989852668
+      },
+      "seq": 97
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.669+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt\",\"delta\":\".txt\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":71,\"ts\":1770989852669},\"seq\":98}",
+      "_len": 257
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.669+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt",
+          "delta": ".txt"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 71,
+        "ts": 1770989852669
+      },
+      "seq": 98
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.729+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt`\",\"delta\":\"`\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":72,\"ts\":1770989852729},\"seq\":99}",
+      "_len": 255
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.729+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt`",
+          "delta": "`"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 72,
+        "ts": 1770989852729
+      },
+      "seq": 99
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.730+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` созда\",\"delta\":\" созда\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":73,\"ts\":1770989852729},\"seq\":100}",
+      "_len": 267
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.730+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` созда",
+          "delta": " созда"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 73,
+        "ts": 1770989852729
+      },
+      "seq": 100
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.790+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан\",\"delta\":\"н\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":74,\"ts\":1770989852789},\"seq\":101}",
+      "_len": 263
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.790+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан",
+          "delta": "н"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 74,
+        "ts": 1770989852789
+      },
+      "seq": 101
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.790+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и\",\"delta\":\" и\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":75,\"ts\":1770989852790},\"seq\":102}",
+      "_len": 266
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.790+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и",
+          "delta": " и"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 75,
+        "ts": 1770989852790
+      },
+      "seq": 102
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.853+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и от\",\"delta\":\" от\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":76,\"ts\":1770989852853},\"seq\":103}",
+      "_len": 270
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.853+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и от",
+          "delta": " от"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 76,
+        "ts": 1770989852853
+      },
+      "seq": 103
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.854+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":76,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и от\"}],\"timestamp\":1770989852853}},\"seq\":104}",
+      "_len": 307
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.854+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 76,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и от"
+            }
+          ],
+          "timestamp": 1770989852853
+        }
+      },
+      "seq": 104
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.859+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отреда\",\"delta\":\"реда\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":77,\"ts\":1770989852854},\"seq\":105}",
+      "_len": 275
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.860+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отреда",
+          "delta": "реда"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 77,
+        "ts": 1770989852854
+      },
+      "seq": 105
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.910+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредакти\",\"delta\":\"кти\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":78,\"ts\":1770989852910},\"seq\":106}",
+      "_len": 277
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.910+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредакти",
+          "delta": "кти"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 78,
+        "ts": 1770989852910
+      },
+      "seq": 106
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.911+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован\",\"delta\":\"рован\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":79,\"ts\":1770989852910},\"seq\":107}",
+      "_len": 284
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.911+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован",
+          "delta": "рован"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 79,
+        "ts": 1770989852910
+      },
+      "seq": 107
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.971+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован.\",\"delta\":\".\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":80,\"ts\":1770989852970},\"seq\":108}",
+      "_len": 281
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.971+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован.",
+          "delta": "."
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 80,
+        "ts": 1770989852970
+      },
+      "seq": 108
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.971+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. И\",\"delta\":\" И\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":81,\"ts\":1770989852971},\"seq\":109}",
+      "_len": 284
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:32.971+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. И",
+          "delta": " И"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 81,
+        "ts": 1770989852971
+      },
+      "seq": 109
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.138+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изнача\",\"delta\":\"знача\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":82,\"ts\":1770989853137},\"seq\":110}",
+      "_len": 292
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.138+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изнача",
+          "delta": "знача"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 82,
+        "ts": 1770989853137
+      },
+      "seq": 110
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.138+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":82,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изнача\"}],\"timestamp\":1770989853138}},\"seq\":111}",
+      "_len": 327
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.138+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 82,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изнача"
+            }
+          ],
+          "timestamp": 1770989853138
+        }
+      },
+      "seq": 111
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.139+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально\",\"delta\":\"льно\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":83,\"ts\":1770989853139},\"seq\":112}",
+      "_len": 295
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.139+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально",
+          "delta": "льно"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 83,
+        "ts": 1770989853139
+      },
+      "seq": 112
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.190+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он\",\"delta\":\" он\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":84,\"ts\":1770989853190},\"seq\":113}",
+      "_len": 297
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.191+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он",
+          "delta": " он"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 84,
+        "ts": 1770989853190
+      },
+      "seq": 113
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.191+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержа\",\"delta\":\" содержа\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":85,\"ts\":1770989853190},\"seq\":114}",
+      "_len": 310
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.191+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержа",
+          "delta": " содержа"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 85,
+        "ts": 1770989853190
+      },
+      "seq": 114
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.208+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал\",\"delta\":\"л\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":86,\"ts\":1770989853207},\"seq\":115}",
+      "_len": 304
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.208+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал",
+          "delta": "л"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 86,
+        "ts": 1770989853207
+      },
+      "seq": 115
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.208+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":87,\"ts\":1770989853208},\"seq\":116}",
+      "_len": 309
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.208+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 87,
+        "ts": 1770989853208
+      },
+      "seq": 116
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.301+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello\",\"delta\":\"hello\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":88,\"ts\":1770989853301},\"seq\":117}",
+      "_len": 316
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.302+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello",
+          "delta": "hello"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 88,
+        "ts": 1770989853301
+      },
+      "seq": 117
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.302+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":88,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello\"}],\"timestamp\":1770989853301}},\"seq\":118}",
+      "_len": 351
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.302+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 88,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello"
+            }
+          ],
+          "timestamp": 1770989853301
+        }
+      },
+      "seq": 118
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.302+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\",\"delta\":\" world\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":89,\"ts\":1770989853302},\"seq\":119}",
+      "_len": 323
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.302+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world",
+          "delta": " world"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 89,
+        "ts": 1770989853302
+      },
+      "seq": 119
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.336+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\",\",\"delta\":\"\\\",\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":90,\"ts\":1770989853335},\"seq\":120}",
+      "_len": 323
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.336+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\",",
+          "delta": "\","
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 90,
+        "ts": 1770989853335
+      },
+      "seq": 120
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.337+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а\",\"delta\":\" а\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":91,\"ts\":1770989853336},\"seq\":121}",
+      "_len": 324
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.337+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а",
+          "delta": " а"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 91,
+        "ts": 1770989853336
+      },
+      "seq": 121
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.359+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"tick\",\"payload\":{\"ts\":1770989853359},\"seq\":122}",
+      "_len": 72
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.359+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "tick",
+      "payload": {
+        "ts": 1770989853359
+      },
+      "seq": 122
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.392+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь\",\"delta\":\" теперь\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":92,\"ts\":1770989853392},\"seq\":123}",
+      "_len": 336
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.392+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь",
+          "delta": " теперь"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 92,
+        "ts": 1770989853392
+      },
+      "seq": 123
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.393+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь содержит\",\"delta\":\" содержит\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":93,\"ts\":1770989853392},\"seq\":124}",
+      "_len": 347
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.393+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь содержит",
+          "delta": " содержит"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 93,
+        "ts": 1770989853392
+      },
+      "seq": 124
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.447+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь содержит \\\"\",\"delta\":\" \\\"\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":94,\"ts\":1770989853446},\"seq\":125}",
+      "_len": 344
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.447+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь содержит \"",
+          "delta": " \""
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 94,
+        "ts": 1770989853446
+      },
+      "seq": 125
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.447+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь содержит \\\"good\",\"delta\":\"good\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":95,\"ts\":1770989853447},\"seq\":126}",
+      "_len": 349
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.447+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь содержит \"good",
+          "delta": "good"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 95,
+        "ts": 1770989853447
+      },
+      "seq": 126
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.508+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь содержит \\\"goodbye\",\"delta\":\"bye\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":96,\"ts\":1770989853508},\"seq\":127}",
+      "_len": 351
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.509+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь содержит \"goodbye",
+          "delta": "bye"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 96,
+        "ts": 1770989853508
+      },
+      "seq": 127
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.509+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":96,\"state\":\"delta\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь содержит \\\"goodbye\"}],\"timestamp\":1770989853508}},\"seq\":128}",
+      "_len": 388
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.509+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 96,
+        "state": "delta",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь содержит \"goodbye"
+            }
+          ],
+          "timestamp": 1770989853508
+        }
+      },
+      "seq": 128
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.509+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь содержит \\\"goodbye world\",\"delta\":\" world\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":97,\"ts\":1770989853509},\"seq\":129}",
+      "_len": 360
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.509+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь содержит \"goodbye world",
+          "delta": " world"
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 97,
+        "ts": 1770989853509
+      },
+      "seq": 129
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.570+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"assistant\",\"data\":{\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь содержит \\\"goodbye world\\\".\",\"delta\":\"\\\".\"},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":98,\"ts\":1770989853569},\"seq\":130}",
+      "_len": 360
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.570+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "assistant",
+        "data": {
+          "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь содержит \"goodbye world\".",
+          "delta": "\"."
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 98,
+        "ts": 1770989853569
+      },
+      "seq": 130
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.576+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"agent\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"stream\":\"lifecycle\",\"data\":{\"phase\":\"end\",\"endedAt\":1770989853576},\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":99,\"ts\":1770989853576},\"seq\":131}",
+      "_len": 228
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.577+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "agent",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "stream": "lifecycle",
+        "data": {
+          "phase": "end",
+          "endedAt": 1770989853576
+        },
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 99,
+        "ts": 1770989853576
+      },
+      "seq": 131
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.577+00:00",
+    "dir": "recv_raw",
+    "data": {
+      "_raw": "{\"type\":\"event\",\"event\":\"chat\",\"payload\":{\"runId\":\"debug-6bb3b08108e241d4\",\"sessionKey\":\"agent:main:debug-c84066cc7c6e\",\"seq\":99,\"state\":\"final\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \\\"hello world\\\", а теперь содержит \\\"goodbye world\\\".\"}],\"timestamp\":1770989853576}},\"seq\":132}",
+      "_len": 397
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.577+00:00",
+    "dir": "recv",
+    "data": {
+      "type": "event",
+      "event": "chat",
+      "payload": {
+        "runId": "debug-6bb3b08108e241d4",
+        "sessionKey": "agent:main:debug-c84066cc7c6e",
+        "seq": 99,
+        "state": "final",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Готово! Файл `/tmp/openclaw-test-backup.txt` создан и отредактирован. Изначально он содержал \"hello world\", а теперь содержит \"goodbye world\"."
+            }
+          ],
+          "timestamp": 1770989853576
+        }
+      },
+      "seq": 132
+    }
+  },
+  {
+    "ts": "2026-02-13T13:37:33.577+00:00",
+    "dir": "info",
+    "data": {
+      "message": "Ответ получен (final)"
+    }
+  }
+]
