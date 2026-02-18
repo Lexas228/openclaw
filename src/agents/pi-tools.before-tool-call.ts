@@ -3,10 +3,15 @@ import { createSubsystemLogger } from "../logging/subsystem.js";
 import { getGlobalHookRunner } from "../plugins/hook-runner-global.js";
 import { isPlainObject } from "../utils.js";
 import { normalizeToolName } from "./tool-policy.js";
+import {
+  type ToolApprovalRuntimeConfig,
+  maybeRequireToolApproval,
+} from "./tool-approval.js";
 
 type HookContext = {
   agentId?: string;
   sessionKey?: string;
+  toolApproval?: ToolApprovalRuntimeConfig;
 };
 
 type HookOutcome = { blocked: true; reason: string } | { blocked: false; params: unknown };
@@ -23,46 +28,56 @@ export async function runBeforeToolCallHook(args: {
   ctx?: HookContext;
 }): Promise<HookOutcome> {
   const toolName = normalizeToolName(args.toolName || "tool");
-  const params = args.params;
+  let nextParams = args.params;
 
   const hookRunner = getGlobalHookRunner();
-  if (!hookRunner?.hasHooks("before_tool_call")) {
-    return { blocked: false, params: args.params };
-  }
+  if (hookRunner?.hasHooks("before_tool_call")) {
+    try {
+      const normalizedParams = isPlainObject(nextParams) ? nextParams : {};
+      const hookResult = await hookRunner.runBeforeToolCall(
+        {
+          toolName,
+          params: normalizedParams,
+        },
+        {
+          toolName,
+          agentId: args.ctx?.agentId,
+          sessionKey: args.ctx?.sessionKey,
+        },
+      );
 
-  try {
-    const normalizedParams = isPlainObject(params) ? params : {};
-    const hookResult = await hookRunner.runBeforeToolCall(
-      {
-        toolName,
-        params: normalizedParams,
-      },
-      {
-        toolName,
-        agentId: args.ctx?.agentId,
-        sessionKey: args.ctx?.sessionKey,
-      },
-    );
-
-    if (hookResult?.block) {
-      return {
-        blocked: true,
-        reason: hookResult.blockReason || "Tool call blocked by plugin hook",
-      };
-    }
-
-    if (hookResult?.params && isPlainObject(hookResult.params)) {
-      if (isPlainObject(params)) {
-        return { blocked: false, params: { ...params, ...hookResult.params } };
+      if (hookResult?.block) {
+        return {
+          blocked: true,
+          reason: hookResult.blockReason || "Tool call blocked by plugin hook",
+        };
       }
-      return { blocked: false, params: hookResult.params };
+
+      if (hookResult?.params && isPlainObject(hookResult.params)) {
+        if (isPlainObject(nextParams)) {
+          nextParams = { ...nextParams, ...hookResult.params };
+        } else {
+          nextParams = hookResult.params;
+        }
+      }
+    } catch (err) {
+      const toolCallId = args.toolCallId ? ` toolCallId=${args.toolCallId}` : "";
+      log.warn(`before_tool_call hook failed: tool=${toolName}${toolCallId} error=${String(err)}`);
     }
-  } catch (err) {
-    const toolCallId = args.toolCallId ? ` toolCallId=${args.toolCallId}` : "";
-    log.warn(`before_tool_call hook failed: tool=${toolName}${toolCallId} error=${String(err)}`);
   }
 
-  return { blocked: false, params };
+  const approval = await maybeRequireToolApproval({
+    toolName,
+    args: nextParams,
+    cfg: args.ctx?.toolApproval,
+    agentId: args.ctx?.agentId,
+    sessionKey: args.ctx?.sessionKey,
+  });
+  if (!approval.allowed) {
+    return { blocked: true, reason: approval.reason };
+  }
+
+  return { blocked: false, params: nextParams };
 }
 
 export function wrapToolWithBeforeToolCallHook(

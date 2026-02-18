@@ -22,15 +22,57 @@ import {
 import { inferToolMetaFromArgs } from "./pi-embedded-utils.js";
 import { buildToolMutationState, isSameToolMutationAction } from "./tool-mutation.js";
 import { normalizeToolName } from "./tool-policy.js";
+import { callGatewayTool } from "./tools/gateway.js";
 
 /** Tools that modify files — we create a backup before these run. */
-const FILE_MUTATING_TOOLS = new Set(["write", "edit"]);
+const FILE_MUTATING_TOOLS = new Set(["write", "edit", "apply_patch"]);
 
 /** Backup directory under ~/.openclaw/backups/. Created once lazily. */
 const BACKUP_DIR = path.join(os.homedir(), ".openclaw", "backups");
 let backupDirEnsured = false;
 
-type FileBackupResult = { backupPath: string; originalSize: number };
+type FileBackupResult = { backupPath: string; originalSize?: number };
+
+async function resolvePendingBaselineBackupPath(
+  sessionKey: string | undefined,
+  filePath: string,
+  log: { debug: (msg: string) => void },
+): Promise<string | null> {
+  const normalizedSessionKey =
+    typeof sessionKey === "string" && sessionKey.trim() ? sessionKey.trim() : "";
+  const normalizedPath = filePath.trim();
+  if (!normalizedSessionKey || !normalizedPath) {
+    return null;
+  }
+  try {
+    const raw = await callGatewayTool<{ pending?: unknown }>(
+      "chat.files.pending",
+      {},
+      { sessionKey: normalizedSessionKey },
+    );
+    const pending = Array.isArray(raw?.pending) ? raw.pending : [];
+    const matched = pending.find((entry) => {
+      if (!entry || typeof entry !== "object") {
+        return false;
+      }
+      const record = entry as Record<string, unknown>;
+      return typeof record.path === "string" && record.path.trim() === normalizedPath;
+    });
+    if (!matched || typeof matched !== "object") {
+      return null;
+    }
+    const backupPath =
+      typeof (matched as Record<string, unknown>).backupPath === "string"
+        ? (matched as Record<string, unknown>).backupPath.trim()
+        : "";
+    return backupPath || null;
+  } catch (error) {
+    log.debug(
+      `file backup pending lookup failed: sessionKey=${normalizedSessionKey} path=${normalizedPath} error=${String(error)}`,
+    );
+    return null;
+  }
+}
 
 /**
  * Create a backup copy of a file before a mutating tool modifies it.
@@ -142,15 +184,29 @@ export async function handleToolExecutionStart(
     `embedded run tool start: runId=${ctx.params.runId} tool=${toolName} toolCallId=${toolCallId}`,
   );
 
-  // Create a backup of the file before mutating tools (write/edit) modify it.
+  // Create a backup of the file before mutating tools (write/edit/apply_patch) modify it.
   // The backup path is included in the tool start event so WS clients can
   // fetch it via SSH for diff display or undo. No TTL — client deletes after use.
   let backup: FileBackupResult | null = null;
+  let beforePath: string | null = null;
   if (FILE_MUTATING_TOOLS.has(toolName)) {
     const record = args && typeof args === "object" ? (args as Record<string, unknown>) : {};
     const filePath = typeof record.path === "string" ? record.path.trim() : "";
     if (filePath) {
-      backup = await createFileBackup(filePath, toolCallId, ctx.log);
+      beforePath = filePath;
+      const baselineBackupPath = await resolvePendingBaselineBackupPath(
+        ctx.params.sessionKey,
+        filePath,
+        ctx.log,
+      );
+      if (baselineBackupPath) {
+        backup = { backupPath: baselineBackupPath };
+        ctx.log.debug(
+          `file backup reused from pending: tool_call=${toolCallId} path=${filePath} backup=${baselineBackupPath}`,
+        );
+      } else {
+        backup = await createFileBackup(filePath, toolCallId, ctx.log);
+      }
     }
   }
 
@@ -163,7 +219,15 @@ export async function handleToolExecutionStart(
       name: toolName,
       toolCallId,
       args: args as Record<string, unknown>,
-      ...(backup ? { beforeBackupPath: backup.backupPath, beforeSize: backup.originalSize } : {}),
+      ...(backup && beforePath
+        ? {
+            beforeFile: {
+              path: beforePath,
+              backupPath: backup.backupPath,
+              ...(typeof backup.originalSize === "number" ? { size: backup.originalSize } : {}),
+            },
+          }
+        : {}),
     },
   });
   // Best-effort typing signal; do not block tool summaries on slow emitters.

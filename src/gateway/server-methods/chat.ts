@@ -28,6 +28,8 @@ import {
   errorShape,
   formatValidationErrors,
   validateChatAbortParams,
+  validateChatFilesPendingParams,
+  validateChatFilesResolveParams,
   validateChatHistoryParams,
   validateChatInjectParams,
   validateChatSendParams,
@@ -431,8 +433,90 @@ export const chatHandlers: GatewayRequestHandlers = {
       sessionKey,
       sessionId,
       messages: capped,
+      pendingFileApprovals: context.fileChangeApprovalManager?.listPending(sessionKey) ?? [],
       thinkingLevel,
       verboseLevel,
+    });
+  },
+  "chat.files.pending": ({ params, respond, context }) => {
+    if (!validateChatFilesPendingParams(params)) {
+      respond(
+        false,
+        undefined,
+        errorShape(
+          ErrorCodes.INVALID_REQUEST,
+          `invalid chat.files.pending params: ${formatValidationErrors(
+            validateChatFilesPendingParams.errors,
+          )}`,
+        ),
+      );
+      return;
+    }
+    const { sessionKey: rawSessionKey } = params as { sessionKey: string };
+    const { canonicalKey } = loadSessionEntry(rawSessionKey);
+    const sessionKey = canonicalKey || rawSessionKey;
+    const pending = context.fileChangeApprovalManager?.listPending(sessionKey) ?? [];
+    respond(true, { sessionKey, pending });
+  },
+  "chat.files.resolve": ({ params, respond, context, client }) => {
+    if (!validateChatFilesResolveParams(params)) {
+      respond(
+        false,
+        undefined,
+        errorShape(
+          ErrorCodes.INVALID_REQUEST,
+          `invalid chat.files.resolve params: ${formatValidationErrors(
+            validateChatFilesResolveParams.errors,
+          )}`,
+        ),
+      );
+      return;
+    }
+    if (!context.fileChangeApprovalManager) {
+      respond(
+        false,
+        undefined,
+        errorShape(ErrorCodes.UNAVAILABLE, "file approvals are unavailable"),
+      );
+      return;
+    }
+    const p = params as {
+      sessionKey: string;
+      id?: string;
+      toolCallId?: string;
+      decision: "accept" | "rollback";
+    };
+    if ((!p.id || !p.id.trim()) && (!p.toolCallId || !p.toolCallId.trim())) {
+      respond(
+        false,
+        undefined,
+        errorShape(ErrorCodes.INVALID_REQUEST, "id or toolCallId is required"),
+      );
+      return;
+    }
+    const { canonicalKey } = loadSessionEntry(p.sessionKey);
+    const sessionKey = canonicalKey || p.sessionKey;
+    const resolved = context.fileChangeApprovalManager.resolvePendingChange({
+      sessionKey,
+      decision: p.decision,
+      id: p.id,
+      toolCallId: p.toolCallId,
+    });
+    if (!resolved.ok) {
+      respond(false, undefined, errorShape(ErrorCodes.INVALID_REQUEST, resolved.error));
+      return;
+    }
+    const resolvedBy = client?.connect?.client?.displayName ?? client?.connect?.client?.id ?? null;
+    respond(true, {
+      ok: true,
+      sessionKey,
+      resolved: {
+        ...resolved.record,
+        decision: p.decision,
+        resolvedAtMs: Date.now(),
+        resolvedBy,
+      },
+      pending: context.fileChangeApprovalManager.listPending(sessionKey),
     });
   },
   "chat.abort": ({ params, respond, context }) => {

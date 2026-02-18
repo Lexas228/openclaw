@@ -61,6 +61,40 @@ export const ChatInjectParamsSchema = Type.Object(
   { additionalProperties: false },
 );
 
+export const ChatFilesPendingParamsSchema = Type.Object(
+  {
+    sessionKey: NonEmptyString,
+  },
+  { additionalProperties: false },
+);
+
+export const ChatFilesResolveParamsSchema = Type.Object(
+  {
+    sessionKey: NonEmptyString,
+    id: Type.Optional(NonEmptyString),
+    toolCallId: Type.Optional(NonEmptyString),
+    decision: Type.Union([Type.Literal("accept"), Type.Literal("rollback")]),
+  },
+  { additionalProperties: false },
+);
+
+export const ChatFileApprovalSchema = Type.Object(
+  {
+    id: NonEmptyString,
+    sessionKey: NonEmptyString,
+    path: NonEmptyString,
+    backupPath: NonEmptyString,
+    firstToolCallId: NonEmptyString,
+    lastToolCallId: NonEmptyString,
+    runId: NonEmptyString,
+    toolName: NonEmptyString,
+    changesCount: Type.Integer({ minimum: 1 }),
+    createdAtMs: Type.Integer({ minimum: 0 }),
+    updatedAtMs: Type.Integer({ minimum: 0 }),
+  },
+  { additionalProperties: false },
+);
+
 export const ChatEventSchema = Type.Object(
   {
     runId: NonEmptyString,

@@ -93,6 +93,9 @@ import type {
 import type {
   ChatAbortParamsSchema,
   ChatEventSchema,
+  ChatFileApprovalSchema,
+  ChatFilesPendingParamsSchema,
+  ChatFilesResolveParamsSchema,
   ChatInjectParamsSchema,
   LogsTailParamsSchema,
   LogsTailResultSchema,
@@ -238,6 +241,9 @@ export type DeviceTokenRotateParams = Static<typeof DeviceTokenRotateParamsSchem
 export type DeviceTokenRevokeParams = Static<typeof DeviceTokenRevokeParamsSchema>;
 export type ChatAbortParams = Static<typeof ChatAbortParamsSchema>;
 export type ChatInjectParams = Static<typeof ChatInjectParamsSchema>;
+export type ChatFilesPendingParams = Static<typeof ChatFilesPendingParamsSchema>;
+export type ChatFilesResolveParams = Static<typeof ChatFilesResolveParamsSchema>;
+export type ChatFileApproval = Static<typeof ChatFileApprovalSchema>;
 export type ChatEvent = Static<typeof ChatEventSchema>;
 export type UpdateRunParams = Static<typeof UpdateRunParamsSchema>;
 export type TickEvent = Static<typeof TickEventSchema>;

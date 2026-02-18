@@ -50,6 +50,10 @@ import { runOnboardingWizard } from "../wizard/onboarding.js";
 import { createAuthRateLimiter, type AuthRateLimiter } from "./auth-rate-limit.js";
 import { startGatewayConfigReloader } from "./config-reload.js";
 import { ExecApprovalManager } from "./exec-approval-manager.js";
+import {
+  FileChangeApprovalManager,
+  resolveDefaultFileChangeApprovalsDbPath,
+} from "./file-change-approval-manager.js";
 import { NodeRegistry } from "./node-registry.js";
 import { createChannelManager } from "./server-channels.js";
 import { createAgentEventHandler } from "./server-chat.js";
@@ -474,6 +478,9 @@ export async function startGatewayServer(
     }));
   }
 
+  const fileChangeApprovalManager = new FileChangeApprovalManager({
+    dbPath: resolveDefaultFileChangeApprovalsDbPath(),
+  });
   const agentUnsub = minimalTestGateway
     ? null
     : onAgentEvent(
@@ -486,6 +493,7 @@ export async function startGatewayServer(
           resolveSessionKeyForRun,
           clearAgentRunContext,
           toolEventRecipients,
+          fileChangeApprovalManager,
         }),
       );
 
@@ -552,6 +560,7 @@ export async function startGatewayServer(
       cron,
       cronStorePath,
       execApprovalManager,
+      fileChangeApprovalManager,
       loadGatewayModelCatalog,
       getHealthCache,
       refreshHealthSnapshot: refreshGatewayHealthSnapshot,
@@ -720,6 +729,7 @@ export async function startGatewayServer(
       }
       skillsChangeUnsub();
       authRateLimiter?.dispose();
+      fileChangeApprovalManager.close();
       await close(opts);
     },
   };

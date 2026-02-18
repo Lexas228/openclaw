@@ -1,15 +1,22 @@
-import { describe, expect, it, vi } from "vitest";
+import fs from "node:fs/promises";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+vi.mock("./tools/gateway.js", () => ({
+  callGatewayTool: vi.fn(),
+}));
 import { handleToolExecutionStart } from "./pi-embedded-subscribe.handlers.tools.js";
+import { callGatewayTool } from "./tools/gateway.js";
 
 function createTestContext() {
   const onBlockReplyFlush = vi.fn();
   const warn = vi.fn();
+  const onAgentEvent = vi.fn();
   const ctx = {
     params: {
       runId: "run-test",
       onBlockReplyFlush,
-      onAgentEvent: undefined,
+      onAgentEvent,
       onToolResult: undefined,
+      sessionKey: "main",
     },
     flushBlockReplyBuffer: vi.fn(),
     hookRunner: undefined,
@@ -31,10 +38,14 @@ function createTestContext() {
     trimMessagingToolSent: vi.fn(),
   } as const;
 
-  return { ctx, warn, onBlockReplyFlush };
+  return { ctx, warn, onBlockReplyFlush, onAgentEvent };
 }
 
 describe("handleToolExecutionStart read path checks", () => {
+  beforeEach(() => {
+    vi.mocked(callGatewayTool).mockReset();
+  });
+
   it("does not warn when read tool uses file_path alias", async () => {
     const { ctx, warn, onBlockReplyFlush } = createTestContext();
 
@@ -67,5 +78,39 @@ describe("handleToolExecutionStart read path checks", () => {
 
     expect(warn).toHaveBeenCalledTimes(1);
     expect(String(warn.mock.calls[0]?.[0] ?? "")).toContain("read tool called without path");
+  });
+
+  it("reuses baseline backup from pending approvals and skips local backup creation", async () => {
+    const { ctx } = createTestContext();
+    vi.mocked(callGatewayTool).mockResolvedValue({
+      sessionKey: "main",
+      pending: [
+        {
+          id: "pending-1",
+          sessionKey: "main",
+          path: "/tmp/example.txt",
+          backupPath: "/tmp/baseline.bak",
+        },
+      ],
+    } as never);
+    const statSpy = vi.spyOn(fs, "stat");
+
+    await handleToolExecutionStart(
+      ctx as never,
+      {
+        type: "tool_execution_start",
+        toolName: "write",
+        toolCallId: "tool-3",
+        args: { path: "/tmp/example.txt", content: "updated" },
+      } as never,
+    );
+
+    expect(callGatewayTool).toHaveBeenCalledWith(
+      "chat.files.pending",
+      {},
+      { sessionKey: "main" },
+    );
+    expect(statSpy).not.toHaveBeenCalled();
+    statSpy.mockRestore();
   });
 });

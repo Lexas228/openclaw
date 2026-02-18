@@ -356,6 +356,17 @@ const ToolFsSchema = z
   .strict()
   .optional();
 
+const ToolApprovalSchema = z
+  .object({
+    enabled: z.boolean().optional(),
+    mode: z.enum(["all", "mutating"]).optional(),
+    include: z.array(z.string()).optional(),
+    exclude: z.array(z.string()).optional(),
+    timeoutMs: z.number().int().positive().optional(),
+  })
+  .strict()
+  .optional();
+
 export const AgentSandboxSchema = z
   .object({
     mode: z.union([z.literal("off"), z.literal("non-main"), z.literal("all")]).optional(),
@@ -387,6 +398,7 @@ export const AgentToolsSchema = z
       .optional(),
     exec: AgentToolExecSchema,
     fs: ToolFsSchema,
+    toolApproval: ToolApprovalSchema,
     sandbox: z
       .object({
         tools: ToolPolicySchema,
@@ -614,6 +626,7 @@ export const ToolsSchema = z
       .optional(),
     exec: ToolExecSchema,
     fs: ToolFsSchema,
+    toolApproval: ToolApprovalSchema,
     subagents: z
       .object({
         tools: ToolPolicySchema,

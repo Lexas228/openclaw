@@ -76,6 +76,7 @@ const READ_METHODS = new Set([
   "node.list",
   "node.describe",
   "chat.history",
+  "chat.files.pending",
   "config.get",
   "talk.config",
 ]);
@@ -93,6 +94,7 @@ const WRITE_METHODS = new Set([
   "node.invoke",
   "chat.send",
   "chat.abort",
+  "chat.files.resolve",
   "browser.request",
 ]);
 

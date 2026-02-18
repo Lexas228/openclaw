@@ -1,3 +1,4 @@
+import type { FileChangeApprovalManager } from "./file-change-approval-manager.js";
 import { normalizeVerboseLevel } from "../auto-reply/thinking.js";
 import { isSilentReplyText, SILENT_REPLY_TOKEN } from "../auto-reply/tokens.js";
 import { loadConfig } from "../config/config.js";
@@ -216,6 +217,7 @@ export type AgentEventHandlerOptions = {
   resolveSessionKeyForRun: (runId: string) => string | undefined;
   clearAgentRunContext: (runId: string) => void;
   toolEventRecipients: ToolEventRecipientRegistry;
+  fileChangeApprovalManager?: FileChangeApprovalManager;
 };
 
 export function createAgentEventHandler({
@@ -227,6 +229,7 @@ export function createAgentEventHandler({
   resolveSessionKeyForRun,
   clearAgentRunContext,
   toolEventRecipients,
+  fileChangeApprovalManager,
 }: AgentEventHandlerOptions) {
   const emitChatDelta = (sessionKey: string, clientRunId: string, seq: number, text: string) => {
     if (isSilentReplyText(text, SILENT_REPLY_TOKEN)) {
@@ -323,16 +326,100 @@ export function createAgentEventHandler({
     }
   };
 
+  const parseToolStartFile = (data: unknown) => {
+    if (!data || typeof data !== "object") {
+      return null;
+    }
+    const payload = data as Record<string, unknown>;
+    if (payload.phase !== "start") {
+      return null;
+    }
+    const toolCallId = typeof payload.toolCallId === "string" ? payload.toolCallId.trim() : "";
+    const toolName = typeof payload.name === "string" ? payload.name.trim() : "";
+    const beforeFile =
+      payload.beforeFile && typeof payload.beforeFile === "object"
+        ? (payload.beforeFile as Record<string, unknown>)
+        : null;
+    const filePath =
+      beforeFile && typeof beforeFile.path === "string" ? beforeFile.path.trim() : "";
+    const backupPath =
+      beforeFile && typeof beforeFile.backupPath === "string" ? beforeFile.backupPath.trim() : "";
+    if (!toolCallId || !toolName || !filePath || !backupPath) {
+      return null;
+    }
+    return { toolCallId, toolName, filePath, backupPath };
+  };
+
+  const parseToolResult = (data: unknown) => {
+    if (!data || typeof data !== "object") {
+      return null;
+    }
+    const payload = data as Record<string, unknown>;
+    if (payload.phase !== "result") {
+      return null;
+    }
+    const toolCallId = typeof payload.toolCallId === "string" ? payload.toolCallId.trim() : "";
+    const isError = payload.isError === true;
+    if (!toolCallId) {
+      return null;
+    }
+    return { toolCallId, isError };
+  };
+
   return (evt: AgentEventPayload) => {
+    let normalizedToolData: Record<string, unknown> | null = null;
     const chatLink = chatRunState.registry.peek(evt.runId);
     const sessionKey = chatLink?.sessionKey ?? resolveSessionKeyForRun(evt.runId);
     const clientRunId = chatLink?.clientRunId ?? evt.runId;
     const isAborted =
       chatRunState.abortedRuns.has(clientRunId) || chatRunState.abortedRuns.has(evt.runId);
-    // Include sessionKey so Control UI can filter tool streams per session.
-    const agentPayload = sessionKey ? { ...evt, sessionKey } : evt;
     const last = agentRunSeq.get(evt.runId) ?? 0;
     const isToolEvent = evt.stream === "tool";
+    if (isToolEvent && sessionKey && fileChangeApprovalManager) {
+      const toolStart = parseToolStartFile(evt.data);
+      if (toolStart) {
+        const baseline = fileChangeApprovalManager.registerToolStart({
+          sessionKey,
+          runId: evt.runId,
+          toolCallId: toolStart.toolCallId,
+          toolName: toolStart.toolName,
+          path: toolStart.filePath,
+          backupPath: toolStart.backupPath,
+        });
+        if (baseline) {
+          const eventData =
+            evt.data && typeof evt.data === "object" ? (evt.data as Record<string, unknown>) : {};
+          const beforeFileRaw =
+            eventData.beforeFile && typeof eventData.beforeFile === "object"
+              ? (eventData.beforeFile as Record<string, unknown>)
+              : {};
+          const beforeFile = {
+            ...beforeFileRaw,
+            path: baseline.baselinePath,
+            backupPath: baseline.baselineBackupPath,
+          };
+          if (!baseline.existingPending && beforeFile["size"] == null) {
+            delete beforeFile.size;
+          }
+          normalizedToolData = {
+            ...eventData,
+            beforeFile,
+          };
+        }
+      } else {
+        const toolResult = parseToolResult(evt.data);
+        if (toolResult) {
+          fileChangeApprovalManager.registerToolResult({
+            runId: evt.runId,
+            toolCallId: toolResult.toolCallId,
+            isError: toolResult.isError,
+          });
+        }
+      }
+    }
+    // Include sessionKey so Control UI can filter tool streams per session.
+    const eventForOutput = normalizedToolData == null ? evt : { ...evt, data: normalizedToolData };
+    const agentPayload = sessionKey ? { ...eventForOutput, sessionKey } : eventForOutput;
     const toolVerbose = isToolEvent ? resolveToolVerboseLevel(evt.runId, sessionKey) : "off";
     // Build tool payload for messaging surfaces: strip result/partialResult
     // unless verbose=full. WS clients with tool-events cap get the full
@@ -340,10 +427,15 @@ export function createAgentEventHandler({
     const toolPayload =
       isToolEvent && toolVerbose !== "full"
         ? (() => {
-            const data = evt.data ? { ...evt.data } : {};
+            const data =
+              eventForOutput.data && typeof eventForOutput.data === "object"
+                ? { ...(eventForOutput.data as Record<string, unknown>) }
+                : {};
             delete data.result;
             delete data.partialResult;
-            return sessionKey ? { ...evt, sessionKey, data } : { ...evt, data };
+            return sessionKey
+              ? { ...eventForOutput, sessionKey, data }
+              : { ...eventForOutput, data };
           })()
         : agentPayload;
     if (evt.seq !== last + 1) {
