@@ -10,6 +10,10 @@ describe("agent event handler", () => {
   function createHarness(params?: {
     now?: number;
     resolveSessionKeyForRun?: (runId: string) => string | undefined;
+    fileChangeApprovalManager?: {
+      registerToolStart: ReturnType<typeof vi.fn>;
+      registerToolResult: ReturnType<typeof vi.fn>;
+    };
   }) {
     const nowSpy =
       params?.now === undefined ? undefined : vi.spyOn(Date, "now").mockReturnValue(params.now);
@@ -29,6 +33,7 @@ describe("agent event handler", () => {
       resolveSessionKeyForRun: params?.resolveSessionKeyForRun ?? (() => undefined),
       clearAgentRunContext: vi.fn(),
       toolEventRecipients,
+      fileChangeApprovalManager: params?.fileChangeApprovalManager as any,
     });
 
     return {
@@ -197,7 +202,7 @@ describe("agent event handler", () => {
   });
 
   it("strips tool output when verbose is on", () => {
-    const { broadcastToConnIds, toolEventRecipients, handler } = createHarness({
+    const { broadcastToConnIds, nodeSendToSession, toolEventRecipients, handler } = createHarness({
       resolveSessionKeyForRun: () => "session-1",
     });
 
@@ -219,9 +224,12 @@ describe("agent event handler", () => {
     });
 
     expect(broadcastToConnIds).toHaveBeenCalledTimes(1);
+    const nodePayload = nodeSendToSession.mock.calls[0]?.[2] as { data?: Record<string, unknown> };
+    expect(nodePayload.data?.result).toBeUndefined();
+    expect(nodePayload.data?.partialResult).toBeUndefined();
     const payload = broadcastToConnIds.mock.calls[0]?.[1] as { data?: Record<string, unknown> };
-    expect(payload.data?.result).toBeUndefined();
-    expect(payload.data?.partialResult).toBeUndefined();
+    expect(payload.data?.result).toEqual({ content: [{ type: "text", text: "secret" }] });
+    expect(payload.data?.partialResult).toEqual({ content: [{ type: "text", text: "partial" }] });
     resetAgentRunContextForTest();
   });
 
@@ -251,5 +259,97 @@ describe("agent event handler", () => {
     const payload = broadcastToConnIds.mock.calls[0]?.[1] as { data?: Record<string, unknown> };
     expect(payload.data?.result).toEqual(result);
     resetAgentRunContextForTest();
+  });
+
+  it("tracks file approval candidates from tool start/result events", () => {
+    const fileChangeApprovalManager = {
+      registerToolStart: vi.fn(),
+      registerToolResult: vi.fn(),
+    };
+    const { handler } = createHarness({
+      resolveSessionKeyForRun: () => "main",
+      fileChangeApprovalManager,
+    });
+
+    handler({
+      runId: "run-file-1",
+      seq: 1,
+      stream: "tool",
+      ts: Date.now(),
+      data: {
+        phase: "start",
+        name: "write",
+        toolCallId: "tool-1",
+        beforeFile: {
+          path: "/tmp/test.txt",
+          backupPath: "/tmp/test.txt.bak",
+          size: 10,
+        },
+      },
+    });
+    handler({
+      runId: "run-file-1",
+      seq: 2,
+      stream: "tool",
+      ts: Date.now(),
+      data: {
+        phase: "result",
+        name: "write",
+        toolCallId: "tool-1",
+        isError: false,
+      },
+    });
+
+    expect(fileChangeApprovalManager.registerToolStart).toHaveBeenCalledWith({
+      sessionKey: "main",
+      runId: "run-file-1",
+      toolCallId: "tool-1",
+      toolName: "write",
+      path: "/tmp/test.txt",
+      backupPath: "/tmp/test.txt.bak",
+    });
+    expect(fileChangeApprovalManager.registerToolResult).toHaveBeenCalledWith({
+      runId: "run-file-1",
+      toolCallId: "tool-1",
+      isError: false,
+    });
+  });
+
+  it("uses backend baseline backup path in emitted tool start payload", () => {
+    const fileChangeApprovalManager = {
+      registerToolStart: vi.fn().mockReturnValue({
+        baselinePath: "/tmp/test.txt",
+        baselineBackupPath: "/tmp/test.txt.baseline.bak",
+        existingPending: true,
+      }),
+      registerToolResult: vi.fn(),
+    };
+    const { broadcastToConnIds, toolEventRecipients, handler } = createHarness({
+      resolveSessionKeyForRun: () => "main",
+      fileChangeApprovalManager,
+    });
+    toolEventRecipients.add("run-file-2", "conn-1");
+
+    handler({
+      runId: "run-file-2",
+      seq: 1,
+      stream: "tool",
+      ts: Date.now(),
+      data: {
+        phase: "start",
+        name: "write",
+        toolCallId: "tool-2",
+        beforeFile: {
+          path: "/tmp/test.txt",
+          backupPath: "/tmp/test.txt.latest.bak",
+          size: 100,
+        },
+      },
+    });
+
+    const payload = broadcastToConnIds.mock.calls[0]?.[1] as {
+      data?: { beforeFile?: { backupPath?: string } };
+    };
+    expect(payload.data?.beforeFile?.backupPath).toBe("/tmp/test.txt.baseline.bak");
   });
 });

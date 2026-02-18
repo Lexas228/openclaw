@@ -239,6 +239,19 @@ export type FsToolsConfig = {
   workspaceOnly?: boolean;
 };
 
+export type ToolApprovalConfig = {
+  /** Enable gateway approval for tool calls. */
+  enabled?: boolean;
+  /** Which calls require approval. */
+  mode?: "all" | "mutating";
+  /** Optional allowlist: when set, only listed tools require approval. */
+  include?: string[];
+  /** Optional denylist: listed tools bypass approval. */
+  exclude?: string[];
+  /** Approval timeout in milliseconds. */
+  timeoutMs?: number;
+};
+
 export type AgentToolsConfig = {
   /** Base tool profile applied before allow/deny lists. */
   profile?: ToolProfileId;
@@ -261,6 +274,8 @@ export type AgentToolsConfig = {
   fs?: FsToolsConfig;
   /** Runtime loop detection for repetitive/ stuck tool-call patterns. */
   loopDetection?: ToolLoopDetectionConfig;
+  /** Optional approval gate for tool calls in this agent. */
+  toolApproval?: ToolApprovalConfig;
   sandbox?: {
     tools?: {
       allow?: string[];
@@ -523,6 +538,8 @@ export type ToolsConfig = {
   fs?: FsToolsConfig;
   /** Runtime loop detection for repetitive/ stuck tool-call patterns. */
   loopDetection?: ToolLoopDetectionConfig;
+  /** Optional global approval gate for tool calls. */
+  toolApproval?: ToolApprovalConfig;
   /** Sub-agent tool policy defaults (deny wins). */
   subagents?: {
     /** Default model selection for spawned sub-agents (string or {primary,fallbacks}). */

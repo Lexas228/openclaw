@@ -54,6 +54,12 @@ import {
   ChannelsStatusResultSchema,
   type ChatAbortParams,
   ChatAbortParamsSchema,
+  type ChatFileApproval,
+  ChatFileApprovalSchema,
+  type ChatFilesPendingParams,
+  ChatFilesPendingParamsSchema,
+  type ChatFilesResolveParams,
+  ChatFilesResolveParamsSchema,
   type ChatEvent,
   ChatEventSchema,
   ChatHistoryParamsSchema,
@@ -367,6 +373,12 @@ export const validateChatHistoryParams = ajv.compile(ChatHistoryParamsSchema);
 export const validateChatSendParams = ajv.compile(ChatSendParamsSchema);
 export const validateChatAbortParams = ajv.compile<ChatAbortParams>(ChatAbortParamsSchema);
 export const validateChatInjectParams = ajv.compile<ChatInjectParams>(ChatInjectParamsSchema);
+export const validateChatFilesPendingParams = ajv.compile<ChatFilesPendingParams>(
+  ChatFilesPendingParamsSchema,
+);
+export const validateChatFilesResolveParams = ajv.compile<ChatFilesResolveParams>(
+  ChatFilesResolveParamsSchema,
+);
 export const validateChatEvent = ajv.compile(ChatEventSchema);
 export const validateUpdateRunParams = ajv.compile<UpdateRunParams>(UpdateRunParamsSchema);
 export const validateWebLoginStartParams =
@@ -496,6 +508,9 @@ export {
   ChatHistoryParamsSchema,
   ChatSendParamsSchema,
   ChatInjectParamsSchema,
+  ChatFilesPendingParamsSchema,
+  ChatFilesResolveParamsSchema,
+  ChatFileApprovalSchema,
   UpdateRunParamsSchema,
   TickEventSchema,
   ShutdownEventSchema,
@@ -605,4 +620,7 @@ export type {
   PollParams,
   UpdateRunParams,
   ChatInjectParams,
+  ChatFilesPendingParams,
+  ChatFilesResolveParams,
+  ChatFileApproval,
 };

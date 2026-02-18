@@ -4,10 +4,13 @@ import { getGlobalHookRunner } from "../plugins/hook-runner-global.js";
 import { toClientToolDefinitions, toToolDefinitions } from "./pi-tool-definition-adapter.js";
 import { wrapToolWithAbortSignal } from "./pi-tools.abort.js";
 import { wrapToolWithBeforeToolCallHook } from "./pi-tools.before-tool-call.js";
+import { callGatewayTool } from "./tools/gateway.js";
 
 vi.mock("../plugins/hook-runner-global.js");
+vi.mock("./tools/gateway.js");
 
 const mockGetGlobalHookRunner = vi.mocked(getGlobalHookRunner);
+const mockCallGatewayTool = vi.mocked(callGatewayTool);
 
 describe("before_tool_call hook integration", () => {
   let hookRunner: {
@@ -17,12 +20,92 @@ describe("before_tool_call hook integration", () => {
 
   beforeEach(() => {
     resetDiagnosticSessionStateForTest();
+    mockCallGatewayTool.mockReset();
     hookRunner = {
       hasHooks: vi.fn(),
       runBeforeToolCall: vi.fn(),
     };
     // oxlint-disable-next-line typescript/no-explicit-any
     mockGetGlobalHookRunner.mockReturnValue(hookRunner as any);
+  });
+
+  it("requires approval for mutating non-file tools when toolApproval is enabled", async () => {
+    hookRunner.hasHooks.mockReturnValue(false);
+    mockCallGatewayTool.mockResolvedValue({ decision: "allow-once" });
+    const execute = vi.fn().mockResolvedValue({ content: [], details: { ok: true } });
+    // oxlint-disable-next-line typescript/no-explicit-any
+    const tool = wrapToolWithBeforeToolCallHook({ name: "message", execute } as any, {
+      agentId: "main",
+      sessionKey: "main",
+      toolApproval: { enabled: true, mode: "mutating" },
+    });
+
+    await tool.execute(
+      "call-approval-1",
+      { action: "send", message: "hello", to: "target" },
+      undefined,
+      undefined,
+    );
+
+    expect(mockCallGatewayTool).toHaveBeenCalledWith(
+      "exec.approval.request",
+      expect.objectContaining({ timeoutMs: expect.any(Number) }),
+      expect.objectContaining({
+        host: "tool",
+        sessionKey: "main",
+        agentId: "main",
+        command: expect.stringContaining("tool=message"),
+      }),
+    );
+    expect(execute).toHaveBeenCalledTimes(1);
+  });
+
+  it("skips pre-approval for file tools in mutating mode", async () => {
+    hookRunner.hasHooks.mockReturnValue(false);
+    const execute = vi.fn().mockResolvedValue({ content: [], details: { ok: true } });
+    // oxlint-disable-next-line typescript/no-explicit-any
+    const tool = wrapToolWithBeforeToolCallHook({ name: "write", execute } as any, {
+      toolApproval: { enabled: true, mode: "mutating" },
+    });
+
+    await tool.execute(
+      "call-approval-file-1",
+      { path: "/tmp/file.txt", content: "x" },
+      undefined,
+      undefined,
+    );
+
+    expect(mockCallGatewayTool).not.toHaveBeenCalled();
+    expect(execute).toHaveBeenCalledTimes(1);
+  });
+
+  it("blocks tool execution when tool approval is denied", async () => {
+    hookRunner.hasHooks.mockReturnValue(false);
+    mockCallGatewayTool.mockResolvedValue({ decision: "deny" });
+    const execute = vi.fn().mockResolvedValue({ content: [], details: { ok: true } });
+    // oxlint-disable-next-line typescript/no-explicit-any
+    const tool = wrapToolWithBeforeToolCallHook({ name: "write", execute } as any, {
+      toolApproval: { enabled: true, mode: "all" },
+    });
+
+    await expect(tool.execute("call-approval-2", { path: "/tmp/file.txt" }, undefined, undefined)).rejects.toThrow(
+      'Tool "write" was denied by approval policy',
+    );
+    expect(execute).not.toHaveBeenCalled();
+  });
+
+  it("does not apply generic tool approval to exec/bash", async () => {
+    hookRunner.hasHooks.mockReturnValue(false);
+    const execute = vi.fn().mockResolvedValue({ content: [], details: { ok: true } });
+    // oxlint-disable-next-line typescript/no-explicit-any
+    const tool = wrapToolWithBeforeToolCallHook({ name: "exec", execute } as any, {
+      toolApproval: { enabled: true, mode: "all" },
+    });
+
+    await tool.execute("call-approval-3", { command: "ls -la" }, undefined, undefined);
+
+    expect(mockCallGatewayTool).not.toHaveBeenCalled();
+    expect(execute).toHaveBeenCalledTimes(1);
   });
 
   it("executes tool normally when no hook is registered", async () => {

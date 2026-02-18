@@ -153,6 +153,20 @@ export function resolveToolLoopDetectionConfig(params: {
   };
 }
 
+function resolveToolApprovalConfig(params: { cfg?: OpenClawConfig; agentId?: string }) {
+  const cfg = params.cfg;
+  const globalToolApproval = cfg?.tools?.toolApproval;
+  const agentToolApproval =
+    cfg && params.agentId ? resolveAgentConfig(cfg, params.agentId)?.tools?.toolApproval : undefined;
+  return {
+    enabled: agentToolApproval?.enabled ?? globalToolApproval?.enabled,
+    mode: agentToolApproval?.mode ?? globalToolApproval?.mode,
+    include: agentToolApproval?.include ?? globalToolApproval?.include,
+    exclude: agentToolApproval?.exclude ?? globalToolApproval?.exclude,
+    timeoutMs: agentToolApproval?.timeoutMs ?? globalToolApproval?.timeoutMs,
+  };
+}
+
 export const __testing = {
   cleanToolSchemaForGemini,
   normalizeToolParams,
@@ -280,6 +294,7 @@ export function createOpenClawCodingTools(options?: {
   ]);
   const execConfig = resolveExecConfig({ cfg: options?.config, agentId });
   const fsConfig = resolveFsConfig({ cfg: options?.config, agentId });
+  const toolApprovalConfig = resolveToolApprovalConfig({ cfg: options?.config, agentId });
   const sandboxRoot = sandbox?.workspaceDir;
   const sandboxFsBridge = sandbox?.fsBridge;
   const allowWorkspaceWrites = sandbox?.workspaceAccess !== "ro";
@@ -492,6 +507,7 @@ export function createOpenClawCodingTools(options?: {
       agentId,
       sessionKey: options?.sessionKey,
       loopDetection: resolveToolLoopDetectionConfig({ cfg: options?.config, agentId }),
+      toolApproval: toolApprovalConfig,
     }),
   );
   const withAbort = options?.abortSignal
