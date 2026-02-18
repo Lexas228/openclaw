@@ -33,7 +33,7 @@ describe("agent event handler", () => {
       resolveSessionKeyForRun: params?.resolveSessionKeyForRun ?? (() => undefined),
       clearAgentRunContext: vi.fn(),
       toolEventRecipients,
-      fileChangeApprovalManager: params?.fileChangeApprovalManager as any,
+      fileChangeApprovalManager: params?.fileChangeApprovalManager as never,
     });
 
     return {
@@ -311,6 +311,48 @@ describe("agent event handler", () => {
     expect(fileChangeApprovalManager.registerToolResult).toHaveBeenCalledWith({
       runId: "run-file-1",
       toolCallId: "tool-1",
+      isError: false,
+    });
+  });
+
+  it("tracks file approval candidates from tool result beforeFile payload", () => {
+    const fileChangeApprovalManager = {
+      registerToolStart: vi.fn(),
+      registerToolResult: vi.fn(),
+    };
+    const { handler } = createHarness({
+      resolveSessionKeyForRun: () => "main",
+      fileChangeApprovalManager,
+    });
+
+    handler({
+      runId: "run-file-result",
+      seq: 1,
+      stream: "tool",
+      ts: Date.now(),
+      data: {
+        phase: "result",
+        name: "edit",
+        toolCallId: "tool-r1",
+        isError: false,
+        beforeFile: {
+          path: "/tmp/result.txt",
+          backupPath: "/tmp/result.txt.bak",
+        },
+      },
+    });
+
+    expect(fileChangeApprovalManager.registerToolStart).toHaveBeenCalledWith({
+      sessionKey: "main",
+      runId: "run-file-result",
+      toolCallId: "tool-r1",
+      toolName: "edit",
+      path: "/tmp/result.txt",
+      backupPath: "/tmp/result.txt.bak",
+    });
+    expect(fileChangeApprovalManager.registerToolResult).toHaveBeenCalledWith({
+      runId: "run-file-result",
+      toolCallId: "tool-r1",
       isError: false,
     });
   });

@@ -1,6 +1,5 @@
 import type { AgentEvent } from "@mariozechner/pi-agent-core";
-import fs from "node:fs/promises";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import type { MessagingToolSend } from "./pi-embedded-messaging.js";
 import type {
   ToolCallSummary,
@@ -10,10 +9,6 @@ import {
   handleToolExecutionEnd,
   handleToolExecutionStart,
 } from "./pi-embedded-subscribe.handlers.tools.js";
-vi.mock("./tools/gateway.js", () => ({
-  callGatewayTool: vi.fn(),
-}));
-import { callGatewayTool } from "./tools/gateway.js";
 
 type ToolExecutionStartEvent = Extract<AgentEvent, { type: "tool_execution_start" }>;
 type ToolExecutionEndEvent = Extract<AgentEvent, { type: "tool_execution_end" }>;
@@ -65,10 +60,6 @@ function createTestContext(): {
 }
 
 describe("handleToolExecutionStart read path checks", () => {
-  beforeEach(() => {
-    vi.mocked(callGatewayTool).mockReset();
-  });
-
   it("does not warn when read tool uses file_path alias", async () => {
     const { ctx, warn, onBlockReplyFlush } = createTestContext();
 
@@ -99,40 +90,6 @@ describe("handleToolExecutionStart read path checks", () => {
 
     expect(warn).toHaveBeenCalledTimes(1);
     expect(String(warn.mock.calls[0]?.[0] ?? "")).toContain("read tool called without path");
-  });
-
-  it("reuses baseline backup from pending approvals and skips local backup creation", async () => {
-    const { ctx } = createTestContext();
-    vi.mocked(callGatewayTool).mockResolvedValue({
-      sessionKey: "main",
-      pending: [
-        {
-          id: "pending-1",
-          sessionKey: "main",
-          path: "/tmp/example.txt",
-          backupPath: "/tmp/baseline.bak",
-        },
-      ],
-    } as never);
-    const statSpy = vi.spyOn(fs, "stat");
-
-    await handleToolExecutionStart(
-      ctx as never,
-      {
-        type: "tool_execution_start",
-        toolName: "write",
-        toolCallId: "tool-3",
-        args: { path: "/tmp/example.txt", content: "updated" },
-      } as never,
-    );
-
-    expect(callGatewayTool).toHaveBeenCalledWith(
-      "chat.files.pending",
-      {},
-      { sessionKey: "main" },
-    );
-    expect(statSpy).not.toHaveBeenCalled();
-    statSpy.mockRestore();
   });
 });
 

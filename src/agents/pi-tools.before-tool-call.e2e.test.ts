@@ -1,9 +1,15 @@
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { resetDiagnosticSessionStateForTest } from "../logging/diagnostic-session-state.js";
 import { getGlobalHookRunner } from "../plugins/hook-runner-global.js";
 import { toClientToolDefinitions, toToolDefinitions } from "./pi-tool-definition-adapter.js";
 import { wrapToolWithAbortSignal } from "./pi-tools.abort.js";
-import { wrapToolWithBeforeToolCallHook } from "./pi-tools.before-tool-call.js";
+import {
+  consumeMutationBeforeFileForToolCall,
+  wrapToolWithBeforeToolCallHook,
+} from "./pi-tools.before-tool-call.js";
 import { callGatewayTool } from "./tools/gateway.js";
 
 vi.mock("../plugins/hook-runner-global.js");
@@ -88,9 +94,9 @@ describe("before_tool_call hook integration", () => {
       toolApproval: { enabled: true, mode: "all" },
     });
 
-    await expect(tool.execute("call-approval-2", { path: "/tmp/file.txt" }, undefined, undefined)).rejects.toThrow(
-      'Tool "write" was denied by approval policy',
-    );
+    await expect(
+      tool.execute("call-approval-2", { path: "/tmp/file.txt" }, undefined, undefined),
+    ).rejects.toThrow('Tool "write" was denied by approval policy');
     expect(execute).not.toHaveBeenCalled();
   });
 
@@ -206,6 +212,33 @@ describe("before_tool_call hook integration", () => {
         sessionKey: "main",
       },
     );
+  });
+
+  it("captures beforeFile metadata for write in before_tool_call", async () => {
+    hookRunner.hasHooks.mockReturnValue(false);
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-before-file-"));
+    const targetPath = path.join(root, "target.txt");
+    await fs.writeFile(targetPath, "baseline", "utf-8");
+    const execute = vi.fn().mockResolvedValue({ content: [], details: { ok: true } });
+    // oxlint-disable-next-line typescript/no-explicit-any
+    const tool = wrapToolWithBeforeToolCallHook({ name: "write", execute } as any, {
+      sessionKey: "main",
+    });
+
+    await tool.execute(
+      "call-before-file",
+      { path: targetPath, content: "next" },
+      undefined,
+      undefined,
+    );
+
+    const beforeFile = consumeMutationBeforeFileForToolCall("call-before-file");
+    expect(beforeFile?.path).toBe(targetPath);
+    expect(beforeFile?.backupPath).toContain(".bak");
+    await fs.rm(root, { recursive: true, force: true });
+    if (beforeFile?.backupPath) {
+      await fs.rm(beforeFile.backupPath, { force: true });
+    }
   });
 });
 

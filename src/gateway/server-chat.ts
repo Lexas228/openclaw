@@ -337,6 +337,19 @@ export function createAgentEventHandler({
   };
 
   const parseToolStartFile = (data: unknown) => {
+    const parseBeforeFile = (value: unknown) => {
+      if (!value || typeof value !== "object") {
+        return null;
+      }
+      const record = value as Record<string, unknown>;
+      const filePath = typeof record.path === "string" ? record.path.trim() : "";
+      const backupPath = typeof record.backupPath === "string" ? record.backupPath.trim() : "";
+      if (!filePath || !backupPath) {
+        return null;
+      }
+      return { filePath, backupPath };
+    };
+
     if (!data || typeof data !== "object") {
       return null;
     }
@@ -346,21 +359,27 @@ export function createAgentEventHandler({
     }
     const toolCallId = typeof payload.toolCallId === "string" ? payload.toolCallId.trim() : "";
     const toolName = typeof payload.name === "string" ? payload.name.trim() : "";
-    const beforeFile =
-      payload.beforeFile && typeof payload.beforeFile === "object"
-        ? (payload.beforeFile as Record<string, unknown>)
-        : null;
-    const filePath =
-      beforeFile && typeof beforeFile.path === "string" ? beforeFile.path.trim() : "";
-    const backupPath =
-      beforeFile && typeof beforeFile.backupPath === "string" ? beforeFile.backupPath.trim() : "";
-    if (!toolCallId || !toolName || !filePath || !backupPath) {
+    const beforeFile = parseBeforeFile(payload.beforeFile);
+    if (!toolCallId || !toolName || !beforeFile) {
       return null;
     }
-    return { toolCallId, toolName, filePath, backupPath };
+    return { toolCallId, toolName, beforeFile };
   };
 
   const parseToolResult = (data: unknown) => {
+    const parseBeforeFile = (value: unknown) => {
+      if (!value || typeof value !== "object") {
+        return null;
+      }
+      const record = value as Record<string, unknown>;
+      const filePath = typeof record.path === "string" ? record.path.trim() : "";
+      const backupPath = typeof record.backupPath === "string" ? record.backupPath.trim() : "";
+      if (!filePath || !backupPath) {
+        return null;
+      }
+      return { filePath, backupPath };
+    };
+
     if (!data || typeof data !== "object") {
       return null;
     }
@@ -369,11 +388,26 @@ export function createAgentEventHandler({
       return null;
     }
     const toolCallId = typeof payload.toolCallId === "string" ? payload.toolCallId.trim() : "";
+    const toolName = typeof payload.name === "string" ? payload.name.trim() : "";
     const isError = payload.isError === true;
+    const result =
+      payload.result && typeof payload.result === "object"
+        ? (payload.result as Record<string, unknown>)
+        : null;
+    const details =
+      result?.details && typeof result.details === "object"
+        ? (result.details as Record<string, unknown>)
+        : null;
+    const beforeFile = parseBeforeFile(payload.beforeFile) ?? parseBeforeFile(details?.beforeFile);
     if (!toolCallId) {
       return null;
     }
-    return { toolCallId, isError };
+    return {
+      toolCallId,
+      toolName,
+      isError,
+      beforeFile,
+    };
   };
 
   return (evt: AgentEventPayload) => {
@@ -404,8 +438,8 @@ export function createAgentEventHandler({
           runId: evt.runId,
           toolCallId: toolStart.toolCallId,
           toolName: toolStart.toolName,
-          path: toolStart.filePath,
-          backupPath: toolStart.backupPath,
+          path: toolStart.beforeFile.filePath,
+          backupPath: toolStart.beforeFile.backupPath,
         });
         if (baseline) {
           const eventData = evt.data && typeof evt.data === "object" ? evt.data : {};
@@ -443,6 +477,33 @@ export function createAgentEventHandler({
 
         const toolResult = parseToolResult(eventData);
         if (toolResult) {
+          if (toolResult.beforeFile) {
+            const baseline = fileChangeApprovalManager.registerToolStart({
+              sessionKey,
+              runId: evt.runId,
+              toolCallId: toolResult.toolCallId,
+              toolName: toolResult.toolName || "tool",
+              path: toolResult.beforeFile.filePath,
+              backupPath: toolResult.beforeFile.backupPath,
+            });
+            if (baseline) {
+              normalizedToolData = {
+                ...eventData,
+                beforeFile: {
+                  ...toolResult.beforeFile,
+                  path: baseline.baselinePath,
+                  backupPath: baseline.baselineBackupPath,
+                },
+              };
+              debugFileApproval(
+                `result-start run=${evt.runId} session=${sessionKey} tool=${toolResult.toolName || "-"} toolCallId=${toolResult.toolCallId} path=${baseline.baselinePath} backup=${baseline.baselineBackupPath} existing=${baseline.existingPending}`,
+              );
+            } else {
+              debugFileApproval(
+                `result-start ignored run=${evt.runId} session=${sessionKey} tool=${toolResult.toolName || "-"} toolCallId=${toolResult.toolCallId} reason=register_start_rejected`,
+              );
+            }
+          }
           debugFileApproval(
             `result run=${evt.runId} session=${sessionKey} toolCallId=${toolResult.toolCallId} isError=${toolResult.isError}`,
           );

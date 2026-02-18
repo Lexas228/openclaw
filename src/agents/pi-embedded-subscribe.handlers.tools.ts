@@ -1,7 +1,4 @@
 import type { AgentEvent } from "@mariozechner/pi-agent-core";
-import fs from "node:fs/promises";
-import os from "node:os";
-import path from "node:path";
 import type { PluginHookAfterToolCallEvent } from "../plugins/types.js";
 import type {
   ToolCallSummary,
@@ -20,103 +17,9 @@ import {
   sanitizeToolResult,
 } from "./pi-embedded-subscribe.tools.js";
 import { inferToolMetaFromArgs } from "./pi-embedded-utils.js";
+import { consumeMutationBeforeFileForToolCall } from "./pi-tools.before-tool-call.js";
 import { buildToolMutationState, isSameToolMutationAction } from "./tool-mutation.js";
 import { normalizeToolName } from "./tool-policy.js";
-import { callGatewayTool } from "./tools/gateway.js";
-
-/** Tools that modify files — we create a backup before these run. */
-const FILE_MUTATING_TOOLS = new Set(["write", "edit", "apply_patch"]);
-
-/** Backup directory under ~/.openclaw/backups/. Created once lazily. */
-const BACKUP_DIR = path.join(os.homedir(), ".openclaw", "backups");
-const NEW_FILE_BASELINE_SUFFIX = ".missing.bak";
-let backupDirEnsured = false;
-
-type FileBackupResult = { backupPath: string; originalSize?: number };
-
-async function resolvePendingBaselineBackupPath(
-  sessionKey: string | undefined,
-  filePath: string,
-  log: { debug: (msg: string) => void },
-): Promise<string | null> {
-  const normalizedSessionKey =
-    typeof sessionKey === "string" && sessionKey.trim() ? sessionKey.trim() : "";
-  const normalizedPath = filePath.trim();
-  if (!normalizedSessionKey || !normalizedPath) {
-    return null;
-  }
-  try {
-    const raw = await callGatewayTool<{ pending?: unknown }>(
-      "chat.files.pending",
-      {},
-      { sessionKey: normalizedSessionKey },
-    );
-    const pending = Array.isArray(raw?.pending) ? raw.pending : [];
-    const matched = pending.find((entry) => {
-      if (!entry || typeof entry !== "object") {
-        return false;
-      }
-      const record = entry as Record<string, unknown>;
-      return typeof record.path === "string" && record.path.trim() === normalizedPath;
-    });
-    if (!matched || typeof matched !== "object") {
-      return null;
-    }
-    const backupPathValue = (matched as Record<string, unknown>).backupPath;
-    const backupPath = typeof backupPathValue === "string" ? backupPathValue.trim() : "";
-    return backupPath || null;
-  } catch (error) {
-    log.debug(
-      `file backup pending lookup failed: sessionKey=${normalizedSessionKey} path=${normalizedPath} error=${String(error)}`,
-    );
-    return null;
-  }
-}
-
-/**
- * Create a backup copy of a file before a mutating tool modifies it.
- * For new files, creates a marker backup so approvals/rollback still work.
- * No TTL — cleanup is the client's responsibility.
- */
-async function createFileBackup(
-  filePath: string,
-  toolCallId: string,
-  log: { debug: (msg: string) => void },
-): Promise<FileBackupResult | null> {
-  // Ensure backup directory exists (once per process).
-  if (!backupDirEnsured) {
-    await fs.mkdir(BACKUP_DIR, { recursive: true });
-    backupDirEnsured = true;
-  }
-  // Sanitize toolCallId for use as filename (replace path-unsafe chars).
-  const safeId = toolCallId.replace(/[^a-zA-Z0-9_-]/g, "_");
-
-  try {
-    const stat = await fs.stat(filePath);
-    if (!stat.isFile()) {
-      return null;
-    }
-    const backupPath = path.join(BACKUP_DIR, `${safeId}.bak`);
-    await fs.copyFile(filePath, backupPath);
-    log.debug(
-      `file backup created: tool_call=${toolCallId} path=${filePath} backup=${backupPath} size=${stat.size}`,
-    );
-    return { backupPath, originalSize: stat.size };
-  } catch (error) {
-    const code = (error as NodeJS.ErrnoException | undefined)?.code;
-    if (code !== "ENOENT") {
-      // Unreadable/non-file targets keep previous behavior (skip backup).
-      return null;
-    }
-    // New file baseline marker: rollback should delete the created file.
-    const backupPath = path.join(BACKUP_DIR, `${safeId}${NEW_FILE_BASELINE_SUFFIX}`);
-    await fs.writeFile(backupPath, "", { encoding: "utf-8" });
-    log.debug(
-      `file backup marker created for new file: tool_call=${toolCallId} path=${filePath} backup=${backupPath}`,
-    );
-    return { backupPath, originalSize: 0 };
-  }
-}
 
 /** Track tool execution start times and args for after_tool_call hook */
 const toolStartData = new Map<string, { startTime: number; args: unknown }>();
@@ -273,46 +176,6 @@ export async function handleToolExecutionStart(
     `embedded run tool start: runId=${ctx.params.runId} tool=${toolName} toolCallId=${toolCallId}`,
   );
 
-  // Create a backup of the file before mutating tools (write/edit/apply_patch) modify it.
-  // The backup path is included in the tool start event so WS clients can
-  // fetch it via SSH for diff display or undo. No TTL — client deletes after use.
-  let backup: FileBackupResult | null = null;
-  let beforePath: string | null = null;
-  if (FILE_MUTATING_TOOLS.has(toolName)) {
-    const record = args && typeof args === "object" ? (args as Record<string, unknown>) : {};
-    const filePath = extractPathFromRecord(record);
-    const argKeys =
-      record && typeof record === "object" ? Object.keys(record).slice(0, 12).join(",") : "";
-    ctx.log.debug(
-      `file backup candidate: tool_call=${toolCallId} tool=${toolName} path=${filePath || "-"} argKeys=${argKeys || "-"}`,
-    );
-    if (filePath) {
-      beforePath = filePath;
-      const baselineBackupPath = await resolvePendingBaselineBackupPath(
-        ctx.params.sessionKey,
-        filePath,
-        ctx.log,
-      );
-      if (baselineBackupPath) {
-        backup = { backupPath: baselineBackupPath };
-        ctx.log.debug(
-          `file backup reused from pending: tool_call=${toolCallId} path=${filePath} backup=${baselineBackupPath}`,
-        );
-      } else {
-        backup = await createFileBackup(filePath, toolCallId, ctx.log);
-        if (!backup) {
-          ctx.log.debug(
-            `file backup skipped: tool_call=${toolCallId} tool=${toolName} path=${filePath}`,
-          );
-        }
-      }
-    } else {
-      ctx.log.debug(
-        `file backup skipped: tool_call=${toolCallId} tool=${toolName} reason=missing_path`,
-      );
-    }
-  }
-
   const shouldEmitToolEvents = ctx.shouldEmitToolResult();
   emitAgentEvent({
     runId: ctx.params.runId,
@@ -322,15 +185,6 @@ export async function handleToolExecutionStart(
       name: toolName,
       toolCallId,
       args: args as Record<string, unknown>,
-      ...(backup && beforePath
-        ? {
-            beforeFile: {
-              path: beforePath,
-              backupPath: backup.backupPath,
-              ...(typeof backup.originalSize === "number" ? { size: backup.originalSize } : {}),
-            },
-          }
-        : {}),
     },
   });
   // Best-effort typing signal; do not block tool summaries on slow emitters.
@@ -496,6 +350,7 @@ export async function handleToolExecutionEnd(
     ctx.state.successfulCronAdds += 1;
   }
 
+  const beforeFile = consumeMutationBeforeFileForToolCall(toolCallId);
   emitAgentEvent({
     runId: ctx.params.runId,
     stream: "tool",
@@ -506,6 +361,7 @@ export async function handleToolExecutionEnd(
       meta,
       isError: isToolError,
       result: sanitizedResult,
+      ...(beforeFile ? { beforeFile } : {}),
     },
   });
   void ctx.params.onAgentEvent?.({
