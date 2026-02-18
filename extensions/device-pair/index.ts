@@ -1,6 +1,15 @@
 import type { OpenClawPluginApi } from "openclaw/plugin-sdk";
 import os from "node:os";
 import { approveDevicePairing, listDevicePairing } from "openclaw/plugin-sdk";
+import qrcode from "qrcode-terminal";
+
+function renderQrAscii(data: string): Promise<string> {
+  return new Promise((resolve) => {
+    qrcode.generate(data, { small: true }, (output: string) => {
+      resolve(output);
+    });
+  });
+}
 
 const DEFAULT_GATEWAY_PORT = 18789;
 
@@ -28,45 +37,49 @@ type ResolveAuthResult = {
 };
 
 function normalizeUrl(raw: string, schemeFallback: "ws" | "wss"): string | null {
-  const trimmed = raw.trim();
-  if (!trimmed) {
+  const candidate = raw.trim();
+  if (!candidate) {
     return null;
   }
-  try {
-    const parsed = new URL(trimmed);
-    const scheme = parsed.protocol.replace(":", "");
-    if (!scheme) {
-      return null;
-    }
-    const resolvedScheme = scheme === "http" ? "ws" : scheme === "https" ? "wss" : scheme;
-    if (resolvedScheme !== "ws" && resolvedScheme !== "wss") {
-      return null;
-    }
-    const host = parsed.hostname;
-    if (!host) {
-      return null;
-    }
-    const port = parsed.port ? `:${parsed.port}` : "";
-    return `${resolvedScheme}://${host}${port}`;
-  } catch {
-    // Fall through to host:port parsing.
+  const parsedUrl = parseNormalizedGatewayUrl(candidate);
+  if (parsedUrl) {
+    return parsedUrl;
   }
+  const hostPort = candidate.split("/", 1)[0]?.trim() ?? "";
+  return hostPort ? `${schemeFallback}://${hostPort}` : null;
+}
 
-  const withoutPath = trimmed.split("/")[0] ?? "";
-  if (!withoutPath) {
+function parseNormalizedGatewayUrl(raw: string): string | null {
+  try {
+    const parsed = new URL(raw);
+    const scheme = parsed.protocol.slice(0, -1);
+    const normalizedScheme = scheme === "http" ? "ws" : scheme === "https" ? "wss" : scheme;
+    if (!(normalizedScheme === "ws" || normalizedScheme === "wss")) {
+      return null;
+    }
+    if (!parsed.hostname) {
+      return null;
+    }
+    return `${normalizedScheme}://${parsed.hostname}${parsed.port ? `:${parsed.port}` : ""}`;
+  } catch {
     return null;
   }
-  return `${schemeFallback}://${withoutPath}`;
+}
+
+function parsePositiveInteger(raw: string | undefined): number | null {
+  if (!raw) {
+    return null;
+  }
+  const parsed = Number.parseInt(raw, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
 }
 
 function resolveGatewayPort(cfg: OpenClawPluginApi["config"]): number {
-  const envRaw =
-    process.env.OPENCLAW_GATEWAY_PORT?.trim() || process.env.CLAWDBOT_GATEWAY_PORT?.trim();
-  if (envRaw) {
-    const parsed = Number.parseInt(envRaw, 10);
-    if (Number.isFinite(parsed) && parsed > 0) {
-      return parsed;
-    }
+  const envPort =
+    parsePositiveInteger(process.env.OPENCLAW_GATEWAY_PORT?.trim()) ??
+    parsePositiveInteger(process.env.CLAWDBOT_GATEWAY_PORT?.trim());
+  if (envPort) {
+    return envPort;
   }
   const configPort = cfg.gateway?.port;
   if (typeof configPort === "number" && Number.isFinite(configPort) && configPort > 0) {
@@ -206,25 +219,20 @@ function parsePossiblyNoisyJsonObject(raw: string): Record<string, unknown> {
 function resolveAuth(cfg: OpenClawPluginApi["config"]): ResolveAuthResult {
   const mode = cfg.gateway?.auth?.mode;
   const token =
-    process.env.OPENCLAW_GATEWAY_TOKEN?.trim() ||
-    process.env.CLAWDBOT_GATEWAY_TOKEN?.trim() ||
-    cfg.gateway?.auth?.token?.trim();
+    pickFirstDefined([
+      process.env.OPENCLAW_GATEWAY_TOKEN,
+      process.env.CLAWDBOT_GATEWAY_TOKEN,
+      cfg.gateway?.auth?.token,
+    ]) ?? undefined;
   const password =
-    process.env.OPENCLAW_GATEWAY_PASSWORD?.trim() ||
-    process.env.CLAWDBOT_GATEWAY_PASSWORD?.trim() ||
-    cfg.gateway?.auth?.password?.trim();
+    pickFirstDefined([
+      process.env.OPENCLAW_GATEWAY_PASSWORD,
+      process.env.CLAWDBOT_GATEWAY_PASSWORD,
+      cfg.gateway?.auth?.password,
+    ]) ?? undefined;
 
-  if (mode === "password") {
-    if (!password) {
-      return { error: "Gateway auth is set to password, but no password is configured." };
-    }
-    return { password, label: "password" };
-  }
-  if (mode === "token") {
-    if (!token) {
-      return { error: "Gateway auth is set to token, but no token is configured." };
-    }
-    return { token, label: "token" };
+  if (mode === "token" || mode === "password") {
+    return resolveRequiredAuth(mode, { token, password });
   }
   if (token) {
     return { token, label: "token" };
@@ -233,6 +241,30 @@ function resolveAuth(cfg: OpenClawPluginApi["config"]): ResolveAuthResult {
     return { password, label: "password" };
   }
   return { error: "Gateway auth is not configured (no token or password)." };
+}
+
+function pickFirstDefined(candidates: Array<string | undefined>): string | null {
+  for (const value of candidates) {
+    const trimmed = value?.trim();
+    if (trimmed) {
+      return trimmed;
+    }
+  }
+  return null;
+}
+
+function resolveRequiredAuth(
+  mode: "token" | "password",
+  values: { token?: string; password?: string },
+): ResolveAuthResult {
+  if (mode === "token") {
+    return values.token
+      ? { token: values.token, label: "token" }
+      : { error: "Gateway auth is set to token, but no token is configured." };
+  }
+  return values.password
+    ? { password: values.password, label: "password" }
+    : { error: "Gateway auth is set to password, but no password is configured." };
 }
 
 async function resolveGatewayUrl(api: OpenClawPluginApi): Promise<ResolveUrlResult> {
@@ -433,6 +465,69 @@ export default function register(api: OpenClawPluginApi) {
         token: auth.token,
         password: auth.password,
       };
+
+      if (action === "qr") {
+        const setupCode = encodeSetupCode(payload);
+        const qrAscii = await renderQrAscii(setupCode);
+        const authLabel = auth.label ?? "auth";
+
+        const channel = ctx.channel;
+        const target = ctx.senderId?.trim() || ctx.from?.trim() || ctx.to?.trim() || "";
+
+        if (channel === "telegram" && target) {
+          try {
+            const send = api.runtime?.channel?.telegram?.sendMessageTelegram;
+            if (send) {
+              await send(
+                target,
+                ["Scan this QR code with the OpenClaw iOS app:", "", "```", qrAscii, "```"].join(
+                  "\n",
+                ),
+                {
+                  ...(ctx.messageThreadId != null ? { messageThreadId: ctx.messageThreadId } : {}),
+                  ...(ctx.accountId ? { accountId: ctx.accountId } : {}),
+                },
+              );
+              return {
+                text: [
+                  `Gateway: ${payload.url}`,
+                  `Auth: ${authLabel}`,
+                  "",
+                  "After scanning, come back here and run `/pair approve` to complete pairing.",
+                ].join("\n"),
+              };
+            }
+          } catch (err) {
+            api.logger.warn?.(
+              `device-pair: telegram QR send failed, falling back (${String(
+                (err as Error)?.message ?? err,
+              )})`,
+            );
+          }
+        }
+
+        // Render based on channel capability
+        api.logger.info?.(`device-pair: QR fallback channel=${channel} target=${target}`);
+        const infoLines = [
+          `Gateway: ${payload.url}`,
+          `Auth: ${authLabel}`,
+          "",
+          "After scanning, run `/pair approve` to complete pairing.",
+        ];
+
+        // WebUI + CLI/TUI: ASCII QR
+        return {
+          text: [
+            "Scan this QR code with the OpenClaw iOS app:",
+            "",
+            "```",
+            qrAscii,
+            "```",
+            "",
+            ...infoLines,
+          ].join("\n"),
+        };
+      }
 
       const channel = ctx.channel;
       const target = ctx.senderId?.trim() || ctx.from?.trim() || ctx.to?.trim() || "";
