@@ -226,6 +226,18 @@ function collectMessagingMediaUrlsFromToolResult(result: unknown): string[] {
   return urls;
 }
 
+function extractPathFromRecord(record: Record<string, unknown>): string {
+  const pathValue =
+    typeof record.path === "string"
+      ? record.path
+      : typeof record.file_path === "string"
+        ? record.file_path
+        : typeof record.filePath === "string"
+          ? record.filePath
+          : "";
+  return pathValue.trim();
+}
+
 export async function handleToolExecutionStart(
   ctx: ToolHandlerContext,
   evt: AgentEvent & { toolName: string; toolCallId: string; args: unknown },
@@ -246,13 +258,7 @@ export async function handleToolExecutionStart(
 
   if (toolName === "read") {
     const record = args && typeof args === "object" ? (args as Record<string, unknown>) : {};
-    const filePathValue =
-      typeof record.path === "string"
-        ? record.path
-        : typeof record.file_path === "string"
-          ? record.file_path
-          : "";
-    const filePath = filePathValue.trim();
+    const filePath = extractPathFromRecord(record);
     if (!filePath) {
       const argsPreview = typeof args === "string" ? args.slice(0, 200) : undefined;
       ctx.log.warn(
@@ -274,7 +280,7 @@ export async function handleToolExecutionStart(
   let beforePath: string | null = null;
   if (FILE_MUTATING_TOOLS.has(toolName)) {
     const record = args && typeof args === "object" ? (args as Record<string, unknown>) : {};
-    const filePath = typeof record.path === "string" ? record.path.trim() : "";
+    const filePath = extractPathFromRecord(record);
     if (filePath) {
       beforePath = filePath;
       const baselineBackupPath = await resolvePendingBaselineBackupPath(
