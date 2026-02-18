@@ -61,10 +61,8 @@ async function resolvePendingBaselineBackupPath(
     if (!matched || typeof matched !== "object") {
       return null;
     }
-    const backupPath =
-      typeof (matched as Record<string, unknown>).backupPath === "string"
-        ? (matched as Record<string, unknown>).backupPath.trim()
-        : "";
+    const backupPathValue = (matched as Record<string, unknown>).backupPath;
+    const backupPath = typeof backupPathValue === "string" ? backupPathValue.trim() : "";
     return backupPath || null;
   } catch (error) {
     log.debug(
