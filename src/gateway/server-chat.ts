@@ -387,8 +387,7 @@ export function createAgentEventHandler({
           backupPath: toolStart.backupPath,
         });
         if (baseline) {
-          const eventData =
-            evt.data && typeof evt.data === "object" ? (evt.data as Record<string, unknown>) : {};
+          const eventData = evt.data && typeof evt.data === "object" ? evt.data : {};
           const beforeFileRaw =
             eventData.beforeFile && typeof eventData.beforeFile === "object"
               ? (eventData.beforeFile as Record<string, unknown>)
@@ -398,9 +397,6 @@ export function createAgentEventHandler({
             path: baseline.baselinePath,
             backupPath: baseline.baselineBackupPath,
           };
-          if (!baseline.existingPending && beforeFile["size"] == null) {
-            delete beforeFile.size;
-          }
           normalizedToolData = {
             ...eventData,
             beforeFile,
@@ -429,7 +425,7 @@ export function createAgentEventHandler({
         ? (() => {
             const data =
               eventForOutput.data && typeof eventForOutput.data === "object"
-                ? { ...(eventForOutput.data as Record<string, unknown>) }
+                ? { ...eventForOutput.data }
                 : {};
             delete data.result;
             delete data.partialResult;

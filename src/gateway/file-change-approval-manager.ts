@@ -87,6 +87,8 @@ type PersistedApprovalRow = {
   tool_call_ids_json: string | null;
 };
 
+const NEW_FILE_BASELINE_SUFFIX = ".missing.bak";
+
 function trimNonEmpty(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
 }
@@ -261,7 +263,7 @@ export class FileChangeApprovalManager {
     const normalizedSessionKey = this.normalizeSessionKey(sessionKey);
     return Array.from(this.pendingById.values())
       .filter((entry) => entry.sessionKey === normalizedSessionKey)
-      .sort((a, b) => a.updatedAtMs - b.updatedAtMs)
+      .toSorted((a, b) => a.updatedAtMs - b.updatedAtMs)
       .map((entry) => ({ ...entry }));
   }
 
@@ -280,7 +282,11 @@ export class FileChangeApprovalManager {
     }
     if (params.decision === "rollback") {
       try {
-        fs.copyFileSync(record.backupPath, record.path);
+        if (record.backupPath.endsWith(NEW_FILE_BASELINE_SUFFIX)) {
+          this.deleteFileQuietly(record.path);
+        } else {
+          fs.copyFileSync(record.backupPath, record.path);
+        }
       } catch (err) {
         return { ok: false, error: `rollback failed: ${String(err)}` };
       }

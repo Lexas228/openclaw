@@ -122,6 +122,40 @@ describe("FileChangeApprovalManager", () => {
     expect(manager.listPending("main")).toHaveLength(0);
   });
 
+  it("rolls back new-file baseline by deleting the target file", async () => {
+    const dir = await makeTempDir();
+    const filePath = path.join(dir, "created.txt");
+    const backup = path.join(dir, "tool-new.missing.bak");
+    await fs.writeFile(filePath, "new content", "utf-8");
+    await fs.writeFile(backup, "", "utf-8");
+
+    const manager = new FileChangeApprovalManager();
+    manager.registerToolStart({
+      sessionKey: "main",
+      runId: "run-new",
+      toolCallId: "tool-new",
+      toolName: "write",
+      path: filePath,
+      backupPath: backup,
+    });
+    manager.registerToolResult({
+      runId: "run-new",
+      toolCallId: "tool-new",
+      isError: false,
+    });
+
+    const resolved = manager.resolvePendingChange({
+      sessionKey: "main",
+      decision: "rollback",
+      toolCallId: "tool-new",
+    });
+
+    expect(resolved.ok).toBe(true);
+    expect(await pathExists(filePath)).toBe(false);
+    expect(await pathExists(backup)).toBe(false);
+    expect(manager.listPending("main")).toHaveLength(0);
+  });
+
   it("drops backup for failed first mutation and leaves no pending record", async () => {
     const dir = await makeTempDir();
     const filePath = path.join(dir, "target.txt");

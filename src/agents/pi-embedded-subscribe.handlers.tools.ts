@@ -29,6 +29,7 @@ const FILE_MUTATING_TOOLS = new Set(["write", "edit", "apply_patch"]);
 
 /** Backup directory under ~/.openclaw/backups/. Created once lazily. */
 const BACKUP_DIR = path.join(os.homedir(), ".openclaw", "backups");
+const NEW_FILE_BASELINE_SUFFIX = ".missing.bak";
 let backupDirEnsured = false;
 
 type FileBackupResult = { backupPath: string; originalSize?: number };
@@ -74,7 +75,7 @@ async function resolvePendingBaselineBackupPath(
 
 /**
  * Create a backup copy of a file before a mutating tool modifies it.
- * Returns null if the file doesn't exist yet (new file) or is unreadable.
+ * For new files, creates a marker backup so approvals/rollback still work.
  * No TTL — cleanup is the client's responsibility.
  */
 async function createFileBackup(
@@ -82,27 +83,38 @@ async function createFileBackup(
   toolCallId: string,
   log: { debug: (msg: string) => void },
 ): Promise<FileBackupResult | null> {
+  // Ensure backup directory exists (once per process).
+  if (!backupDirEnsured) {
+    await fs.mkdir(BACKUP_DIR, { recursive: true });
+    backupDirEnsured = true;
+  }
+  // Sanitize toolCallId for use as filename (replace path-unsafe chars).
+  const safeId = toolCallId.replace(/[^a-zA-Z0-9_-]/g, "_");
+
   try {
     const stat = await fs.stat(filePath);
     if (!stat.isFile()) {
       return null;
     }
-    // Ensure backup directory exists (once per process).
-    if (!backupDirEnsured) {
-      await fs.mkdir(BACKUP_DIR, { recursive: true });
-      backupDirEnsured = true;
-    }
-    // Sanitize toolCallId for use as filename (replace path-unsafe chars).
-    const safeId = toolCallId.replace(/[^a-zA-Z0-9_-]/g, "_");
     const backupPath = path.join(BACKUP_DIR, `${safeId}.bak`);
     await fs.copyFile(filePath, backupPath);
     log.debug(
       `file backup created: tool_call=${toolCallId} path=${filePath} backup=${backupPath} size=${stat.size}`,
     );
     return { backupPath, originalSize: stat.size };
-  } catch {
-    // File doesn't exist yet (new file) or not readable — that's fine.
-    return null;
+  } catch (error) {
+    const code = (error as NodeJS.ErrnoException | undefined)?.code;
+    if (code !== "ENOENT") {
+      // Unreadable/non-file targets keep previous behavior (skip backup).
+      return null;
+    }
+    // New file baseline marker: rollback should delete the created file.
+    const backupPath = path.join(BACKUP_DIR, `${safeId}${NEW_FILE_BASELINE_SUFFIX}`);
+    await fs.writeFile(backupPath, "", { encoding: "utf-8" });
+    log.debug(
+      `file backup marker created for new file: tool_call=${toolCallId} path=${filePath} backup=${backupPath}`,
+    );
+    return { backupPath, originalSize: 0 };
   }
 }
 
