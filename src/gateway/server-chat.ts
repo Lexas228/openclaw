@@ -218,6 +218,7 @@ export type AgentEventHandlerOptions = {
   clearAgentRunContext: (runId: string) => void;
   toolEventRecipients: ToolEventRecipientRegistry;
   fileChangeApprovalManager?: FileChangeApprovalManager;
+  debugLog?: (message: string) => void;
 };
 
 export function createAgentEventHandler({
@@ -230,7 +231,16 @@ export function createAgentEventHandler({
   clearAgentRunContext,
   toolEventRecipients,
   fileChangeApprovalManager,
+  debugLog,
 }: AgentEventHandlerOptions) {
+  const debugFileApproval = (message: string) => {
+    try {
+      debugLog?.(`[file-approval] ${message}`);
+    } catch {
+      // ignore logging failures
+    }
+  };
+
   const emitChatDelta = (sessionKey: string, clientRunId: string, seq: number, text: string) => {
     if (isSilentReplyText(text, SILENT_REPLY_TOKEN)) {
       return;
@@ -375,8 +385,19 @@ export function createAgentEventHandler({
       chatRunState.abortedRuns.has(clientRunId) || chatRunState.abortedRuns.has(evt.runId);
     const last = agentRunSeq.get(evt.runId) ?? 0;
     const isToolEvent = evt.stream === "tool";
+    const eventData = evt.data && typeof evt.data === "object" ? evt.data : {};
+    const phase = typeof eventData.phase === "string" ? eventData.phase : "";
+    const toolCallId = typeof eventData.toolCallId === "string" ? eventData.toolCallId.trim() : "";
+    const toolName = typeof eventData.name === "string" ? eventData.name.trim() : "";
+
+    if (isToolEvent && fileChangeApprovalManager && !sessionKey) {
+      debugFileApproval(
+        `skip run=${evt.runId} reason=missing_session phase=${phase || "-"} tool=${toolName || "-"} toolCallId=${toolCallId || "-"}`,
+      );
+    }
+
     if (isToolEvent && sessionKey && fileChangeApprovalManager) {
-      const toolStart = parseToolStartFile(evt.data);
+      const toolStart = parseToolStartFile(eventData);
       if (toolStart) {
         const baseline = fileChangeApprovalManager.registerToolStart({
           sessionKey,
@@ -401,10 +422,30 @@ export function createAgentEventHandler({
             ...eventData,
             beforeFile,
           };
+          debugFileApproval(
+            `start run=${evt.runId} session=${sessionKey} tool=${toolStart.toolName} toolCallId=${toolStart.toolCallId} path=${baseline.baselinePath} backup=${baseline.baselineBackupPath} existing=${baseline.existingPending}`,
+          );
+        } else {
+          debugFileApproval(
+            `start ignored run=${evt.runId} session=${sessionKey} tool=${toolStart.toolName} toolCallId=${toolStart.toolCallId} reason=register_start_rejected`,
+          );
         }
       } else {
-        const toolResult = parseToolResult(evt.data);
+        if (phase === "start") {
+          const beforeFilePresent =
+            "beforeFile" in eventData &&
+            Boolean(eventData.beforeFile) &&
+            typeof eventData.beforeFile === "object";
+          debugFileApproval(
+            `start ignored run=${evt.runId} session=${sessionKey} tool=${toolName || "-"} toolCallId=${toolCallId || "-"} beforeFile=${beforeFilePresent}`,
+          );
+        }
+
+        const toolResult = parseToolResult(eventData);
         if (toolResult) {
+          debugFileApproval(
+            `result run=${evt.runId} session=${sessionKey} toolCallId=${toolResult.toolCallId} isError=${toolResult.isError}`,
+          );
           fileChangeApprovalManager.registerToolResult({
             runId: evt.runId,
             toolCallId: toolResult.toolCallId,

@@ -495,6 +495,7 @@ export async function startGatewayServer(
           clearAgentRunContext,
           toolEventRecipients,
           fileChangeApprovalManager,
+          debugLog: (message) => log.debug(message),
         }),
       );
 

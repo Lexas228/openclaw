@@ -281,6 +281,11 @@ export async function handleToolExecutionStart(
   if (FILE_MUTATING_TOOLS.has(toolName)) {
     const record = args && typeof args === "object" ? (args as Record<string, unknown>) : {};
     const filePath = extractPathFromRecord(record);
+    const argKeys =
+      record && typeof record === "object" ? Object.keys(record).slice(0, 12).join(",") : "";
+    ctx.log.debug(
+      `file backup candidate: tool_call=${toolCallId} tool=${toolName} path=${filePath || "-"} argKeys=${argKeys || "-"}`,
+    );
     if (filePath) {
       beforePath = filePath;
       const baselineBackupPath = await resolvePendingBaselineBackupPath(
@@ -295,7 +300,16 @@ export async function handleToolExecutionStart(
         );
       } else {
         backup = await createFileBackup(filePath, toolCallId, ctx.log);
+        if (!backup) {
+          ctx.log.debug(
+            `file backup skipped: tool_call=${toolCallId} tool=${toolName} path=${filePath}`,
+          );
+        }
       }
+    } else {
+      ctx.log.debug(
+        `file backup skipped: tool_call=${toolCallId} tool=${toolName} reason=missing_path`,
+      );
     }
   }
 
