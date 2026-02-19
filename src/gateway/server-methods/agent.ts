@@ -46,7 +46,7 @@ import {
   resolveGatewaySessionStoreTarget,
 } from "../session-utils.js";
 import { formatForLog } from "../ws-log.js";
-import { waitForAgentJob } from "./agent-job.js";
+import { isAgentJobRunning, waitForAgentJob } from "./agent-job.js";
 import { injectTimestamp, timestampOptsFromConfig } from "./agent-timestamp.js";
 import { normalizeRpcAttachmentsToChatAttachments } from "./attachment-normalize.js";
 import { sessionsHandlers } from "./sessions.js";
@@ -668,6 +668,14 @@ export const agentHandlers: GatewayRequestHandlers = {
       typeof p.timeoutMs === "number" && Number.isFinite(p.timeoutMs)
         ? Math.max(0, Math.floor(p.timeoutMs))
         : 30_000;
+
+    if (timeoutMs <= 0 && isAgentJobRunning(runId)) {
+      respond(true, {
+        runId,
+        status: "running",
+      });
+      return;
+    }
 
     const snapshot = await waitForAgentJob({
       runId,

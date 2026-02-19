@@ -239,4 +239,15 @@ export async function waitForAgentJob(params: {
   });
 }
 
+export function isAgentJobRunning(runId: string): boolean {
+  ensureAgentRunListener();
+  if (agentRunStarts.has(runId)) {
+    return true;
+  }
+  if (pendingAgentRunErrors.has(runId)) {
+    return true;
+  }
+  return false;
+}
+
 ensureAgentRunListener();
