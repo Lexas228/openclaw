@@ -51,6 +51,10 @@ type RegisterToolResultParams = {
   isError: boolean;
 };
 
+type RegisterToolResultResult = {
+  approvalId: string;
+};
+
 type ResolvePendingChangeParams = {
   sessionKey: string;
   decision: FileChangeApprovalDecision;
@@ -182,14 +186,14 @@ export class FileChangeApprovalManager {
     };
   }
 
-  registerToolResult(params: RegisterToolResultParams): void {
+  registerToolResult(params: RegisterToolResultParams): RegisterToolResultResult | null {
     const toolCallId = trimNonEmpty(params.toolCallId);
     if (!toolCallId) {
-      return;
+      return null;
     }
     const started = this.inFlightByToolCallId.get(toolCallId);
     if (!started) {
-      return;
+      return null;
     }
     this.inFlightByToolCallId.delete(toolCallId);
 
@@ -204,7 +208,7 @@ export class FileChangeApprovalManager {
       if (!started.pendingId) {
         this.deleteFileQuietly(started.backupPath);
       }
-      return;
+      return null;
     }
 
     const now = Date.now();
@@ -232,7 +236,7 @@ export class FileChangeApprovalManager {
         if (started.backupPath !== existing.backupPath) {
           this.deleteFileQuietly(started.backupPath);
         }
-        return;
+        return { approvalId: existing.id };
       }
     }
 
@@ -257,6 +261,7 @@ export class FileChangeApprovalManager {
     this.pendingBySessionPath.set(sessionPath, record.id);
     this.linkToolCallToPending(toolCallId, record.id);
     this.persistRecord(record);
+    return { approvalId: record.id };
   }
 
   listPending(sessionKey: string): FileChangeApprovalRecord[] {

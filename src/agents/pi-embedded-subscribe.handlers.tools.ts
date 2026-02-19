@@ -17,7 +17,10 @@ import {
   sanitizeToolResult,
 } from "./pi-embedded-subscribe.tools.js";
 import { inferToolMetaFromArgs } from "./pi-embedded-utils.js";
-import { consumeMutationBeforeFileForToolCall } from "./pi-tools.before-tool-call.js";
+import {
+  consumeMutationBeforeFileForToolCall,
+  peekMutationBeforeFileForToolCall,
+} from "./pi-tools.before-tool-call.js";
 import { buildToolMutationState, isSameToolMutationAction } from "./tool-mutation.js";
 import { normalizeToolName } from "./tool-policy.js";
 
@@ -172,6 +175,7 @@ export async function handleToolExecutionStart(
 
   const meta = extendExecMeta(toolName, args, inferToolMetaFromArgs(toolName, args));
   ctx.state.toolMetaById.set(toolCallId, buildToolCallSummary(toolName, args, meta));
+  const beforeFile = peekMutationBeforeFileForToolCall(toolCallId);
   ctx.log.debug(
     `embedded run tool start: runId=${ctx.params.runId} tool=${toolName} toolCallId=${toolCallId}`,
   );
@@ -185,6 +189,15 @@ export async function handleToolExecutionStart(
       name: toolName,
       toolCallId,
       args: args as Record<string, unknown>,
+      ...(beforeFile
+        ? {
+            beforeFile: {
+              path: beforeFile.path,
+              backupPath: beforeFile.backupPath,
+              ...(beforeFile.size != null ? { size: beforeFile.size } : {}),
+            },
+          }
+        : {}),
     },
   });
   // Best-effort typing signal; do not block tool summaries on slow emitters.

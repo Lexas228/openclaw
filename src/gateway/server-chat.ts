@@ -507,11 +507,21 @@ export function createAgentEventHandler({
           debugFileApproval(
             `result run=${evt.runId} session=${sessionKey} toolCallId=${toolResult.toolCallId} isError=${toolResult.isError}`,
           );
-          fileChangeApprovalManager.registerToolResult({
+          const toolResultOutcome = fileChangeApprovalManager.registerToolResult({
             runId: evt.runId,
             toolCallId: toolResult.toolCallId,
             isError: toolResult.isError,
           });
+          if (toolResultOutcome?.approvalId) {
+            const toolDataSource = normalizedToolData ?? eventData;
+            normalizedToolData = {
+              ...toolDataSource,
+              approvalId: toolResultOutcome.approvalId,
+            };
+            debugFileApproval(
+              `result approval run=${evt.runId} session=${sessionKey} toolCallId=${toolResult.toolCallId} approvalId=${toolResultOutcome.approvalId}`,
+            );
+          }
         }
       }
     }

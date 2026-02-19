@@ -377,6 +377,16 @@ export function consumeMutationBeforeFileForToolCall(
   return beforeFile;
 }
 
+export function peekMutationBeforeFileForToolCall(
+  toolCallId: string,
+): ToolMutationBeforeFile | null {
+  const normalizedToolCallId = trimNonEmpty(toolCallId);
+  if (!normalizedToolCallId) {
+    return null;
+  }
+  return mutationBeforeFileByToolCallId.get(normalizedToolCallId) ?? null;
+}
+
 export const __testing = {
   BEFORE_TOOL_CALL_WRAPPED,
   adjustedParamsByToolCallId,

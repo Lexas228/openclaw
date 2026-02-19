@@ -394,4 +394,39 @@ describe("agent event handler", () => {
     };
     expect(payload.data?.beforeFile?.backupPath).toBe("/tmp/test.txt.baseline.bak");
   });
+
+  it("emits approvalId in tool result payload when file approval is registered", () => {
+    const fileChangeApprovalManager = {
+      registerToolStart: vi.fn(),
+      registerToolResult: vi.fn().mockReturnValue({ approvalId: "approval-1" }),
+    };
+    const { broadcastToConnIds, toolEventRecipients, handler } = createHarness({
+      resolveSessionKeyForRun: () => "main",
+      fileChangeApprovalManager,
+    });
+    toolEventRecipients.add("run-approval", "conn-1");
+
+    handler({
+      runId: "run-approval",
+      seq: 1,
+      stream: "tool",
+      ts: Date.now(),
+      data: {
+        phase: "result",
+        name: "edit",
+        toolCallId: "tool-a1",
+        isError: false,
+      },
+    });
+
+    expect(fileChangeApprovalManager.registerToolResult).toHaveBeenCalledWith({
+      runId: "run-approval",
+      toolCallId: "tool-a1",
+      isError: false,
+    });
+    const payload = broadcastToConnIds.mock.calls[0]?.[1] as {
+      data?: { approvalId?: string };
+    };
+    expect(payload.data?.approvalId).toBe("approval-1");
+  });
 });
